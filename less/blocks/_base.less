@@ -1,0 +1,41 @@
+@font-face {
+	font-family: 'M PLUS 1p', sans-serif;
+	src: url("../../fonts/mplus1p/MPLUS1.ttf");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'M PLUS 1p', sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+button, input {
+  outline: none;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  //Медиа для планшетов и выше
+  @media (min-width: 768px) {
+    padding: 0 30px;
+  }
+
+  //Медиа для десктопов
+  @media (min-width: 1200px) {
+    padding: 0;
+  }
+}
