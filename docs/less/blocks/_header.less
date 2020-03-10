@@ -1,0 +1,131 @@
+.header {
+  position: relative;
+  max-width: 1600px;
+  padding: 75px 0 240px;
+  background-image: url("../../img/lines-5.jpg");
+  background-position: center;
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url("../../img/header/bg-01.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 600px;
+    content: "";
+  }
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin-bottom: 170px;
+  padding: 0 20px;
+
+  &__logo {
+    color: #000;
+    font-weight: 900;
+    font-size: 42px;
+  }
+
+  &__menu {
+    display: flex;
+    font-weight: 700;
+    font-size: 20px;
+    a {
+      margin-right: 80px;
+      color: #000;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__contacts {
+  }
+}
+
+.header-coder {
+  z-index: 10;
+  width: 50%;
+  &__title {
+    font-size: 90px;
+    line-height: 1.2;
+  }
+  &__desc {
+    margin-bottom: 30px;
+    color: @desc;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  &__greeting {
+    margin-right: 20px;
+    margin-bottom: 710px;
+  }
+
+  &__contacts {
+  }
+
+  &__avatar {
+    position: relative;
+    z-index: 5;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-image: gradient(
+        90deg,
+        rgb(244, 248, 249) 0%,
+        rgba(244, 248, 249, 0) 100%
+      );
+      opacity: 0.5;
+      content: "";
+    }
+  }
+}
+.header-experience {
+  flex: 0 1 70%;
+  &__title {
+    margin-bottom: 40px;
+    font-weight: 800;
+    font-size: 40px;
+  }
+  &__desc {
+    margin-bottom: 40px;
+    font-size: 24px;
+    li {
+      &::before {
+        content: "— ";
+      }
+    }
+  }
+}
+
+.header-contacts {
+  display: flex;
+  flex: 0 1 30%;
+  flex-direction: column;
+  // .header-contacts__title
+  &__title {
+    margin-bottom: 40px;
+    font-weight: 800;
+    font-size: 40px;
+  }
+
+  // .header-contacts__icons
+  &__icons {
+  }
+}
+
+.navbar__vk {
+  width: 40px;
+  height: 40px;
+  path {
+    fill: @darkgray;
+  }
+}
