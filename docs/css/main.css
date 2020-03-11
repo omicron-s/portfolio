@@ -68,6 +68,19 @@ input {
   bottom: 15%;
   height: 12px;
 }
+.link {
+  color: #000;
+  border-bottom: 1px solid #000;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.link:hover {
+  color: #039be5;
+  border-color: #039be5;
+}
+.link:active {
+  color: #ea736d;
+  border-color: #ea736d;
+}
 .btn {
   display: inline-block;
   height: 56px;
@@ -77,22 +90,22 @@ input {
   border-radius: 30px;
   transition: color 0.2s ease, border 0.2s ease;
 }
+.btn:focus {
+  border: 4px dotted #ea736d;
+}
 .btn-filled {
   color: #000;
   background-color: #039be5;
-  border: 4px solid #039be5;
-  transition: background-color 0.2s ease, border 0.2s ease;
+  border: 4px solid transparent;
+  transition: background-color 0.2s ease;
 }
 .btn-filled:hover {
   color: #000;
   background-color: #038acc;
-  border-color: #038acc;
 }
-.btn-filled:active,
-.btn-filled :focus {
+.btn-filled:active {
   color: #000;
   background-color: #0279b3;
-  border-color: #0279b3;
 }
 .btn-empty {
   color: #464646;
@@ -103,16 +116,15 @@ input {
   color: #797979;
   border-color: #797979;
 }
-.btn-empty:active,
-.btn-empty :focus {
+.btn-empty:active {
   color: #181818;
   border-color: #181818;
 }
-.icon-vk :hover,
+.icon-vk:hover,
 .icon-vk a:focus {
   filter: drop-shadow(0 0 4px rgba(70, 128, 194, 0.7));
 }
-.icon-vk :hover path,
+.icon-vk:hover path,
 .icon-vk a:focus path {
   fill: #4680c2;
 }
@@ -131,6 +143,57 @@ input {
 .icon-discord:hover path,
 .icon-discord a:focus path {
   fill: #7289da;
+}
+.contacts-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-right: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: box-shadow 0.2s ease;
+}
+.contacts-icon__vk {
+  background-color: #4680c2;
+}
+.contacts-icon__vk img {
+  width: 32px;
+  height: 32px;
+}
+.contacts-icon__vk:hover,
+.contacts-icon__vk:focus,
+.contacts-icon__vk:active {
+  border: none;
+  box-shadow: 0 0 20px #4680c2;
+}
+.contacts-icon__github {
+  background-color: #fff;
+}
+.contacts-icon__github img {
+  max-width: 110%;
+}
+.contacts-icon__github:hover,
+.contacts-icon__github:focus,
+.contacts-icon__github:active {
+  border: none;
+  box-shadow: 0 0 20px #181818;
+}
+.contacts-icon__discord {
+  margin-top: -2px;
+  margin-right: 0;
+  background-color: #fff;
+}
+.contacts-icon__discord img {
+  max-width: 110%;
+  margin-top: 6px;
+}
+.contacts-icon__discord:hover,
+.contacts-icon__discord:focus,
+.contacts-icon__discord:active {
+  border: none;
+  box-shadow: 0 0 20px #7289da;
 }
 .header {
   position: relative;
@@ -161,24 +224,43 @@ input {
   margin: 0 auto 170px;
   padding: 0 15px;
 }
-.navbar a:focus {
-  outline: none;
-}
 .navbar__logo {
   color: #000;
   font-weight: 900;
   font-size: 42px;
+}
+.navbar__logo:focus,
+.navbar__logo:hover {
+  color: #000;
+  border: none;
 }
 .navbar__menu {
   font-weight: 700;
   font-size: 20px;
 }
 .navbar__menu a {
+  position: relative;
+  z-index: 2;
   margin-right: 80px;
   color: #000;
 }
 .navbar__menu a:last-child {
   margin-right: 0;
+}
+.navbar__menu a::before {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  z-index: -1;
+  width: 0;
+  height: 5px;
+  background-color: #039be5;
+  transition: 0.2s ease;
+  content: "";
+}
+.navbar__menu a:hover::before,
+.navbar__menu a:active::before {
+  width: 100%;
 }
 .navbar__icon {
   height: 30px;
@@ -212,7 +294,7 @@ input {
 }
 .header-avatar {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   width: 50%;
 }
 .header-avatar img {
@@ -230,7 +312,7 @@ input {
   content: "";
 }
 .header-experience {
-  flex: 0 1 70%;
+  width: 70%;
 }
 .header-experience__title {
   margin-bottom: 40px;
@@ -245,13 +327,18 @@ input {
   content: "— ";
 }
 .header-contacts {
-  display: flex;
-  flex: 0 1 30%;
-  flex-direction: column;
+  width: 30%;
 }
 .header-contacts__title {
   margin-bottom: 40px;
   font-weight: 800;
   font-size: 40px;
+}
+.header-contacts__icons {
+  display: flex;
+  margin-bottom: 40px;
+}
+.header-contacts__email {
+  font-size: 24px;
 }
 /*# sourceMappingURL=./main.css.map */

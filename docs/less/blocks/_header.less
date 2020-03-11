@@ -19,6 +19,7 @@
     content: "";
   }
 }
+
 .navbar {
   display: flex;
   align-items: center;
@@ -27,23 +28,43 @@
   margin: 0 auto 170px;
   padding: 0 15px;
 
-  a:focus {
-    outline: none;
-  }
   &__logo {
     color: #000;
     font-weight: 900;
     font-size: 42px;
+    &:focus,
+    &:hover {
+      color: #000;
+      border: none;
+    }
   }
 
   &__menu {
     font-weight: 700;
     font-size: 20px;
     a {
+      position: relative;
+      z-index: 2;
       margin-right: 80px;
       color: #000;
       &:last-child {
         margin-right: 0;
+      }
+
+      &::before {
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        z-index: -1;
+        width: 0;
+        height: 5px;
+        background-color: @main;
+        transition: 0.2s ease;
+        content: "";
+      }
+      &:hover::before,
+      &:active::before {
+        width: 100%;
       }
     }
   }
@@ -91,7 +112,7 @@
 
 .header-avatar {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   width: 50%;
   img {
     margin: 0 auto;
@@ -114,7 +135,7 @@
 }
 
 .header-experience {
-  flex: 0 1 70%;
+  width: 70%;
   &__title {
     margin-bottom: 40px;
     font-weight: 800;
@@ -132,9 +153,7 @@
 }
 
 .header-contacts {
-  display: flex;
-  flex: 0 1 30%;
-  flex-direction: column;
+  width: 30%;
   // .header-contacts__title
   &__title {
     margin-bottom: 40px;
@@ -144,5 +163,11 @@
 
   // .header-contacts__icons
   &__icons {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  &__email {
+    font-size: 24px;
   }
 }
