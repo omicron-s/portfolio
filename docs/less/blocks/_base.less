@@ -37,7 +37,7 @@ input {
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 1170px;
   margin: 0 auto;
   padding: 0 15px;
 
@@ -54,6 +54,9 @@ input {
 
 .row {
   display: flex;
+  &&__sb {
+    justify-content: space-between;
+  }
 }
 
 .title {
@@ -81,14 +84,17 @@ input {
 }
 
 .link {
+  padding: 8px 0;
   color: #000;
-  border-bottom: 1px solid #000;
-  transition: color 0.2s ease, border-color 0.2s ease;
-  &:hover {
+  span {
+    border-bottom: 1px solid #000;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  &:hover span {
     color: @main;
     border-color: @main;
   }
-  &:active {
+  &:active span {
     color: @scarlet;
     border-color: @scarlet;
   }
@@ -96,8 +102,8 @@ input {
 // buttons
 .btn {
   display: inline-block;
-  height: 56px;
-  padding: 6px 40px 0;
+  height: 64px;
+  padding: 10px 40px 0;
   font-weight: 700;
   font-size: 22px;
   border-radius: 30px;
@@ -117,7 +123,7 @@ input {
     color: #000;
     background-color: darken(@main, 5%);
   }
-  
+
   &:active {
     color: #000;
     background-color: darken(@main, 10%);
@@ -139,24 +145,21 @@ input {
 }
 // icons
 .icon-vk:hover,
-.icon-vk a:focus {
-  filter: drop-shadow(0 0 4px rgba(@vk, 0.7));
+.icon-vk:focus {
   path {
     fill: @vk;
   }
 }
 
 .icon-github:hover,
-.icon-github a:focus {
-  filter: drop-shadow(0 0 4px rgba(@github, 0.7));
+.icon-github:focus {
   path {
     fill: @github;
   }
 }
 
 .icon-discord:hover,
-.icon-discord a:focus {
-  filter: drop-shadow(0 0 4px rgba(@discord, 0.7));
+.icon-discord:focus {
   path {
     fill: @discord;
   }
@@ -172,6 +175,9 @@ input {
   overflow: hidden;
   border-radius: 50%;
   transition: box-shadow 0.2s ease;
+  &:last-child {
+    margin-right: 0;
+  }
 
   // .contacts-icon__vk
   &__vk {
@@ -209,7 +215,6 @@ input {
   // .contacts-icon__discord
   &__discord {
     margin-top: -2px;
-    margin-right: 0;
     background-color: #fff;
 
     img {

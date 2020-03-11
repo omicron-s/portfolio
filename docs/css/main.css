@@ -29,7 +29,7 @@ input {
   outline: none;
 }
 .container {
-  max-width: 1140px;
+  max-width: 1170px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -45,6 +45,9 @@ input {
 }
 .row {
   display: flex;
+}
+.row.row__sb {
+  justify-content: space-between;
 }
 .title {
   color: #000;
@@ -69,22 +72,25 @@ input {
   height: 12px;
 }
 .link {
+  padding: 8px 0;
   color: #000;
+}
+.link span {
   border-bottom: 1px solid #000;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
-.link:hover {
+.link:hover span {
   color: #039be5;
   border-color: #039be5;
 }
-.link:active {
+.link:active span {
   color: #ea736d;
   border-color: #ea736d;
 }
 .btn {
   display: inline-block;
-  height: 56px;
-  padding: 6px 40px 0;
+  height: 64px;
+  padding: 10px 40px 0;
   font-weight: 700;
   font-size: 22px;
   border-radius: 30px;
@@ -120,28 +126,16 @@ input {
   color: #181818;
   border-color: #181818;
 }
-.icon-vk:hover,
-.icon-vk a:focus {
-  filter: drop-shadow(0 0 4px rgba(70, 128, 194, 0.7));
-}
 .icon-vk:hover path,
-.icon-vk a:focus path {
+.icon-vk:focus path {
   fill: #4680c2;
 }
-.icon-github:hover,
-.icon-github a:focus {
-  filter: drop-shadow(0 0 4px rgba(108, 198, 68, 0.7));
-}
 .icon-github:hover path,
-.icon-github a:focus path {
+.icon-github:focus path {
   fill: #6cc644;
 }
-.icon-discord:hover,
-.icon-discord a:focus {
-  filter: drop-shadow(0 0 4px rgba(114, 137, 218, 0.7));
-}
 .icon-discord:hover path,
-.icon-discord a:focus path {
+.icon-discord:focus path {
   fill: #7289da;
 }
 .contacts-icon {
@@ -154,6 +148,9 @@ input {
   overflow: hidden;
   border-radius: 50%;
   transition: box-shadow 0.2s ease;
+}
+.contacts-icon:last-child {
+  margin-right: 0;
 }
 .contacts-icon__vk {
   background-color: #4680c2;
@@ -182,7 +179,6 @@ input {
 }
 .contacts-icon__discord {
   margin-top: -2px;
-  margin-right: 0;
   background-color: #fff;
 }
 .contacts-icon__discord img {
@@ -199,28 +195,17 @@ input {
   position: relative;
   z-index: 1;
   max-width: 1600px;
+  margin: 0 auto;
   padding: 75px 0 240px;
   background-image: url("../img/lines-5.jpg");
   background-position: center;
-}
-.header::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background-image: url("../img/header/bg-01.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position-y: 600px;
-  content: "";
+  background-size: contain;
 }
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1370px;
+  max-width: 1400px;
   margin: 0 auto 170px;
   padding: 0 15px;
 }
@@ -228,10 +213,18 @@ input {
   color: #000;
   font-weight: 900;
   font-size: 42px;
+  transition: color 0.2s ease;
+}
+.navbar__logo span::before {
+  transition: transform 0.4s ease, background-color 0.4s ease;
+}
+.navbar__logo span:hover::before {
+  background-color: #ea736d;
+  transform: rotatex(180deg);
 }
 .navbar__logo:focus,
 .navbar__logo:hover {
-  color: #000;
+  color: #464646;
   border: none;
 }
 .navbar__menu {
@@ -242,6 +235,7 @@ input {
   position: relative;
   z-index: 2;
   margin-right: 80px;
+  padding: 5px 0;
   color: #000;
 }
 .navbar__menu a:last-child {
@@ -250,7 +244,7 @@ input {
 .navbar__menu a::before {
   position: absolute;
   bottom: 2px;
-  left: 0;
+  left: -5px;
   z-index: -1;
   width: 0;
   height: 5px;
@@ -260,12 +254,24 @@ input {
 }
 .navbar__menu a:hover::before,
 .navbar__menu a:active::before {
-  width: 100%;
+  width: 110%;
+}
+.navbar__contacts {
+  display: flex;
 }
 .navbar__icon {
+  display: block;
+  width: 30px;
   height: 30px;
   margin-right: 20px;
   transition: filter 0.2s ease;
+}
+.navbar__icon:focus {
+  border: none;
+}
+.navbar__icon svg {
+  width: 30px;
+  height: 30px;
 }
 .navbar__icon:last-child {
   margin-right: 0;
@@ -275,11 +281,13 @@ input {
   fill: #181818;
 }
 .header-coder {
+  z-index: 5;
   width: 50%;
 }
 .header-coder__title {
+  margin-bottom: 15px;
   font-size: 90px;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 .header-coder__desc {
   margin-bottom: 30px;
@@ -290,26 +298,34 @@ input {
 }
 .header-coder__greeting {
   margin-right: 20px;
-  margin-bottom: 710px;
 }
 .header-avatar {
   position: relative;
   z-index: 2;
   width: 50%;
+  max-width: 460px;
+  max-height: 415px;
 }
 .header-avatar img {
-  margin: 0 auto;
+  max-height: 100%;
+  margin-left: auto;
 }
 .header-avatar::before {
   position: absolute;
-  top: 5%;
-  right: -30px;
-  left: 10%;
+  top: 20%;
+  right: 0;
+  left: 25%;
   z-index: -1;
-  height: 40%;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(90deg, #f4f8f9 0%, rgba(244, 248, 249, 0) 100%);
   opacity: 0.5;
   content: "";
+}
+.header-background-img {
+  z-index: -1;
+  max-width: 1600px;
+  margin: -78px auto 0;
 }
 .header-experience {
   width: 70%;
