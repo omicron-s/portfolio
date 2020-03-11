@@ -1,5 +1,6 @@
 .header {
   position: relative;
+  z-index: 1;
   max-width: 1600px;
   padding: 75px 0 240px;
   background-image: url("../../img/lines-5.jpg");
@@ -22,10 +23,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1400px;
-  margin-bottom: 170px;
-  padding: 0 20px;
+  max-width: 1370px;
+  margin: 0 auto 170px;
+  padding: 0 15px;
 
+  a:focus {
+    outline: none;
+  }
   &__logo {
     color: #000;
     font-weight: 900;
@@ -33,7 +37,6 @@
   }
 
   &__menu {
-    display: flex;
     font-weight: 700;
     font-size: 20px;
     a {
@@ -44,12 +47,26 @@
       }
     }
   }
+
   &__contacts {
+  }
+
+  &__icon {
+    height: 30px;
+    margin-right: 20px;
+    transition: filter 0.2s ease;
+
+    &:last-child {
+      margin-right: 0;
+    }
+    path {
+      transition: fill 0.2s ease;
+      fill: @darkgray;
+    }
   }
 }
 
 .header-coder {
-  z-index: 10;
   width: 50%;
   &__title {
     font-size: 90px;
@@ -62,6 +79,7 @@
     font-size: 24px;
     line-height: 1.5;
   }
+
   &__greeting {
     margin-right: 20px;
     margin-bottom: 710px;
@@ -69,25 +87,32 @@
 
   &__contacts {
   }
+}
 
-  &__avatar {
-    position: relative;
-    z-index: 5;
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      background-image: gradient(
-        90deg,
-        rgb(244, 248, 249) 0%,
-        rgba(244, 248, 249, 0) 100%
-      );
-      opacity: 0.5;
-      content: "";
-    }
+.header-avatar {
+  position: relative;
+  z-index: 10;
+  width: 50%;
+  img {
+    margin: 0 auto;
+  }
+  &::before {
+    position: absolute;
+    top: 5%;
+    right: -30px;
+    left: 10%;
+    z-index: -1;
+    height: 40%;
+    background: linear-gradient(
+      90deg,
+      rgb(244, 248, 249) 0%,
+      rgba(244, 248, 249, 0) 100%
+    );
+    opacity: 0.5;
+    content: "";
   }
 }
+
 .header-experience {
   flex: 0 1 70%;
   &__title {
@@ -119,13 +144,5 @@
 
   // .header-contacts__icons
   &__icons {
-  }
-}
-
-.navbar__vk {
-  width: 40px;
-  height: 40px;
-  path {
-    fill: @darkgray;
   }
 }
