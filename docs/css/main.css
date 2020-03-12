@@ -424,7 +424,7 @@ input {
 }
 .profolio-card__desc {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 21px;
 }
 .profolio-card__lg {
   flex: 0 1 50%;
@@ -453,44 +453,54 @@ input {
   margin-bottom: 150px;
   text-align: center;
 }
+.planning-card-wrapper {
+  max-width: 1005px;
+  margin: 0 auto;
+}
 .planning-card {
   position: relative;
   display: flex;
-  justify-content: flex-end;
   width: calc(50% + 37px);
-  margin-right: auto;
+  margin-right: 0;
   margin-bottom: 60px;
-  margin-left: 0;
+  margin-left: auto;
 }
 .planning-card:nth-child(odd) {
-  justify-content: flex-start;
-  width: calc(50% - 37px);
-  margin-right: 0;
+  margin-right: auto;
+  margin-left: 0;
+}
+.planning-card:nth-child(odd) div:nth-child(even) {
+  order: -1;
+  margin-right: 40px;
   margin-left: auto;
+  text-align: right;
+}
+.planning-card:first-child::after {
+  position: absolute;
+  right: 37px;
+  bottom: calc(100% + 20px);
+  width: 4px;
+  height: 57px;
+  background-color: #e1eef4;
+  border-radius: 2px;
+  transform: translateX(50%);
+  content: "";
 }
 .planning-card:last-child {
   margin-bottom: 0;
 }
-.planning-card__wrapper {
+.planning-card:last-child div::before {
+  display: none;
+}
+.planning-card__img-wrapper {
   position: relative;
 }
-.planning-card__wrapper::before {
+.planning-card__img-wrapper::before {
   position: absolute;
   top: 94px;
   left: 50%;
   width: 4px;
   height: calc(100% - 74px);
-  background-color: #e1eef4;
-  border-radius: 2px;
-  transform: translateX(-50%);
-  content: "";
-}
-.planning-card__wrapper:first-child::after {
-  position: absolute;
-  bottom: calc(100% + 20px);
-  left: 50%;
-  width: 4px;
-  height: 57px;
   background-color: #e1eef4;
   border-radius: 2px;
   transform: translateX(-50%);
@@ -511,22 +521,18 @@ input {
   height: 40px;
 }
 .planning-card__action {
+  justify-content: flex-start;
+  margin-right: auto;
   margin-left: 40px;
-  text-align: left;
-}
-.planning-card__action:nth-child(even) {
-  order: -1;
-  margin-right: 40px;
-  margin-left: 0;
-  text-align: right;
 }
 .planning-card__title {
   font-weight: 800;
   font-size: 26px;
 }
 .planning-card__desc {
+  width: 100%;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 21px;
 }
 .planning-card__desc p {
   margin-bottom: 10px;
