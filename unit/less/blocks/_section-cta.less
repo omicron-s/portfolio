@@ -1,0 +1,78 @@
+.section-cta {
+	position: relative;
+	padding: 67px 0 75px;
+	color: #fff;
+
+	text-align: center;
+	background-color: @darkgreen;
+	background-image: url("../../img/bg-cta.jpg");
+	background-repeat: no-repeat;
+	background-position: center 35%;
+	background-size: cover;
+
+	//Медиа для планшетов и выше
+	@media (min-width: 768px) {
+		padding: 68px 0 79px;
+	}
+
+	//Медиа для десктопов
+	@media (min-width: 1200px) {
+		padding: 79px 0 91px;
+	}
+
+	* >  {
+		position: relative;
+		z-index: 9;
+	}
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+
+		width: 100%;
+		height: 100%;
+		background-color: rgba(@darkgreen, 0.7);
+		content: "";
+	}
+}
+
+.section-cta__desc {
+	margin-bottom: 32px;
+	color: #fff;
+	font-weight: 500;
+	font-size: 22px;
+	//Медиа для планшетов и выше
+	@media (min-width: 768px) {
+		margin-bottom: 50px;
+	}
+
+	//Медиа для десктопов
+	@media (min-width: 1200px) {
+		margin-bottom: 44px;
+	}
+}
+
+.section-cta__btn {
+	height: 60px;
+	padding: 0 40px;
+	color: @darkgreen;
+	font-weight: 700;
+
+	font-size: 14px;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	background-color: #fff;
+	border: none;
+
+	border-radius: 30px;
+	transition: 0.2s ease;
+
+	&:focus,
+	&:hover {
+		color: #fff;
+		background-color: @blue;
+		outline: none;
+	}
+}

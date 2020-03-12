@@ -1,0 +1,19 @@
+<svg id="icon" xmlns="http://www.w3.org/2000/svg" width="45.031" height="66" viewBox="0 0 45.031 66">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #8ac249;
+        stroke-width: 2px;
+      }
+
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="icon-2" data-name="icon" class="cls-1" d="M633.985,1288.01h27.946" transform="translate(-625.969 -1225)"/>
+  <path id="icon-3" data-name="icon" class="cls-1" d="M648.978,1276.95v11.08" transform="translate(-625.969 -1225)"/>
+  <rect id="icon-4" data-name="icon" class="cls-2" x="10.031" y="1" width="24" height="41" rx="11.873" ry="11.873"/>
+  <path id="icon-5" data-name="icon" class="cls-1" d="M628.978,1257.07s0.691,19.93,19.515,19.93,19.5-20.01,19.5-20.01" transform="translate(-625.969 -1225)"/>
+</svg>

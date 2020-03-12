@@ -579,6 +579,9 @@ input {
 .contacts-left-side__list a:focus {
   margin: -3px 0;
 }
+.contacts-left-side__list span {
+  color: #96969d;
+}
 .contacts-right-side {
   display: flex;
   flex-wrap: wrap;
@@ -589,6 +592,7 @@ input {
   box-shadow: 0 28px 100px #c2dbeb;
 }
 .contacts-right-side form {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -601,12 +605,19 @@ input {
   border: none;
   border-bottom: 2px solid #eaeaea;
   border-radius: 1px;
+  transition: 0.5s ease;
+}
+.contacts-right-side input:not([type="submit"]):hover,
+.contacts-right-side input:not([type="submit"]):focus {
+  border-color: #039be5;
 }
 .contacts-right-side input[type="submit"] {
   margin-right: auto;
   padding-top: 0;
 }
 .contacts-right-side textarea {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 115px;
   margin-bottom: 40px;
@@ -617,5 +628,58 @@ input {
   border-bottom: 2px solid #eaeaea;
   outline: none;
   resize: none;
+}
+.contacts-right-side textarea:hover,
+.contacts-right-side textarea:focus {
+  border-color: #039be5;
+}
+.contacts-right-side textarea::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  color: #bcbcbc;
+  font-weight: 700;
+  font-size: 20px;
+  transition: 0.5s ease;
+  content: "Сообщение";
+  pointer-events: none;
+}
+.contacts-right-side textarea:not(:placeholder-shown) {
+  top: 160px;
+  color: #039be5;
+  font-size: 16px;
+}
+.contacts-right-side__email {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #bcbcbc;
+  font-weight: 700;
+  font-size: 20px;
+  transition: 0.5s ease;
+  pointer-events: none;
+}
+.contacts-right-side input[type="email"]:focus + span,
+.contacts-right-side input[type="email"]:not(:placeholder-shown) + span {
+  top: -40px;
+  color: #039be5;
+  font-size: 16px;
+}
+.contacts-right-side__text {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  color: #bcbcbc;
+  font-weight: 700;
+  font-size: 20px;
+  transition: 0.5s ease;
+  pointer-events: none;
+}
+.contacts-right-side input[type="text"]:focus + span,
+.contacts-right-side input[type="text"]:not(:placeholder-shown) + span {
+  top: 60px;
+  color: #039be5;
+  font-size: 16px;
 }
 /*# sourceMappingURL=./main.css.map */

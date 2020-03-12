@@ -1,0 +1,137 @@
+.section-adaptive {
+	position: relative;
+	padding: 73px 0 44px;
+	border-bottom: 1px solid #e1e1e1;
+
+	//Медиа для планшетов и выше
+	@media (min-width: 768px) {
+		padding: 65px 0 43px;
+	}
+
+	//Медиа для десктопов
+	@media (min-width: 1200px) {
+		padding: 94px 0 24px;
+	}
+
+	> * {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		//Медиа для планшетов и выше
+		@media (min-width: 768px) {
+			flex-direction: row-reverse;
+			align-items: flex-start;
+			justify-content: space-between;
+		}
+
+		//Медиа для десктопов
+		@media (min-width: 1200px) {
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		border: 48px solid transparent;
+		border-top: 48px solid #a4eecb;
+		transform: translateX(-50%);
+		content: "";
+
+		//Медиа для планшетов и выше
+		@media (min-width: 768px) {
+			content: unset;
+		}
+
+		//Медиа для десктопов
+		@media (min-width: 1200px) {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			border: 86px solid transparent;
+			border-left: 86px solid #a4eecb;
+			transform: translateY(-50%);
+			content: "";
+		}
+	}
+}
+
+.section-adaptive__content {
+	text-align: center;
+
+	//Медиа для планшетов и выше
+	@media (min-width: 768px) {
+		width: 55%;
+		padding-top: 21px;
+		text-align: left;
+	}
+
+	//Медиа для десктопов
+	@media (min-width: 1200px) {
+		width: 50%;
+		padding: 14px 30px 0px 100px;
+		text-align: left;
+	}
+}
+
+.adaptive-title__title {
+	margin-bottom: 33px;
+
+	//Медиа для планшетов и выше
+	@media (min-width: 768px) {
+		margin-bottom: 37px;
+	}
+
+	//Медиа для десктопов
+	@media (min-width: 1200px) {
+		margin-bottom: 37px;
+	}
+
+	.section-title {
+		font-size: 14px;
+	}
+}
+
+.adaptive__header {
+	margin-bottom: 34px;
+
+	//Медиа для планшетов и выше
+	@media (min-width: 768px) {
+		margin-bottom: 15px;
+	}
+
+	//Медиа для десктопов
+	@media (min-width: 1200px) {
+		margin-bottom: 41px;
+	}
+}
+
+.section-adaptive__img {
+	width: 70%;
+	max-width: 300px;
+
+	img {
+		width: 100%;
+	}
+
+	//Медиа для планшетов и выше
+	@media (min-width: 768px) {
+		width: 36.5%;
+		max-width: unset;
+		transform: translateX(10%);
+	}
+
+	//Медиа для десктопов
+	@media (min-width: 1200px) {
+		width: 50%;
+		padding-left: 80px;
+		transform: translateX(0);
+
+		img {
+			width: auto;
+		}
+	}
+}

@@ -42,10 +42,8 @@
       }
     }
     span {
+      color: #96969d;
     }
-  }
-  // .contacts-left-side__span
-  &__span {
   }
 }
 
@@ -58,6 +56,7 @@
   background-color: #fff;
   box-shadow: 0 28px 100px #c2dbeb;
   form {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -70,14 +69,20 @@
     border: none;
     border-bottom: 2px solid #eaeaea;
     border-radius: 1px;
+    transition: 0.5s ease;
+    &:hover,
+    &:focus {
+      border-color: @main;
+    }
   }
 
-  
   input[type="submit"] {
     margin-right: auto;
     padding-top: 0;
   }
   textarea {
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 115px;
     margin-bottom: 40px;
@@ -88,5 +93,63 @@
     border-bottom: 2px solid #eaeaea;
     outline: none;
     resize: none;
+    &:hover,
+    &:focus {
+      border-color: @main;
+    }
+    &::before {
+      // Не работает потому что это textarea, у нее не может быть before и  after
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      color: #bcbcbc;
+      font-weight: 700;
+      font-size: 20px;
+      transition: 0.5s ease;
+      content: "Сообщение";
+      pointer-events: none;
+    }
+  }
+  textarea:not(:placeholder-shown) {
+    top: 160px;
+    color: @main;
+    font-size: 16px;
+  }
+  // .contacts-right-side__email
+  &__email {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #bcbcbc;
+    font-weight: 700;
+    font-size: 20px;
+    transition: 0.5s ease;
+    pointer-events: none;
+  }
+
+  input[type="email"]:focus + span,
+  input[type="email"]:not(:placeholder-shown) + span {
+    top: -40px;
+    color: @main;
+    font-size: 16px;
+  }
+  // .contacts-right-side__text
+  &__text {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    color: #bcbcbc;
+    font-weight: 700;
+    font-size: 20px;
+    transition: 0.5s ease;
+    pointer-events: none;
+  }
+
+  input[type="text"]:focus + span,
+  input[type="text"]:not(:placeholder-shown) + span {
+    top: 60px;
+    color: @main;
+    font-size: 16px;
   }
 }

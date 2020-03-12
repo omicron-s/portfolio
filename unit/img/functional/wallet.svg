@@ -1,0 +1,27 @@
+<svg id="icon-3.svg" xmlns="http://www.w3.org/2000/svg" width="42" height="37.94" viewBox="0 0 42 37.94">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke: #2096f3;
+        stroke-width: 2px;
+      }
+
+      .cls-1 {
+        stroke-linecap: round;
+      }
+
+      .cls-1, .cls-4 {
+        stroke-linejoin: round;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="icon" class="cls-1" d="M950.919,1262.05l3.9,4.94h15.152v-10h-15.5Z" transform="translate(-929 -1239.06)"/>
+  <path id="icon-2" data-name="icon" class="cls-2" d="M967.989,1257.25v-7.27H932v24.01h36v-7.28" transform="translate(-929 -1239.06)"/>
+  <circle id="icon-3" data-name="icon" class="cls-3" cx="28.969" cy="23" r="2"/>
+  <path id="icon-4" data-name="icon" class="cls-4" d="M931.553,1248.91L962,1240.04v9.61" transform="translate(-929 -1239.06)"/>
+</svg>
