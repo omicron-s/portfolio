@@ -72,11 +72,11 @@ input {
   content: "";
 }
 .title-line.title-line--lg::before {
-  bottom: 15%;
+  bottom: 20%;
   height: 12px;
 }
-.title-line.title-line--sm:before {
-  bottom: 15%;
+.title-line.title-line--sm::before {
+  bottom: 10%;
   height: 7px;
 }
 .link {
@@ -455,16 +455,47 @@ input {
 }
 .planning-row {
   display: flex;
+  margin-bottom: 60px;
+}
+.planning-row:last-child {
+  margin-bottom: 0;
 }
 .planning-card {
   display: flex;
+  justify-content: flex-end;
+  width: calc(50% + 37px);
+}
+.planning-card:nth-child(even) {
+  justify-content: flex-start;
+  width: calc(50% - 37px);
+}
+.planning-card__wrapper {
+  position: relative;
+}
+.planning-card__wrapper::after {
+  position: absolute;
+  top: 94px;
+  left: 50%;
+  width: 4px;
+  height: calc(100% - 74px);
+  background-color: #e1eef4;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  content: "";
 }
 .planning-card__img {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 74px;
   height: 74px;
   border-radius: 28px;
   box-shadow: 3px 1px 35px rgba(0, 112, 187, 0.35);
+}
+.planning-card__img img {
+  width: 40px;
+  height: 40px;
 }
 .planning-card__img:first-child::before {
   position: absolute;
@@ -477,8 +508,14 @@ input {
   transform: translateX(-50%);
   content: "";
 }
+.planning-card__action {
+  margin-left: 40px;
+  text-align: left;
+}
 .planning-card__action:nth-child(even) {
-  margin-right: 40;
+  order: -1;
+  margin-right: 40px;
+  margin-left: 0;
   text-align: right;
 }
 .planning-card__title {

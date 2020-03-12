@@ -14,16 +14,49 @@
 
 .planning-row {
   display: flex;
+  margin-bottom: 60px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 .planning-card {
   display: flex;
+  justify-content: flex-end;
+  width: calc(50% + 37px);
+
+  &:nth-child(even) {
+    justify-content: flex-start;
+    width: calc(50% - 37px);
+  }
+  //.planning-card__wrapper
+  &__wrapper {
+    position: relative;
+    &::after {
+      position: absolute;
+      top: 94px;
+      left: 50%;
+      width: 4px;
+      height: calc(100% - 74px);
+      background-color: #e1eef4;
+      border-radius: 2px;
+      transform: translateX(-50%);
+      content: "";
+    }
+  }
   // .planning-card__img
   &__img {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 74px;
     height: 74px;
     border-radius: 28px;
     box-shadow: 3px 1px 35px rgba(#0070bb, 0.35);
+    img {
+      width: 40px;
+      height: 40px;
+    }
     &:first-child::before {
       position: absolute;
       bottom: calc(100% + 20px);
@@ -38,8 +71,13 @@
   }
   // .planning-card__action
   &__action {
+    margin-left: 40px;
+    text-align: left;
+
     &:nth-child(even) {
-      margin-right: 40;
+      order: -1;
+      margin-right: 40px;
+      margin-left: 0;
       text-align: right;
     }
   }
