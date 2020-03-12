@@ -367,6 +367,8 @@ input {
   font-size: 24px;
 }
 .portfolio {
+  max-width: 1600px;
+  margin: 0 auto;
   padding: 120px 0;
   background-color: #f4f8f9;
 }
@@ -434,5 +436,8 @@ input {
 }
 .profolio-card__lg .profolio-card__desc {
   font-size: 22px;
+}
+.planning {
+  padding: ;
 }
 /*# sourceMappingURL=./main.css.map */
