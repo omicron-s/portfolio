@@ -1,21 +1,62 @@
 .planning {
-    padding: ;
-    // .planning__title
-    &__title {
-    }
-    }
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 140px 0;
+  background-image: url("../../img/planning/line-4.png");
+  background-position: center;
+  background-size: contain;
+  // .planning__title
+  &__title {
+    margin-bottom: 150px;
+    text-align: center;
+  }
+}
 
-    .planning-row {
+.planning-row {
+  display: flex;
+}
+.planning-card {
+  display: flex;
+  // .planning-card__img
+  &__img {
+    position: relative;
+    width: 74px;
+    height: 74px;
+    border-radius: 28px;
+    box-shadow: 3px 1px 35px rgba(#0070bb, 0.35);
+    &:first-child::before {
+      position: absolute;
+      bottom: calc(100% + 20px);
+      left: 50%;
+      width: 4px;
+      height: 57px;
+      background-color: #e1eef4;
+      border-radius: 2px;
+      transform: translateX(-50%);
+      content: "";
     }
-    .planning-card {
-    // .planning-card__img
-    &__img {
+  }
+  // .planning-card__action
+  &__action {
+    &:nth-child(even) {
+      margin-right: 40;
+      text-align: right;
     }
-    // .planning-card__title
-    &__title {
+  }
+  // .planning-card__title
+  &__title {
+    font-weight: 800;
+    font-size: 26px;
+  }
+  // .planning-card__desc
+  &__desc {
+    font-weight: 500;
+    font-size: 18px;
+    p {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
-    // .planning-card__desc
-    &__desc {
-    }
-    }
-    
+  }
+}

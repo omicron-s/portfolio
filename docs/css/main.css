@@ -75,6 +75,10 @@ input {
   bottom: 15%;
   height: 12px;
 }
+.title-line.title-line--sm:before {
+  bottom: 15%;
+  height: 7px;
+}
 .link {
   padding: 8px 0;
   color: #000;
@@ -438,6 +442,57 @@ input {
   font-size: 22px;
 }
 .planning {
-  padding: ;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 140px 0;
+  background-image: url("../img/planning/line-4.png");
+  background-position: center;
+  background-size: contain;
+}
+.planning__title {
+  margin-bottom: 150px;
+  text-align: center;
+}
+.planning-row {
+  display: flex;
+}
+.planning-card {
+  display: flex;
+}
+.planning-card__img {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  border-radius: 28px;
+  box-shadow: 3px 1px 35px rgba(0, 112, 187, 0.35);
+}
+.planning-card__img:first-child::before {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+  width: 4px;
+  height: 57px;
+  background-color: #e1eef4;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  content: "";
+}
+.planning-card__action:nth-child(even) {
+  margin-right: 40;
+  text-align: right;
+}
+.planning-card__title {
+  font-weight: 800;
+  font-size: 26px;
+}
+.planning-card__desc {
+  font-weight: 500;
+  font-size: 18px;
+}
+.planning-card__desc p {
+  margin-bottom: 10px;
+}
+.planning-card__desc p:last-child {
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=./main.css.map */
