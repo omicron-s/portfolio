@@ -1,0 +1,81 @@
+.portfolio {
+  padding: 120px 0;
+  background-color: #f4f8f9;
+
+  // .profolio__title
+  &__title {
+    margin-bottom: 60px;
+  }
+  // .portfolio__pagination
+  &__pagination {
+    display: flex;
+    margin-bottom: 50px;
+    font-weight: 800;
+    font-size: 28px;
+    a {
+      margin-right: 80px;
+      color: #8fa5ae;
+
+      &:active,
+      &:hover {
+        color: @scarlet;
+        border: none;
+      }
+      &:focus {
+        margin: -3px 77px -3px -3px;
+        border: 3px dotted @scarlet;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &.active {
+        color: #000;
+      }
+    }
+  }
+}
+
+.profolio-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.profolio-card {
+  flex: 0 1 33.3333%;
+  &__img {
+    max-width: 360px;
+    max-height: 240px;
+    margin-bottom: 25px;
+    overflow: hidden;
+  }
+  // .profolio-card__title
+  &__title {
+    font-weight: 700;
+    font-size: 26px;
+  }
+  // .profolio-card__desc
+  &__desc {
+    font-weight: 300;
+    font-size: 20px;
+  }
+  &__lg {
+    flex: 0 1 50%;
+    .profolio-card {
+      &__img {
+        max-width: 560px;
+        max-height: 370px;
+        margin-bottom: 25px;
+        overflow: hidden;
+      }
+      // .profolio-card__title
+      &__title {
+        font-size: 32px;
+      }
+      // .profolio-card__desc
+      &__desc {
+        font-size: 22px;
+      }
+    }
+  }
+}

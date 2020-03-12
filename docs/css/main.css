@@ -1,12 +1,13 @@
 @font-face {
-  font-family: "M PLUS 1p", sans-serif;
-  src: url("../fonts/mplus1p/MPLUS1");
+  font-weight: 400;
+  font-family: "MPLUS 1p", sans-serif;
+  src: url("../fonts/mplus1p/MPLUS1p-Regular.ttf");
 }
 html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: "MPLUS 1p", sans-serif;
 }
 img {
   display: block;
@@ -52,6 +53,9 @@ input {
 .title {
   color: #000;
   font-weight: 800;
+}
+.title.title__section {
+  font-size: 64px;
 }
 .title-line {
   position: relative;
@@ -215,7 +219,11 @@ input {
   font-size: 42px;
   transition: color 0.2s ease;
 }
+.navbar__logo span {
+  display: block;
+}
 .navbar__logo span::before {
+  bottom: 18%;
   transition: transform 0.4s ease, background-color 0.4s ease;
 }
 .navbar__logo span:hover::before,
@@ -357,5 +365,74 @@ input {
 }
 .header-contacts__email {
   font-size: 24px;
+}
+.portfolio {
+  padding: 120px 0;
+  background-color: #f4f8f9;
+}
+.portfolio__title {
+  margin-bottom: 60px;
+}
+.portfolio__pagination {
+  display: flex;
+  margin-bottom: 50px;
+  font-weight: 800;
+  font-size: 28px;
+}
+.portfolio__pagination a {
+  margin-right: 80px;
+  color: #8fa5ae;
+}
+.portfolio__pagination a:active,
+.portfolio__pagination a:hover {
+  color: #ea736d;
+  border: none;
+}
+.portfolio__pagination a:focus {
+  margin: -3px 77px -3px -3px;
+  border: 3px dotted #ea736d;
+}
+.portfolio__pagination a:last-child {
+  margin-right: 0;
+}
+.portfolio__pagination a.active {
+  color: #000;
+}
+.profolio-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.profolio-card {
+  flex: 0 1 33.3333%;
+}
+.profolio-card__img {
+  max-width: 360px;
+  max-height: 240px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+.profolio-card__title {
+  font-weight: 700;
+  font-size: 26px;
+}
+.profolio-card__desc {
+  font-weight: 300;
+  font-size: 20px;
+}
+.profolio-card__lg {
+  flex: 0 1 50%;
+}
+.profolio-card__lg .profolio-card__img {
+  max-width: 560px;
+  max-height: 370px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+.profolio-card__lg .profolio-card__title {
+  font-size: 32px;
+}
+.profolio-card__lg .profolio-card__desc {
+  font-size: 22px;
 }
 /*# sourceMappingURL=./main.css.map */
