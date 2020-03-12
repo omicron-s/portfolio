@@ -218,7 +218,8 @@ input {
 .navbar__logo span::before {
   transition: transform 0.4s ease, background-color 0.4s ease;
 }
-.navbar__logo span:hover::before {
+.navbar__logo span:hover::before,
+.navbar__logo:focus span::before {
   background-color: #ea736d;
   transform: rotatex(180deg);
 }
