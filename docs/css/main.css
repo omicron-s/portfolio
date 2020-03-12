@@ -146,6 +146,10 @@ input {
 .icon-discord:focus path {
   fill: #7289da;
 }
+.contacts-icons {
+  display: flex;
+  margin-bottom: 40px;
+}
 .contacts-icon {
   display: flex;
   align-items: center;
@@ -363,10 +367,6 @@ input {
   font-weight: 800;
   font-size: 40px;
 }
-.header-contacts__icons {
-  display: flex;
-  margin-bottom: 40px;
-}
 .header-contacts__email {
   font-size: 24px;
 }
@@ -539,5 +539,82 @@ input {
 }
 .planning-card__desc p:last-child {
   margin-bottom: 0;
+}
+.contacts {
+  margin: 0 auto;
+  padding: 150px 0;
+  background-color: #f4f8f9;
+}
+.contacts__title {
+  margin-bottom: 75px;
+  text-align: center;
+}
+.contacts-left-side {
+  max-width: 555px;
+  font-size: 21px;
+}
+.contacts-left-side div:nth-last-child(2) {
+  margin-bottom: 37px;
+}
+.contacts-left-side__call-to-me {
+  margin-bottom: 45px;
+}
+.contacts-left-side__list {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 14px;
+  padding: 8px 0;
+}
+.contacts-left-side__list b {
+  width: 40%;
+}
+.contacts-left-side__list a {
+  color: #039be5;
+  transition: color 0.2s ease;
+}
+.contacts-left-side__list a:active,
+.contacts-left-side__list a:hover {
+  color: #ea736d;
+}
+.contacts-left-side__list a:focus {
+  margin: -3px 0;
+}
+.contacts-right-side {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 555px;
+  padding: 80px 60px 40px;
+  background-color: #fff;
+  box-shadow: 0 28px 100px #c2dbeb;
+}
+.contacts-right-side form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-weight: 700;
+  font-size: 20px;
+}
+.contacts-right-side input {
+  margin-bottom: 65px;
+  font-weight: 700;
+  font-size: 20px;
+  border: none;
+  border-bottom: 2px solid #eaeaea;
+  border-radius: 1px;
+}
+.contacts-right-side textarea {
+  width: 100%;
+  height: 115px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 20px;
+  border: none;
+  border-bottom: 2px solid #eaeaea;
+  outline: none;
+  resize: none;
+}
+.contacts-right-side button {
+  padding-top: 0;
 }
 /*# sourceMappingURL=./main.css.map */
