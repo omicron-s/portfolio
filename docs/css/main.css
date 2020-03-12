@@ -453,31 +453,44 @@ input {
   margin-bottom: 150px;
   text-align: center;
 }
-.planning-row {
-  display: flex;
-  margin-bottom: 60px;
-}
-.planning-row:last-child {
-  margin-bottom: 0;
-}
 .planning-card {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   width: calc(50% + 37px);
+  margin-right: auto;
+  margin-bottom: 60px;
+  margin-left: 0;
 }
-.planning-card:nth-child(even) {
+.planning-card:nth-child(odd) {
   justify-content: flex-start;
   width: calc(50% - 37px);
+  margin-right: 0;
+  margin-left: auto;
+}
+.planning-card:last-child {
+  margin-bottom: 0;
 }
 .planning-card__wrapper {
   position: relative;
 }
-.planning-card__wrapper::after {
+.planning-card__wrapper::before {
   position: absolute;
   top: 94px;
   left: 50%;
   width: 4px;
   height: calc(100% - 74px);
+  background-color: #e1eef4;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  content: "";
+}
+.planning-card__wrapper:first-child::after {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+  width: 4px;
+  height: 57px;
   background-color: #e1eef4;
   border-radius: 2px;
   transform: translateX(-50%);
@@ -496,17 +509,6 @@ input {
 .planning-card__img img {
   width: 40px;
   height: 40px;
-}
-.planning-card__img:first-child::before {
-  position: absolute;
-  bottom: calc(100% + 20px);
-  left: 50%;
-  width: 4px;
-  height: 57px;
-  background-color: #e1eef4;
-  border-radius: 2px;
-  transform: translateX(-50%);
-  content: "";
 }
 .planning-card__action {
   margin-left: 40px;
