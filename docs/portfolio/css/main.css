@@ -622,6 +622,7 @@ input {
   text-align: center;
 }
 .contacts-left-side {
+  position: relative;
   max-width: 555px;
   font-size: 21px;
 }
@@ -653,6 +654,16 @@ input {
 }
 .contacts-left-side__list span {
   color: #96969d;
+}
+.contacts-left-side::before {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  bottom: 0;
+  left: -340px;
+  background-image: url("../img/bg-02.png");
+  background-repeat: no-repeat;
+  content: "";
 }
 .contacts-right-side {
   display: flex;
@@ -761,8 +772,8 @@ footer {
 footer h4 {
   margin-bottom: 20px;
   color: #fff;
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 19px;
 }
 footer p {
   color: #b0b0b0;

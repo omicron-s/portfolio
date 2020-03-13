@@ -10,6 +10,7 @@
 }
 
 .contacts-left-side {
+  position: relative;
   max-width: 555px;
   font-size: 21px;
 
@@ -44,6 +45,16 @@
     span {
       color: #96969d;
     }
+  }
+  &::before {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    bottom: 0;
+    left: -340px;
+    background-image: url("../../img/bg-02.png");
+    background-repeat: no-repeat;
+    content: "";
   }
 }
 
