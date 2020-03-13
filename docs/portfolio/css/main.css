@@ -405,15 +405,30 @@ input {
 .portfolio__pagination a.active {
   color: #000;
 }
-.profolio-row {
+.portfolio-row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
 }
-.profolio-card {
+.portfolio-row .portfolio-card {
+  flex: 0 1 50%;
+}
+.portfolio-row .portfolio-card__img {
+  max-width: 560px;
+  max-height: 370px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+.portfolio-row .portfolio-card__title {
+  font-size: 32px;
+}
+.portfolio-row .portfolio-card__desc {
+  font-size: 22px;
+}
+.portfolio-card {
   flex: 0 1 33.3333%;
 }
-.profolio-card__img {
+.portfolio-card__img {
   position: relative;
   max-width: 360px;
   max-height: 240px;
@@ -421,22 +436,22 @@ input {
   overflow: hidden;
   background-color: #039be5;
 }
-.profolio-card__img img {
+.portfolio-card__img img {
   width: 100%;
   transition: opacity 0.8s ease;
 }
-.profolio-card__img:hover img,
-.profolio-card__img:active img {
+.portfolio-card__img:hover img,
+.portfolio-card__img:active img {
   opacity: 0.3;
   transition: opacity 0.8s ease;
 }
-.profolio-card__img:hover .profolio-card__btn {
+.portfolio-card__img:hover .portfolio-card__btn {
   top: 50%;
   transform: translate(-50%, -50%);
   opacity: 1;
   transition: 0.5s ease;
 }
-.profolio-card__btn {
+.portfolio-card__btn {
   position: absolute;
   top: 25%;
   left: 50%;
@@ -452,48 +467,33 @@ input {
   opacity: 0;
   transition: 0.5s ease;
 }
-.profolio-card__btn:hover {
+.portfolio-card__btn:hover {
   color: #fff;
   background-color: rgba(234, 115, 109, 0.8);
   transition: 0.2s ease;
 }
-.profolio-card__btn:active {
+.portfolio-card__btn:active {
   color: #fff;
   background-color: #e44840;
   transition: 0.2s ease;
 }
-.profolio-card__btn:focus {
+.portfolio-card__btn:focus {
   border: none;
 }
-.profolio-card__title {
+.portfolio-card__title {
   font-weight: 700;
   font-size: 26px;
 }
-.profolio-card__desc {
+.portfolio-card__desc {
   font-weight: 300;
   font-size: 21px;
 }
-.profolio-card__lg {
-  flex: 0 1 50%;
-}
-.profolio-card__lg .profolio-card__img {
-  max-width: 560px;
-  max-height: 370px;
-  margin-bottom: 25px;
-  overflow: hidden;
-}
-.profolio-card__lg .profolio-card__title {
-  font-size: 32px;
-}
-.profolio-card__lg .profolio-card__desc {
-  font-size: 22px;
-}
-.profolio-card .link {
+.portfolio-card .link {
   padding: 0;
   color: #212529;
 }
-.profolio-card .link:hover,
-.profolio-card .link:active {
+.portfolio-card .link:hover,
+.portfolio-card .link:active {
   color: #ea736d;
   border-bottom: 1px solid #ea736d;
 }
