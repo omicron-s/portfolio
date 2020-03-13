@@ -256,8 +256,14 @@ input {
   padding: 5px 0;
   color: #000;
 }
+.navbar__menu a:focus {
+  margin: -3px 77px -3px -3px;
+}
 .navbar__menu a:last-child {
   margin-right: 0;
+}
+.navbar__menu a:focus:last-child {
+  margin-right: -3px;
 }
 .navbar__menu a::before {
   position: absolute;
@@ -371,6 +377,9 @@ input {
 .header-contacts__email {
   font-size: 24px;
 }
+.header-contacts__email:focus {
+  margin: -3px;
+}
 .portfolio {
   max-width: 1600px;
   margin: 0 auto;
@@ -483,6 +492,9 @@ input {
 .portfolio-card__title {
   font-weight: 700;
   font-size: 26px;
+}
+.portfolio-card__title a:focus {
+  margin: -3px;
 }
 .portfolio-card__desc {
   font-weight: 300;
@@ -637,7 +649,7 @@ input {
   color: #ea736d;
 }
 .contacts-left-side__list a:focus {
-  margin: -3px 0;
+  margin: -3px;
 }
 .contacts-left-side__list span {
   color: #96969d;
