@@ -78,6 +78,7 @@ input {
 .title-line.title-line--sm::before {
   bottom: 10%;
   height: 7px;
+  transition: background-color 0.5s ease;
 }
 .link {
   padding: 8px 0;
@@ -413,10 +414,56 @@ input {
   flex: 0 1 33.3333%;
 }
 .profolio-card__img {
+  position: relative;
   max-width: 360px;
   max-height: 240px;
   margin-bottom: 25px;
   overflow: hidden;
+  background-color: #039be5;
+}
+.profolio-card__img img {
+  width: 100%;
+  transition: opacity 0.8s ease;
+}
+.profolio-card__img:hover img,
+.profolio-card__img:active img {
+  opacity: 0.3;
+  transition: opacity 0.8s ease;
+}
+.profolio-card__img:hover .profolio-card__btn {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: 0.5s ease;
+}
+.profolio-card__btn {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  min-width: 276px;
+  height: 52px;
+  color: #ea736d;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: center;
+  background-color: rgba(244, 248, 249, 0.7);
+  transform: translate(-50%);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.profolio-card__btn:hover {
+  color: #fff;
+  background-color: rgba(234, 115, 109, 0.8);
+  transition: 0.2s ease;
+}
+.profolio-card__btn:active {
+  color: #fff;
+  background-color: #e44840;
+  transition: 0.2s ease;
+}
+.profolio-card__btn:focus {
+  border: none;
 }
 .profolio-card__title {
   font-weight: 700;
@@ -440,6 +487,15 @@ input {
 }
 .profolio-card__lg .profolio-card__desc {
   font-size: 22px;
+}
+.profolio-card .link {
+  padding: 0;
+  color: #212529;
+}
+.profolio-card .link:hover,
+.profolio-card .link:active {
+  color: #ea736d;
+  border-bottom: 1px solid #ea736d;
 }
 .planning {
   max-width: 1600px;
@@ -491,6 +547,10 @@ input {
 }
 .planning-card:last-child div::before {
   display: none;
+}
+.planning-card:hover .title-line--sm::before {
+  background-color: #ea736d;
+  transition: background-color 0.5s ease;
 }
 .planning-card__img-wrapper {
   position: relative;
@@ -609,7 +669,7 @@ input {
 }
 .contacts-right-side input:not([type="submit"]):hover,
 .contacts-right-side input:not([type="submit"]):focus {
-  border-color: #039be5;
+  border-color: #ea736d;
 }
 .contacts-right-side input[type="submit"] {
   margin-right: auto;
@@ -631,7 +691,7 @@ input {
 }
 .contacts-right-side textarea:hover,
 .contacts-right-side textarea:focus {
-  border-color: #039be5;
+  border-color: #ea736d;
 }
 .contacts-right-side textarea::before {
   position: absolute;
@@ -681,5 +741,31 @@ input {
   top: 60px;
   color: #039be5;
   font-size: 16px;
+}
+footer {
+  padding: 30px 0 40px;
+  background-color: #333;
+}
+footer h4 {
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+}
+footer p {
+  color: #b0b0b0;
+  font-size: 16px;
+  line-height: 1.8;
+}
+footer .link {
+  color: #b0b0b0;
+}
+footer .link span {
+  border-color: #b0b0b0;
+}
+footer .link:hover span,
+footer .link:active span {
+  color: #fff;
+  border-color: #fff;
 }
 /*# sourceMappingURL=./main.css.map */

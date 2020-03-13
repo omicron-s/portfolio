@@ -46,10 +46,57 @@
 .profolio-card {
   flex: 0 1 33.3333%;
   &__img {
+    position: relative;
     max-width: 360px;
     max-height: 240px;
     margin-bottom: 25px;
     overflow: hidden;
+    background-color: @main;
+
+    img {
+      width: 100%;
+      transition: opacity 0.8s ease;
+    }
+    &:hover img,
+    &:active img {
+      opacity: 0.3;
+      transition: opacity 0.8s ease;
+    }
+    &:hover .profolio-card__btn {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 1;
+      transition: 0.5s ease;
+    }
+  }
+  &__btn {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    min-width: 276px;
+    height: 52px;
+    color: @scarlet;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 1.2;
+    text-align: center;
+    background-color: rgba(#f4f8f9, 0.7);
+    transform: translate(-50%);
+    opacity: 0;
+    transition: 0.5s ease;
+    &:hover {
+      color: #fff;
+      background-color: rgba(@scarlet, 0.8);
+      transition: 0.2s ease;
+    }
+    &:active {
+      color: #fff;
+      background-color: darken(@scarlet, 10%);
+      transition: 0.2s ease;
+    }
+    &:focus {
+      border: none;
+    }
   }
   // .profolio-card__title
   &__title {
@@ -78,6 +125,16 @@
       &__desc {
         font-size: 22px;
       }
+    }
+  }
+
+  .link {
+    padding: 0;
+    color: #212529;
+    &:hover,
+    &:active {
+      color: @scarlet;
+      border-bottom: 1px solid @scarlet;
     }
   }
 }
