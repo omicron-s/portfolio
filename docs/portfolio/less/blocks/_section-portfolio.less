@@ -1,20 +1,21 @@
 .portfolio {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 120px 0;
+  padding: 96px 0 127px;
   background-color: #f4f8f9;
 
   // .portfolio__title
   &__title {
-    margin-bottom: 60px;
+    margin-bottom: 46px;
   }
   // .portfolio__pagination
   &__pagination {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
     font-weight: 800;
     font-size: 28px;
-    a {
+    input {
+      display: none;
+    }
+      label {
       margin-right: 80px;
       color: #8fa5ae;
 
@@ -30,10 +31,32 @@
       &:last-child {
         margin-right: 0;
       }
-      &.active {
-        color: #000;
-      }
+      // &.active {
+      //   color: #000;
+      //   pointer-events: none;
+      // }
     }
+    // a {
+    //   margin-right: 80px;
+    //   color: #8fa5ae;
+
+    //   &:active,
+    //   &:hover {
+    //     color: @scarlet;
+    //     border: none;
+    //   }
+    //   &:focus {
+    //     margin: -3px 77px -3px -3px;
+    //     border: 3px dotted @scarlet;
+    //   }
+    //   &:last-child {
+    //     margin-right: 0;
+    //   }
+    //   &.active {
+    //     color: #000;
+    //     pointer-events: none;
+    //   }
+    // }
   }
 }
 
@@ -44,11 +67,11 @@
 }
 
 .portfolio-card:nth-child(-n + 2) {
-flex: 0 1 48%;
+  flex: 0 1 48.6%;
   .portfolio-card {
     &__img {
       max-height: 370px;
-      margin-bottom: 25px;
+      margin-bottom: 22px;
       overflow: hidden;
     }
     // .portfolio-card__title
@@ -56,22 +79,22 @@ flex: 0 1 48%;
       font-size: 32px;
     }
     // .portfolio-card__desc
-    &__desc p {
+    &__desc  {
       font-size: 22px;
     }
   }
 }
 
 .portfolio-card {
-flex: 0 1 30%;
-  margin-bottom: 50px;
+  flex: 0 1 31.8%;
+  margin-bottom: 60px;
   &:nth-last-child(-n + 3) {
     margin-bottom: 0;
   }
   &__img {
     position: relative;
     max-height: 240px;
-    margin-bottom: 25px;
+    margin-bottom: 21px;
     overflow: hidden;
     background-color: @main;
 
@@ -97,7 +120,7 @@ flex: 0 1 30%;
     top: 25%;
     left: 50%;
     min-width: 276px;
-    height: 52px;
+    padding-top: 0;
     color: @scarlet;
     font-weight: 800;
     font-size: 22px;
@@ -135,9 +158,9 @@ flex: 0 1 30%;
   }
 
   // .portfolio-card__desc
-  &__desc p {
+  &__desc  {
     font-weight: 300;
-    font-size: 21px;
+    font-size: 20px;
   }
 
   .link {

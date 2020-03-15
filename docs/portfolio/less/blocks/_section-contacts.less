@@ -1,31 +1,36 @@
 .contacts {
   margin: 0 auto;
-  padding: 150px 0;
+  padding: 127px 0 150px;
   background-color: #f4f8f9;
 
   &__title {
-    margin-bottom: 75px;
+    margin-bottom: 56px;
     text-align: center;
   }
 }
 
 .contacts-left-side {
   position: relative;
+  z-index: 2;
   max-width: 555px;
   font-size: 21px;
 
   div:nth-last-child(2) {
-    margin-bottom: 37px;
+    margin-bottom: 32px;
+  }
+  div:nth-last-child(1) {
+    padding: 0;
   }
   // .contacts-left-side__call-to-me
   &__call-to-me {
-    margin-bottom: 45px;
+    margin-bottom: 35px;
+    padding-top: 22px;
   }
   // .contacts-left-side__list
   &__list {
     display: flex;
     align-items: baseline;
-    margin-bottom: 14px;
+    margin-bottom: 6px;
     padding: 8px 0;
     b {
       width: 40%;
@@ -48,10 +53,11 @@
   }
   &::before {
     position: absolute;
-    top: -10px;
+    top: -2px;
     right: 0;
     bottom: 0;
-    left: -340px;
+    left: -350px;
+    z-index: -1;
     background-image: url("../../img/bg-02.png");
     background-repeat: no-repeat;
     content: "";
@@ -62,7 +68,8 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 555px;
+  max-width: 510px;
+  margin-right: 22px;
   padding: 80px 60px 40px;
   background-color: #fff;
   box-shadow: 0 28px 100px #c2dbeb;
@@ -73,8 +80,8 @@
     width: 100%;
   }
   input:not([type="submit"]) {
-    margin-bottom: 65px;
-    padding: 0 0 5px;
+    margin-bottom: 59px;
+    padding: 0 0 14px;
     font-weight: 700;
     font-size: 19px;
     border: none;
@@ -91,9 +98,9 @@
     margin-right: auto;
     padding-top: 0;
   }
+
   textarea {
     position: relative;
-    z-index: 1;
     width: 100%;
     height: 115px;
     margin-bottom: 40px;
@@ -108,24 +115,6 @@
     &:focus {
       border-color: @scarlet;
     }
-    &::before {
-      // Не работает потому что это textarea, у нее не может быть before и  after
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      color: #bcbcbc;
-      font-weight: 700;
-      font-size: 20px;
-      transition: 0.5s ease;
-      content: "Сообщение";
-      pointer-events: none;
-    }
-  }
-  textarea:not(:placeholder-shown) {
-    top: 160px;
-    color: @main;
-    font-size: 16px;
   }
   // .contacts-right-side__email
   &__email {
@@ -141,14 +130,14 @@
 
   input[type="email"]:focus + span,
   input[type="email"]:not(:placeholder-shown) + span {
-    top: -40px;
+    top: -25px;
     color: @main;
     font-size: 16px;
   }
-  // .contacts-right-side__text
-  &__text {
+  // .contacts-right-side__title
+  &__title {
     position: absolute;
-    top: 100px;
+    top: 107px;
     left: 0;
     color: #bcbcbc;
     font-weight: 700;
@@ -159,7 +148,30 @@
 
   input[type="text"]:focus + span,
   input[type="text"]:not(:placeholder-shown) + span {
-    top: 60px;
+    top: 82px;
+    color: @main;
+    font-size: 16px;
+  }
+  // .contacts-right-side__text
+  &__text {
+    position: absolute;
+    top: 202px;
+    left: 0;
+    color: #bcbcbc;
+    font-weight: 700;
+    font-size: 20px;
+    transition: 0.5s ease;
+    pointer-events: none;
+    &.active {
+      top: 187px;
+      color: @main;
+      font-size: 16px;
+    }
+  }
+
+  textarea:focus + span.contacts-right-side__text,
+  textarea:not(:placeholder-shown) + span.contacts-right-side__text {
+    top: 187px;
     color: @main;
     font-size: 16px;
   }

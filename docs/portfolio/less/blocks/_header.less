@@ -3,7 +3,7 @@
   z-index: 1;
   max-width: 1600px;
   margin: 0 auto;
-  padding: 75px 0 240px;
+  padding: 60px 0 238px;
   background-image: url("../../img/lines-5.jpg");
   background-position: center;
   background-size: contain;
@@ -14,8 +14,7 @@
   align-items: center;
   justify-content: space-between;
   max-width: 1400px;
-  margin: 0 auto 170px;
-  padding: 0 15px;
+  margin: 0 auto 146px;
 
   &__logo {
     color: #000;
@@ -112,10 +111,10 @@
   &__title {
     margin-bottom: 15px;
     font-size: 90px;
-    line-height: 1.1;
+    line-height: 1.2;
   }
   &__desc {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
     color: @desc;
     font-weight: 500;
     font-size: 24px;
@@ -123,7 +122,7 @@
   }
 
   &__greeting {
-    margin-right: 20px;
+    margin-right: 17px;
   }
 
   &__contacts {
@@ -135,10 +134,10 @@
   z-index: 2;
   width: 50%;
   max-width: 460px;
-  max-height: 415px;
+  max-height: 433px;
+  padding-top: 27px;
+  overflow: hidden;
   img {
-    max-height: 100%;
-    margin-left: auto;
   }
 
   &::before {
@@ -162,13 +161,13 @@
 .header-background-img {
   z-index: -1;
   max-width: 1600px;
-  margin: -78px auto 0;
+  margin: -125px auto 0;
 }
 
 .header-experience {
-  width: 70%;
+ flex: 0 1 68%;
   &__title {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     font-weight: 800;
     font-size: 40px;
   }
@@ -176,6 +175,7 @@
     margin-bottom: 40px;
     font-size: 24px;
     li {
+      margin-bottom: 3px;
       &::before {
         content: "— ";
       }
@@ -184,15 +184,18 @@
 }
 
 .header-contacts {
-  width: 30%;
+  flex: 0 1 32%;
   // .header-contacts__title
   &__title {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
     font-weight: 800;
     font-size: 40px;
   }
-
+  &__icons {
+    margin-bottom: 23px;
+  }
   &__email {
+    padding-left: 6px;
     font-size: 24px;
     &:focus {
       margin: -3px;

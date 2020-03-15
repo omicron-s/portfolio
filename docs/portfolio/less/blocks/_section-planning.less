@@ -1,13 +1,13 @@
 .planning {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 140px 0;
+  padding: 127px 0 116px;
   background-image: url("../../img/planning/line-4.png");
   background-position: center;
   background-size: contain;
   // .planning__title
   &__title {
-    margin-bottom: 150px;
+    margin-bottom: 145px;
     text-align: center;
   }
 }
@@ -22,7 +22,7 @@
   display: flex;
   width: calc(50% + 37px);
   margin-right: 0;
-  margin-bottom: 60px;
+  margin-bottom: 85px;
   margin-left: auto;
 
   &:nth-child(odd) {
@@ -63,6 +63,7 @@
   //.planning-card__wrapper
   &__img-wrapper {
     position: relative;
+    margin-bottom: -41px;
     &::before {
       position: absolute;
       top: 94px;
@@ -95,10 +96,12 @@
   &__action {
     justify-content: flex-start;
     margin-right: auto;
-    margin-left: 40px;
+    margin-left: 48px;
   }
   // .planning-card__title
   &__title {
+    margin-bottom: 7px;
+    padding-top: 16px;
     font-weight: 800;
     font-size: 26px;
   }
@@ -106,7 +109,8 @@
   &__desc {
     width: 100%;
     font-weight: 500;
-    font-size: 21px;
+    font-size: 18px;
+    line-height: 1.25;
     p {
       margin-bottom: 10px;
       &:last-child {

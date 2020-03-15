@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио</title>
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="libs/owlCarousel2/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -69,8 +70,8 @@
             <img src="img/header/bg-01.jpg" alt="background">
         </div>
         <div class="container">
-            <div class="row">
-                <div id="myskills" class="header-experience">
+            <div id="myskills" class="row row__myskills">
+                <div class="header-experience">
                     <h2 class="header-experience__title">Что я умею:</h2>
                     <ul class="header-experience__desc desc">
                         <li>pixel perfect, полное соответствие макету.</li>
@@ -84,7 +85,7 @@
                 </div>
                 <div id="mycontacts" class="header-contacts">
                     <h2 class="header-contacts__title">На связи:</h2>
-                    <div class="contacts-icons">
+                    <div class="header-contacts__icons contacts-icons ">
                         <a href="https://vk.com/omigod" target="_blank" class="contacts-icon contacts-icon__vk">
                             <img src="img/icons/vk-brands.svg" alt="Вконтакте">
                         </a>
@@ -107,6 +108,7 @@
             </div>
         </div>
     </header>
+
     <main>
         <section id="portfolio" class="portfolio">
             <div class="container">
@@ -114,16 +116,21 @@
                     <h2><span class="title-line title-line--lg">Портфолио</span></h2>
                 </div>
                 <div class="portfolio__pagination">
-                    <a href="" class="active">Все работы</a>
-                    <a href="">Bootstrap</a>
-                    <a href="">WordPress</a>
-                    <a href="">Frontend</a>
+                    <input id="select-all" name="portfolio__pagination" type="radio" class="portfolio__pagination--radio" checked="checked" />
+                    <label for="select-all" class="pagination-all">Все работы</label>
+
+                    <input id="select-bootstrap" name="portfolio__pagination" type="radio" class="portfolio__pagination--radio" />
+                    <label for="select-bootstrap" class="pagination-bootstrap">Bootstrap</label>
+                    <!-- <a href="#" class="active">Все работы</a>
+                    <a href="#">Bootstrap</a>
+                    <a href="#">WordPress</a>
+                    <a href="#">Frontend</a> -->
                 </div>
                 <div class="portfolio-row">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card portfolio-card--bootstrap">
                         <div class="portfolio-card__img">
-                            <img src="img/portfolio/travel.jpg" alt="Проект Форест-Тревел">
-                            <a href="../forest-travel/index.html" target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</a>
+                            <a href="../forest-travel/index.html" target="_blank" tabindex="-1"><img src="img/portfolio/travel.jpg" alt="Проект Форест-Тревел">
+                                <button class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
                         </div>
                         <div class="portfolio-card__title">
                             <h3>
@@ -132,10 +139,10 @@
                         </div>
                         <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
                     </div>
-                    <div class="portfolio-card">
+                    <div class="portfolio-card portfolio-card--bootstrap">
                         <div class="portfolio-card__img">
-                            <img src="img/portfolio/unit.jpg" alt="Проект Ю Н И Т">
-                            <a href="../unit/index.html" target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</a>
+                            <a href="../unit/index.html" target="_blank" tabindex="-1"><img src="img/portfolio/unit.jpg" alt="Проект Ю Н И Т">
+                                <button class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
                         </div>
                         <div class="portfolio-card__title">
                             <h3>
@@ -146,8 +153,8 @@
                     </div>
                     <div class="portfolio-card">
                         <div class="portfolio-card__img">
-                            <img src="img/portfolio/img-01.jpg" alt="&#34;Мир авто&#34;">
-                            <a href="#" target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</a>
+                            <a href="#" tabindex="-1"><img src="img/portfolio/img-01.jpg" alt="&#34;Мир авто&#34;">
+                                <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
                         </div>
                         <div class="portfolio-card__title">
                             <h3>
@@ -158,8 +165,8 @@
                     </div>
                     <div class="portfolio-card">
                         <div class="portfolio-card__img">
-                            <img src="img/portfolio/img-02.jpg" alt="&#34;Мир авто&#34;">
-                            <a href="#" target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</a>
+                            <a href="#" tabindex="-1"><img src="img/portfolio/img-02.jpg" alt="&#34;Мир авто&#34;">
+                                <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
                         </div>
                         <div class="portfolio-card__title">
                             <h3>
@@ -170,8 +177,8 @@
                     </div>
                     <div class="portfolio-card">
                         <div class="portfolio-card__img">
-                            <img src="img/portfolio/img-03.jpg" alt="&#34;Мир авто&#34;">
-                            <a href="#" target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</a>
+                            <a href="#" tabindex="-1"><img src="img/portfolio/img-03.jpg" alt="&#34;Мир авто&#34;">
+                                <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
                         </div>
                         <div class="portfolio-card__title">
                             <h3>
@@ -339,8 +346,9 @@
                         <form action="mailto:omigod@live.ru">
 
                             <input type="email" required placeholder=" "><span class="contacts-right-side__email">Ваш Email</span>
-                            <input type="text" required placeholder=" "><span class="contacts-right-side__text">Тема письма</span>
+                            <input type="text" required placeholder=" "><span class="contacts-right-side__title">Тема письма</span>
                             <textarea required placeholder=" "></textarea>
+                            <span class="contacts-right-side__text">Сообщение</span>
                             <input type="submit" class="btn btn-filled">
                         </form>
 
@@ -350,6 +358,7 @@
             </div>
         </section>
     </main>
+
     <footer>
         <div class="container">
             <h4>© 2020 — Александр Боярский</h4>
