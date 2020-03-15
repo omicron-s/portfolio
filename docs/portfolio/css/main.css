@@ -399,30 +399,25 @@ input {
   font-weight: 800;
   font-size: 28px;
 }
-.portfolio__pagination input {
-  display: none;
-}
-.portfolio__pagination input:checked + label {
-  margin: 0 80px 0 0;
-  color: #ea736d;
-  border: none;
-  pointer-events: none;
-}
-.portfolio__pagination label {
+.portfolio__pagination a {
   margin-right: 80px;
   color: #8fa5ae;
   outline: none;
   cursor: pointer;
 }
-.portfolio__pagination label:hover {
+.portfolio__pagination a.active {
+  color: #000;
+}
+.portfolio__pagination a:hover,
+.portfolio__pagination a:active {
   color: #ea736d;
   border: none;
 }
-.portfolio__pagination label:focus {
-  margin: -3px 77px 5px -3px;
+.portfolio__pagination a:focus {
+  margin: -3px 77px -3px -3px;
   border: 3px dotted #ea736d;
 }
-.portfolio__pagination label:last-child {
+.portfolio__pagination a:last-child {
   margin-right: 0;
 }
 .portfolio-row {

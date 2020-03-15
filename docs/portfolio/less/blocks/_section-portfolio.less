@@ -14,28 +14,23 @@
     font-weight: 800;
     font-size: 28px;
 
-    input {
-      display: none;
-
-      &:checked + label {
-        margin: 0 80px 0 0;
-        color: @scarlet;
-        border: none;
-        pointer-events: none;
-      }
-    }
-    label {
+    a {
       margin-right: 80px;
       color: #8fa5ae;
       outline: none;
       cursor: pointer;
 
-      &:hover {
+      &.active {
+        color: #000;
+      }
+
+      &:hover,
+      &:active {
         color: @scarlet;
         border: none;
       }
       &:focus {
-        margin: -3px 77px 5px -3px;
+        margin: -3px 77px -3px -3px;
         border: 3px dotted @scarlet;
       }
       &:last-child {
@@ -68,6 +63,7 @@
     }
   }
 }
+
 .portfolio-card {
   flex: 0 1 32%;
   margin-bottom: 60px;
@@ -98,6 +94,7 @@
       transition: 0.5s ease;
     }
   }
+
   &__btn {
     position: absolute;
     top: 25%;
