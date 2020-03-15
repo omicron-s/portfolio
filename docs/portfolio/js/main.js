@@ -32,7 +32,9 @@ $("#select-bootstrap").click(function() {
     bootstrap = null;
   }
   bootstrap = $(".portfolio-card--bootstrap");
-  wordpress = $(".portfolio-card--wordpress").detach();
+  if (wordpress == null) {
+    wordpress = $(".portfolio-card--wordpress").detach();
+  }
   if (frontend == null) {
     frontend = $(".portfolio-card--frontend").detach();
   }
@@ -43,7 +45,9 @@ $("#select-wordpress").click(function() {
     wordpress.appendTo(".portfolio-row");
     wordpress = null;
   }
-  bootstrap = $(".portfolio-card--bootstrap").detach();
+  if (bootstrap == null) {
+    bootstrap = $(".portfolio-card--bootstrap").detach();
+  }
   wordpress = $(".portfolio-card--wordpress");
   if (frontend == null) {
     frontend = $(".portfolio-card--frontend").detach();
@@ -55,8 +59,12 @@ $("#select-frontend").click(function() {
     frontend.appendTo(".portfolio-row");
     frontend = null;
   }
-  bootstrap = $(".portfolio-card--bootstrap").detach();
-  wordpress = $(".portfolio-card--wordpress").detach();
+  if (bootstrap == null) {
+    bootstrap = $(".portfolio-card--bootstrap").detach();
+  }
+  if (wordpress == null) {
+    wordpress = $(".portfolio-card--wordpress").detach();
+  }
   frontend = $(".portfolio-card--frontend");
 });
 
