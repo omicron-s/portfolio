@@ -115,17 +115,20 @@
                 <div class="portfolio__title title title__section">
                     <h2><span class="title-line title-line--lg">Портфолио</span></h2>
                 </div>
-                <div class="portfolio__pagination">
-                    <input id="select-all" name="portfolio__pagination" type="radio" class="portfolio__pagination--radio" checked="checked" />
-                    <label for="select-all" class="pagination-all">Все работы</label>
+                <nav class="portfolio__pagination">
+                    <input id="select-all" name="portfolio__pagination" type="radio" checked="checked" />
+                    <label for="select-all" tabindex="0">Все работы</label>
 
-                    <input id="select-bootstrap" name="portfolio__pagination" type="radio" class="portfolio__pagination--radio" />
-                    <label for="select-bootstrap" class="pagination-bootstrap">Bootstrap</label>
-                    <!-- <a href="#" class="active">Все работы</a>
-                    <a href="#">Bootstrap</a>
-                    <a href="#">WordPress</a>
-                    <a href="#">Frontend</a> -->
-                </div>
+                    <input id="select-bootstrap" name="portfolio__pagination" type="radio" />
+                    <label for="select-bootstrap" tabindex="0">Bootstrap</label>
+
+                    <input id="select-wordpress" name="portfolio__pagination" type="radio" />
+                    <label for="select-wordpress" tabindex="0">WordPress</label>
+
+                    <input id="select-frontend" name="portfolio__pagination" type="radio" />
+                    <label for="select-frontend" tabindex="0">Frontend</label>
+
+                </nav>
                 <div class="portfolio-row">
                     <div class="portfolio-card portfolio-card--bootstrap">
                         <div class="portfolio-card__img">
@@ -139,7 +142,7 @@
                         </div>
                         <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
                     </div>
-                    <div class="portfolio-card portfolio-card--bootstrap">
+                    <div class="portfolio-card portfolio-card--wordpress">
                         <div class="portfolio-card__img">
                             <a href="../unit/index.html" target="_blank" tabindex="-1"><img src="img/portfolio/unit.jpg" alt="Проект Ю Н И Т">
                                 <button class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
@@ -151,7 +154,7 @@
                         </div>
                         <div class="portfolio-card__desc">Верстка лендинга. </div>
                     </div>
-                    <div class="portfolio-card">
+                    <div class="portfolio-card portfolio-card--frontend">
                         <div class="portfolio-card__img">
                             <a href="#" tabindex="-1"><img src="img/portfolio/img-01.jpg" alt="&#34;Мир авто&#34;">
                                 <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
@@ -163,7 +166,7 @@
                         </div>
                         <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
                     </div>
-                    <div class="portfolio-card">
+                    <div class="portfolio-card portfolio-card--bootstrap">
                         <div class="portfolio-card__img">
                             <a href="#" tabindex="-1"><img src="img/portfolio/img-02.jpg" alt="&#34;Мир авто&#34;">
                                 <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
@@ -175,7 +178,7 @@
                         </div>
                         <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
                     </div>
-                    <div class="portfolio-card">
+                    <div class="portfolio-card portfolio-card--wordpress">
                         <div class="portfolio-card__img">
                             <a href="#" tabindex="-1"><img src="img/portfolio/img-03.jpg" alt="&#34;Мир авто&#34;">
                                 <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
@@ -187,6 +190,79 @@
                         </div>
                         <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
                     </div>
+                    <div class="portfolio-card portfolio-card--frontend">
+                        <div class="portfolio-card__img">
+                            <a href="#" tabindex="-1"><img src="img/portfolio/img-01.jpg" alt="&#34;Мир авто&#34;">
+                                <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
+                        </div>
+                        <div class="portfolio-card__title">
+                            <h3>
+                                <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
+                            </h3>
+                        </div>
+                        <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
+                    </div>
+                    <div class="portfolio-card portfolio-card--bootstrap">
+                        <div class="portfolio-card__img">
+                            <a href="#" tabindex="-1"><img src="img/portfolio/img-02.jpg" alt="&#34;Мир авто&#34;">
+                                <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
+                        </div>
+                        <div class="portfolio-card__title">
+                            <h3>
+                                <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
+                            </h3>
+                        </div>
+                        <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
+                    </div>
+                    <div class="portfolio-card portfolio-card--wordpress">
+                        <div class="portfolio-card__img">
+                            <a href="#" tabindex="-1"><img src="img/portfolio/img-03.jpg" alt="&#34;Мир авто&#34;">
+                                <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
+                        </div>
+                        <div class="portfolio-card__title">
+                            <h3>
+                                <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
+                            </h3>
+                        </div>
+                        <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
+                    </div>
+                    <div class="portfolio-card portfolio-card--frontend">
+                        <div class="portfolio-card__img">
+                            <a href="#" tabindex="-1"><img src="img/portfolio/img-01.jpg" alt="&#34;Мир авто&#34;">
+                                <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
+                        </div>
+                        <div class="portfolio-card__title">
+                            <h3>
+                                <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
+                            </h3>
+                        </div>
+                        <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
+                    </div>
+                    <div class="portfolio-card portfolio-card--bootstrap">
+                        <div class="portfolio-card__img">
+                            <a href="#" tabindex="-1"><img src="img/portfolio/img-02.jpg" alt="&#34;Мир авто&#34;">
+                                <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
+                        </div>
+                        <div class="portfolio-card__title">
+                            <h3>
+                                <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
+                            </h3>
+                        </div>
+                        <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
+                    </div>
+                    <div class="portfolio-card portfolio-card--wordpress">
+                        <div class="portfolio-card__img">
+                            <a href="#" tabindex="-1"><img src="img/portfolio/img-03.jpg" alt="&#34;Мир авто&#34;">
+                                <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
+                        </div>
+                        <div class="portfolio-card__title">
+                            <h3>
+                                <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
+                            </h3>
+                        </div>
+                        <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
+                    </div>
+
                 </div>
             </div>
         </section>
