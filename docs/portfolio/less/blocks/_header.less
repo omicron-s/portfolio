@@ -236,7 +236,7 @@
   margin-bottom: 50px;
   overflow: hidden;
   user-select: none;
-  
+
   @media (min-width: 1200px) {
     order: 2;
     margin-bottom: 0;
@@ -259,22 +259,26 @@
       content: "";
     }
   }
-
 }
 
 .header-background-img {
   z-index: -1;
   max-width: 1600px;
   margin: 0;
+  transform: scale(1.5);
   user-select: none;
   pointer-events: none;
+  @media (min-width: 540px) {
+    transform: scale(1);
+  }
   @media (min-width: 1200px) {
     margin: -125px auto 0;
   }
 }
 
 .header-experience {
-  flex: 0 1 68%;
+  z-index: 1;
+  flex: 0 1 60%;
   &__title {
     margin-bottom: 25px;
     font-weight: 800;

@@ -44,8 +44,8 @@ $("#select-frontend").click(function() {
 });
 
 //// portfolio__card show/hide  *mobile*
-$(".portfolio-row span").click(function() {
-  $(".portfolio-row span").toggleClass("show");
+$(".portfolio__link span").click(function() {
+  $(".portfolio__link span").toggleClass("show");
   $(".portfolio-card:not(:nth-child(-n + 4))").slideToggle();
 });
 
