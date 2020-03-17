@@ -51,7 +51,7 @@ $(".portfolio__link span").click(function(e) {
   } else {
     $(".portfolio-card:not(:nth-child(-n + 4))").slideUp(300);
     var scrolling = $(".portfolio-card:nth-child(4)").offset().top;
-    $("body,html").animate({ scrollTop: scrolling }, 350);
+    $("body,html").animate({ scrollTop: scrolling }, 50);
   }
 });
 
