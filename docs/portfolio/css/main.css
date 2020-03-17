@@ -631,6 +631,7 @@ input {
 }
 .portfolio {
   padding: 50px 0 97px;
+  text-align: center;
   background-color: #f4f8f9;
 }
 @media (min-width: 1200px) {
@@ -674,7 +675,6 @@ input {
   margin-right: 0;
 }
 .portfolio__link {
-  margin-left: calc(50% - 104px);
   border-bottom: 1px solid #039be5;
 }
 .portfolio__link span::before {
@@ -691,6 +691,7 @@ input {
 .portfolio .portfolio-row {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 @media (min-width: 1200px) {
   .portfolio .portfolio-row {
@@ -729,7 +730,7 @@ input {
   }
 }
 .portfolio .portfolio-card:last-child {
-  margin-bottom: 0;
+  margin-bottom: 60px;
 }
 @media (min-width: 1200px) {
   .portfolio .portfolio-card:last-child {

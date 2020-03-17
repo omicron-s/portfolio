@@ -1,5 +1,6 @@
 .portfolio {
   padding: 50px 0 97px;
+  text-align: center;
   background-color: #f4f8f9;
   @media (min-width: 1200px) {
     padding: 96px 0 66px;
@@ -45,7 +46,6 @@
   }
 
   &__link {
-    margin-left: calc(50% - 104px);
     border-bottom: 1px solid @main;
     span::before {
       content: "Смотреть все работы";
@@ -60,7 +60,7 @@
   .portfolio-row {
     display: flex;
     flex-direction: column;
-
+    text-align: left;
     @media (min-width: 1200px) {
       flex-direction: row;
       flex-wrap: wrap;
@@ -102,7 +102,7 @@
     }
 
     &:last-child {
-      margin-bottom: 0;
+      margin-bottom: 60px;
 
       @media (min-width: 1200px) {
         margin-bottom: unset;
