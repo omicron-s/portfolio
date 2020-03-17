@@ -88,6 +88,7 @@
     border-radius: 28px;
     box-shadow: 3px 1px 35px rgba(#0070bb, 0.35);
     img {
+      z-index: 1;
       width: 40px;
       height: 40px;
     }
@@ -108,8 +109,8 @@
   // .planning-card__desc
   &__desc {
     width: 100%;
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 400;
+    font-size: 19px;
     line-height: 1.25;
     p {
       margin-bottom: 10px;
@@ -118,4 +119,66 @@
       }
     }
   }
+}
+
+#pc2-anim::before {
+  position: absolute;
+  top: 26px;
+  right: 21px;
+  display: none;
+  width: 0;
+  height: 18px;
+  background-color: #ff5b5b;
+  content: "";
+}
+
+@keyframes pc-2 {
+  10% {
+    width: 29px;
+  }
+  100% {
+    width: 0px;
+  }
+}
+
+#pc2:hover #pc2-anim::before {
+  display: block;
+  animation: pc-2 5s ease infinite;
+}
+
+@keyframes pc-3 {
+  25% {
+    transform: translate(6%, 6%) rotate(90deg);
+  }
+  50% {
+    transform: translate(0, 12%) rotate(180deg);
+  }
+  75% {
+    transform: translate(-6%, 6%) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+#pc3:hover img {
+  animation: pc-3 linear 5s infinite;
+}
+
+@keyframes pc-4 {
+  10% {
+    transform: rotateY(0) rotateZ(-14deg);
+  }
+  30% {
+    transform: rotateY(360deg) rotateZ(-14deg);
+  }
+  50% {
+    transform: rotateY(0deg) rotateZ(-14deg);
+  }
+  60% {
+    transform: rotateY(0deg) rotateZ(0);
+  }
+}
+#pc4:hover img {
+  animation: pc-4 linear 5s infinite;
 }

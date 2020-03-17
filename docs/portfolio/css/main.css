@@ -34,6 +34,34 @@ input {
   border: none;
   outline: none;
 }
+#page-nav {
+  position: fixed;
+  top: 50%;
+  right: 5%;
+  z-index: 100;
+  transform: translateY(-50%);
+}
+#page-nav li {
+  width: 14px;
+  height: 14px;
+  margin-bottom: 26px;
+  background-color: #039be5;
+  border-radius: 50%;
+  transition: 0.5s ease;
+}
+#page-nav li a {
+  display: block;
+  height: 100%;
+}
+#page-nav li a:focus {
+  border: none;
+}
+#page-nav li:hover {
+  background-color: #ea736d;
+}
+#page-nav .current {
+  background-color: #ea736d;
+}
 .container {
   max-width: 1170px;
   margin: 0 auto;
@@ -222,6 +250,7 @@ input {
   justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto 146px;
+  padding: 0 15px;
 }
 .navbar__logo {
   color: #000;
@@ -248,7 +277,7 @@ input {
 }
 .navbar__menu {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 21px;
 }
 .navbar__menu a {
   position: relative;
@@ -443,9 +472,6 @@ input {
   flex: 0 1 32%;
   margin-bottom: 60px;
 }
-.portfolio-card:last-child {
-  justify-self: start;
-}
 .portfolio-card__img {
   position: relative;
   max-height: 240px;
@@ -507,7 +533,7 @@ input {
 }
 .portfolio-card__desc {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 21px;
 }
 .portfolio-card .link {
   padding: 0;
@@ -599,6 +625,7 @@ input {
   box-shadow: 3px 1px 35px rgba(0, 112, 187, 0.35);
 }
 .planning-card__img img {
+  z-index: 1;
   width: 40px;
   height: 40px;
 }
@@ -615,8 +642,8 @@ input {
 }
 .planning-card__desc {
   width: 100%;
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 19px;
   line-height: 1.25;
 }
 .planning-card__desc p {
@@ -624,6 +651,62 @@ input {
 }
 .planning-card__desc p:last-child {
   margin-bottom: 0;
+}
+#pc2-anim::before {
+  position: absolute;
+  top: 26px;
+  right: 21px;
+  display: none;
+  width: 0;
+  height: 18px;
+  background-color: #ff5b5b;
+  content: "";
+}
+@keyframes pc-2 {
+  10% {
+    width: 29px;
+  }
+  100% {
+    width: 0px;
+  }
+}
+#pc2:hover #pc2-anim::before {
+  display: block;
+  animation: pc-2 5s ease infinite;
+}
+@keyframes pc-3 {
+  25% {
+    transform: translate(6%, 6%) rotate(90deg);
+  }
+  50% {
+    transform: translate(0, 12%) rotate(180deg);
+  }
+  75% {
+    transform: translate(-6%, 6%) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+#pc3:hover img {
+  animation: pc-3 linear 5s infinite;
+}
+@keyframes pc-4 {
+  10% {
+    transform: rotateY(0) rotateZ(-14deg);
+  }
+  30% {
+    transform: rotateY(360deg) rotateZ(-14deg);
+  }
+  50% {
+    transform: rotateY(0deg) rotateZ(-14deg);
+  }
+  60% {
+    transform: rotateY(0deg) rotateZ(0);
+  }
+}
+#pc4:hover img {
+  animation: pc-4 linear 5s infinite;
 }
 .contacts {
   margin: 0 auto;
@@ -703,8 +786,6 @@ input {
 .contacts-right-side input:not([type="submit"]) {
   margin-bottom: 59px;
   padding: 0 0 14px;
-  font-weight: 700;
-  font-size: 19px;
   border: none;
   border-bottom: 2px solid #eaeaea;
   border-radius: 1px;
@@ -724,8 +805,6 @@ input {
   height: 115px;
   margin-bottom: 40px;
   padding: 0;
-  font-weight: 700;
-  font-size: 19px;
   border: none;
   border-bottom: 2px solid #eaeaea;
   outline: none;
@@ -740,8 +819,8 @@ input {
   top: 0;
   left: 0;
   color: #bcbcbc;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 21px;
   transition: 0.5s ease;
   pointer-events: none;
 }
@@ -749,44 +828,42 @@ input {
 .contacts-right-side input[type="email"]:not(:placeholder-shown) + span {
   top: -25px;
   color: #039be5;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 19px;
 }
 .contacts-right-side__title {
   position: absolute;
   top: 107px;
   left: 0;
   color: #bcbcbc;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 21px;
   transition: 0.5s ease;
   pointer-events: none;
 }
 .contacts-right-side input[type="text"]:focus + span,
 .contacts-right-side input[type="text"]:not(:placeholder-shown) + span {
-  top: 82px;
+  top: 75px;
   color: #039be5;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 19px;
 }
 .contacts-right-side__text {
   position: absolute;
   top: 202px;
   left: 0;
   color: #bcbcbc;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 21px;
   transition: 0.5s ease;
   pointer-events: none;
 }
-.contacts-right-side__text.active {
-  top: 187px;
-  color: #039be5;
-  font-size: 16px;
-}
 .contacts-right-side textarea:focus + span.contacts-right-side__text,
 .contacts-right-side textarea:not(:placeholder-shown) + span.contacts-right-side__text {
-  top: 187px;
+  top: 174px;
   color: #039be5;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 19px;
 }
 footer {
   padding: 22px 0 20px;

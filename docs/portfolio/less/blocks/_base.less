@@ -42,6 +42,37 @@ input {
   outline: none;
 }
 
+#page-nav {
+  position: fixed;
+  top: 50%;
+  right: 5%;
+  z-index: 100;
+  transform: translateY(-50%);
+  li {
+    width: 14px;
+    height: 14px;
+    margin-bottom: 26px;
+    background-color: @main;
+    border-radius: 50%;
+    transition: 0.5s ease;
+    a {
+      display: block;
+      height: 100%;
+      &:focus {
+        border: none;
+      }
+    }
+    &:hover {
+      background-color: @scarlet;
+    }
+  }
+  .current {
+    background-color: @scarlet;
+  }
+  @media (min-width: 1200px) {
+  }
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;

@@ -82,8 +82,6 @@
   input:not([type="submit"]) {
     margin-bottom: 59px;
     padding: 0 0 14px;
-    font-weight: 700;
-    font-size: 19px;
     border: none;
     border-bottom: 2px solid #eaeaea;
     border-radius: 1px;
@@ -105,8 +103,6 @@
     height: 115px;
     margin-bottom: 40px;
     padding: 0;
-    font-weight: 700;
-    font-size: 19px;
     border: none;
     border-bottom: 2px solid #eaeaea;
     outline: none;
@@ -122,8 +118,8 @@
     top: 0;
     left: 0;
     color: #bcbcbc;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 21px;
     transition: 0.5s ease;
     pointer-events: none;
   }
@@ -132,7 +128,8 @@
   input[type="email"]:not(:placeholder-shown) + span {
     top: -25px;
     color: @main;
-    font-size: 16px;
+    font-weight: 300;
+    font-size: 19px;
   }
   // .contacts-right-side__title
   &__title {
@@ -140,17 +137,18 @@
     top: 107px;
     left: 0;
     color: #bcbcbc;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 21px;
     transition: 0.5s ease;
     pointer-events: none;
   }
 
   input[type="text"]:focus + span,
   input[type="text"]:not(:placeholder-shown) + span {
-    top: 82px;
+    top: 75px;
     color: @main;
-    font-size: 16px;
+    font-weight: 300;
+    font-size: 19px;
   }
   // .contacts-right-side__text
   &__text {
@@ -158,21 +156,17 @@
     top: 202px;
     left: 0;
     color: #bcbcbc;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 21px;
     transition: 0.5s ease;
     pointer-events: none;
-    &.active {
-      top: 187px;
-      color: @main;
-      font-size: 16px;
-    }
   }
 
   textarea:focus + span.contacts-right-side__text,
   textarea:not(:placeholder-shown) + span.contacts-right-side__text {
-    top: 187px;
+    top: 174px;
     color: @main;
-    font-size: 16px;
+    font-weight: 300;
+    font-size: 19px;
   }
 }

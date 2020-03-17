@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="libs/owlCarousel2/assets/owl.carousel.min.css">
@@ -12,6 +13,20 @@
 </head>
 
 <body>
+    <ul id="page-nav">
+        <li class="current">
+            <a href="#header"></a>
+        </li>
+        <li>
+            <a href="#portfolio"></a>
+        </li>
+        <li>
+            <a href="#planning"></a>
+        </li>
+        <li>
+            <a href="#contacts"></a>
+        </li>
+    </ul>
     <header id="header" class="header">
         <div class="navbar">
             <a href="#header" class="navbar__logo"><span class="title-line">АБ</span></a>
@@ -218,42 +233,6 @@
                         </div>
                         <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
                     </div>
-                    <div class="portfolio-card portfolio-card--frontend">
-                        <div class="portfolio-card__img">
-                            <a href="#" tabindex="-1"><img src="img/portfolio/img-01.jpg" alt="&#34;Мир авто&#34;">
-                                <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
-                        </div>
-                        <div class="portfolio-card__title">
-                            <h3>
-                                <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
-                            </h3>
-                        </div>
-                        <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
-                    </div>
-                    <div class="portfolio-card portfolio-card--bootstrap">
-                        <div class="portfolio-card__img">
-                            <a href="#" tabindex="-1"><img src="img/portfolio/img-02.jpg" alt="&#34;Мир авто&#34;">
-                                <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
-                        </div>
-                        <div class="portfolio-card__title">
-                            <h3>
-                                <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
-                            </h3>
-                        </div>
-                        <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
-                    </div>
-                    <div class="portfolio-card portfolio-card--wordpress">
-                        <div class="portfolio-card__img">
-                            <a href="#" tabindex="-1"><img src="img/portfolio/img-03.jpg" alt="&#34;Мир авто&#34;">
-                                <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
-                        </div>
-                        <div class="portfolio-card__title">
-                            <h3>
-                                <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
-                            </h3>
-                        </div>
-                        <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
-                    </div>
 
                 </div>
             </div>
@@ -270,7 +249,7 @@
                 </div>
 
                 <div class="planning-card-wrapper">
-                    <div class="planning-card">
+                    <div id="pc1" class="planning-card">
                         <div class="planning-card__img-wrapper">
                             <div class="planning-card__img">
                                 <img src="img/planning/icons/book.svg" alt="Иконка">
@@ -289,10 +268,10 @@
                         </div>
                     </div>
 
-                    <div class="planning-card">
+                    <div id="pc2"class="planning-card">
                         <div class="planning-card__img-wrapper">
-                            <div class="planning-card__img">
-                                <img src="img/planning/icons/presentation-chart.svg" alt="Иконка">
+                            <div id="pc2-anim" class="planning-card__img">
+                                <img   src="img/planning/icons/presentation-chart.svg" alt="Иконка">
                             </div>
                         </div>
                         <div class="planning-card__action">
@@ -308,9 +287,9 @@
                         </div>
                     </div>
 
-                    <div class="planning-card">
+                    <div id="pc3"class="planning-card">
                         <div class="planning-card__img-wrapper">
-                            <div class="planning-card__img">
+                            <div id="pc3-anim"class="planning-card__img">
                                 <img src="img/planning/icons/24-hours.svg" alt="Иконка">
                             </div>
                         </div>
@@ -327,7 +306,7 @@
                         </div>
                     </div>
 
-                    <div class="planning-card">
+                    <div id="pc4"class="planning-card">
                         <div class="planning-card__img-wrapper">
                             <div class="planning-card__img">
                                 <img src="img/planning/icons/code-alt.svg" alt="Иконка">
@@ -346,7 +325,7 @@
                         </div>
                     </div>
 
-                    <div class="planning-card">
+                    <div id="pc5" class="planning-card">
                         <div class="planning-card__img-wrapper">
                             <div class="planning-card__img">
                                 <img src="img/planning/icons/diamond.svg" alt="Иконка">
@@ -438,6 +417,7 @@
     </footer>
     <script src="libs/jQuery/jquery-3.4.1.min.js"></script>
     <script src="libs/owlCarousel2/owl.carousel.min.js"></script>
+    <script src="libs/nav/nav.js"></script>
 
     <script src="js/main.js"></script>
 </body>
