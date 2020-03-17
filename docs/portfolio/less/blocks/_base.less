@@ -133,14 +133,18 @@ input {
 // buttons
 .btn {
   display: inline-block;
-  height: 64px;
+  height: 54px;
   padding: 10px 36px 0;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 20px;
   border-radius: 30px;
   transition: color 0.2s ease, border 0.2s ease;
-  &:focus {
-    border: 4px dotted @scarlet;
+  @media (min-width: 1200px) {
+    height: 64px;
+    font-size: 22px;
+    &:focus {
+      border: 4px dotted @scarlet;
+    }
   }
 }
 
@@ -267,11 +271,4 @@ input {
       box-shadow: 0 0 20px @discord;
     }
   }
-}
-
-#contacts {
-  display: none;
-}
-footer {
-  display: none;
 }
