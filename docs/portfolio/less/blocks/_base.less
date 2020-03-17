@@ -3,10 +3,9 @@ html {
 }
 *::selection {
   background-color: lighten(@main, 30%);
-  
 }
 body {
-  font-family: "MPLUS 1p", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 img {
@@ -45,37 +44,6 @@ input {
   outline: none;
 }
 
-#page-nav {
-  position: fixed;
-  top: 50%;
-  right: 5%;
-  z-index: 100;
-  transform: translateY(-50%);
-  li {
-    width: 14px;
-    height: 14px;
-    margin-bottom: 26px;
-    background-color: @main;
-    border-radius: 50%;
-    transition: 0.5s ease;
-    a {
-      display: block;
-      height: 100%;
-      &:focus {
-        border: none;
-      }
-    }
-    &:hover {
-      background-color: @scarlet;
-    }
-  }
-  .current {
-    background-color: @scarlet;
-  }
-  @media (min-width: 1200px) {
-  }
-}
-
 .container {
   max-width: 1170px;
   margin: 0 auto;
@@ -84,6 +52,10 @@ input {
 
 .row {
   display: flex;
+  flex-direction: column;
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
   &&__sb {
     justify-content: space-between;
   }
@@ -213,7 +185,9 @@ input {
 
 .contacts-icons {
   display: flex;
-  padding-left: 6px;
+  @media (min-width: 1200px) {
+    padding-left: 6px;
+  }
 }
 
 .contacts-icon {
@@ -280,4 +254,14 @@ input {
       box-shadow: 0 0 20px @discord;
     }
   }
+}
+
+main {
+  display: none;
+}
+#portfolio {
+  display: block;
+}
+footer {
+  display: none;
 }

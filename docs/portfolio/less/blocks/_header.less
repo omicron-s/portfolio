@@ -3,19 +3,64 @@
   z-index: 1;
   max-width: 1600px;
   margin: 0 auto;
-  padding: 60px 0 238px;
-  background-image: url("../../img/lines-5.jpg");
-  background-position: center;
-  background-size: contain;
+  padding: 30px 0 100px;
+  overflow: hidden;
+
+  @media (min-width: 1200px) {
+    padding: 60px 0 238px;
+    background-image: url("../../img/lines-5.jpg");
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+#page-nav {
+  position: fixed;
+  top: 50%;
+  right: 5%;
+  z-index: 100;
+  display: none;
+  transform: translateY(-50%);
+  @media (min-width: 1200px) {
+    display: block;
+  }
+  li {
+    width: 14px;
+    height: 14px;
+    margin-bottom: 26px;
+    background-color: @main;
+    border-radius: 50%;
+    transition: 0.5s ease;
+    a {
+      display: block;
+      height: 100%;
+      &:focus {
+        border: none;
+      }
+    }
+    &:hover {
+      background-color: @scarlet;
+    }
+  }
+  .current {
+    background-color: @scarlet;
+  }
+  @media (min-width: 1200px) {
+  }
 }
 
 .navbar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 1400px;
-  margin: 0 auto 146px;
+  margin: 0 auto 20px;
   padding: 0 15px;
+
+  @media (min-width: 1200px) {
+    margin: 0 auto 146px;
+  }
 
   &__logo {
     color: #000;
@@ -43,19 +88,43 @@
   }
 
   &__menu {
+    position: absolute;
+    // top: 60px;
+    top: -500px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 1200px) {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 22px;
+    }
+  }
+  &__menu-wrapper {
     font-weight: 700;
-    font-size: 21px;
-    a {
+    font-size: 19px;
+    > a {
       position: relative;
       z-index: 2;
-      margin-right: 80px;
+      margin: 0 0 10px 0;
       padding: 5px 0;
       color: #000;
+      text-decoration: underline;
+      @media (min-width: 1200px) {
+        margin: 0 80px 0 0;
+        text-decoration: none;
+      }
       &:focus {
         margin: -3px 77px -3px -3px;
       }
       &:last-child {
-        margin-right: 0;
+        margin: 0 0 35px 0;
+        @media (min-width: 1200px) {
+          margin: 0;
+        }
       }
       &:focus:last-child {
         margin-right: -3px;
@@ -80,7 +149,10 @@
   }
 
   &__contacts {
-    display: flex;
+    display: none;
+    @media (min-width: 1200px) {
+      display: flex;
+    }
   }
 
   &__icon {
@@ -105,22 +177,38 @@
       fill: @darkgray;
     }
   }
+
+  .header-contacts__icons,
+  .link {
+    display: block;
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
 }
 
 .header-coder {
   z-index: 5;
-  width: 50%;
+  flex: 0 1 50%;
   &__title {
-    margin-bottom: 15px;
-    font-size: 90px;
+    margin-bottom: 30px;
+    font-size: 42px;
     line-height: 1.2;
+    @media (min-width: 1200px) {
+      margin-bottom: 15px;
+      font-size: 90px;
+    }
   }
   &__desc {
     margin-bottom: 32px;
     color: @desc;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.5;
+    @media (min-width: 1200px) {
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
   }
 
   &__greeting {
@@ -129,42 +217,60 @@
 
   &__contacts {
   }
+
+  .btn {
+    display: none;
+    @media (min-width: 1200px) {
+      display: inline-block;
+    }
+  }
 }
 
 .header-avatar {
   position: relative;
   z-index: 2;
-  width: 50%;
+  flex: 0 1 50%;
+  order: -1;
   max-width: 460px;
   max-height: 433px;
-  padding-top: 27px;
+  margin-bottom: 50px;
   overflow: hidden;
   user-select: none;
+  
+  @media (min-width: 1200px) {
+    order: 2;
+    margin-bottom: 0;
+    padding-top: 27px;
 
-  &::before {
-    position: absolute;
-    top: 20%;
-    right: 0;
-    left: 25%;
-    z-index: -1;
-    width: 75%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      rgb(244, 248, 249) 0%,
-      rgba(244, 248, 249, 0) 100%
-    );
-    opacity: 0.5;
-    content: "";
+    &::before {
+      position: absolute;
+      top: 20%;
+      right: 0;
+      left: 25%;
+      z-index: -1;
+      width: 75%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgb(244, 248, 249) 0%,
+        rgba(244, 248, 249, 0) 100%
+      );
+      opacity: 0.5;
+      content: "";
+    }
   }
+
 }
 
 .header-background-img {
   z-index: -1;
   max-width: 1600px;
-  margin: -125px auto 0;
+  margin: 0;
   user-select: none;
   pointer-events: none;
+  @media (min-width: 1200px) {
+    margin: -125px auto 0;
+  }
 }
 
 .header-experience {
@@ -172,16 +278,39 @@
   &__title {
     margin-bottom: 25px;
     font-weight: 800;
-    font-size: 40px;
+    font-size: 30px;
+    @media (min-width: 1200px) {
+      font-size: 40px;
+    }
   }
   &__desc {
     margin-bottom: 40px;
-    font-size: 24px;
+    font-size: 18px;
     li {
-      margin-bottom: 3px;
-      &::before {
-        content: "— ";
+      margin-bottom: 15px;
+      &::first-letter {
+        text-transform: capitalize;
       }
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 24px;
+      li {
+        margin-bottom: 3px;
+        &::before {
+          content: "— ";
+        }
+        &::first-letter {
+          text-transform: none;
+        }
+      }
+    }
+  }
+
+  .btn {
+    display: none;
+    @media (min-width: 1200px) {
+      display: inline-block;
     }
   }
 }
@@ -190,16 +319,34 @@
   flex: 0 1 32%;
   // .header-contacts__title
   &__title {
-    margin-bottom: 32px;
+    margin-bottom: 25px;
     font-weight: 800;
-    font-size: 40px;
+    font-size: 30px;
+    @media (min-width: 1200px) {
+      margin-bottom: 32px;
+      font-size: 40px;
+    }
   }
   &__icons {
-    margin-bottom: 23px;
+    margin-bottom: 15px;
+    @media (min-width: 1200px) {
+      margin-bottom: 23px;
+    }
   }
   &__email {
-    padding-left: 6px;
-    font-size: 24px;
+    font-size: 18px;
+    span {
+      color: @main;
+      border-color: @main;
+    }
+    @media (min-width: 1200px) {
+      padding-left: 6px;
+      font-size: 24px;
+      span {
+        color: unset;
+        border-color: unset;
+      }
+    }
     &:focus {
       margin: -3px;
     }
