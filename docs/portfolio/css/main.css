@@ -32,8 +32,10 @@ a:hover {
   text-decoration: none;
   outline: none;
 }
-a:focus {
-  border: 3px dotted #ea736d;
+@media (min-width: 1200px) {
+  a:focus {
+    border: 3px dotted #ea736d;
+  }
 }
 button,
 input {
@@ -66,7 +68,12 @@ input {
   font-weight: 800;
 }
 .title.title__section {
-  font-size: 64px;
+  font-size: 42px;
+}
+@media (min-width: 1200px) {
+  .title.title__section {
+    font-size: 64px;
+  }
 }
 .title-line {
   position: relative;
@@ -84,16 +91,27 @@ input {
 }
 .title-line.title-line--lg::before {
   right: -2px;
-  bottom: 17%;
+  bottom: 12%;
   left: -2px;
   height: 12px;
+}
+@media (min-width: 1200px) {
+  .title-line.title-line--lg::before {
+    bottom: 17%;
+  }
 }
 .title-line.title-line--sm::before {
   right: 0;
   bottom: 10%;
   left: 0;
+  display: none;
   height: 7px;
   transition: background-color 0.5s ease-in-out;
+}
+@media (min-width: 1200px) {
+  .title-line.title-line--sm::before {
+    display: block;
+  }
 }
 .link {
   padding: 8px 0;
@@ -226,11 +244,8 @@ input {
   border: none;
   box-shadow: 0 0 20px #7289da;
 }
-main {
+#contacts {
   display: none;
-}
-#portfolio {
-  display: block;
 }
 footer {
   display: none;
@@ -603,17 +618,27 @@ footer {
   margin: -3px;
 }
 .portfolio {
-  padding: 96px 0 66px;
+  padding: 55px 0 97px;
   background-color: #f4f8f9;
+}
+@media (min-width: 1200px) {
+  .portfolio {
+    padding: 96px 0 66px;
+  }
 }
 .portfolio__title {
   margin-bottom: 46px;
 }
 .portfolio__pagination {
-  display: flex;
-  margin-bottom: 38px;
-  font-weight: 800;
-  font-size: 28px;
+  display: none;
+}
+@media (min-width: 1200px) {
+  .portfolio__pagination {
+    display: flex;
+    margin-bottom: 38px;
+    font-weight: 800;
+    font-size: 28px;
+  }
 }
 .portfolio__pagination a {
   margin-right: 80px;
@@ -636,28 +661,68 @@ footer {
 .portfolio__pagination a:last-child {
   margin-right: 0;
 }
-.portfolio-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.portfolio__link {
+  margin-left: calc(50% - 104px);
+  border-bottom: 1px solid #039be5;
 }
-.portfolio-card:nth-child(-n + 2) {
-  flex: 0 1 48.5%;
+.portfolio__link span::before {
+  content: "Смотреть все работы";
 }
-.portfolio-card:nth-child(-n + 2) .portfolio-card__img {
-  max-height: 370px;
-  margin-bottom: 22px;
-  overflow: hidden;
+.portfolio__link span.show::before {
+  content: "Свернуть работы";
 }
-.portfolio-card:nth-child(-n + 2) .portfolio-card__title h3 {
-  font-size: 32px;
+@media (min-width: 1200px) {
+  .portfolio__link {
+    display: none;
+  }
 }
-.portfolio-card:nth-child(-n + 2) .portfolio-card__desc {
-  font-size: 22px;
+.portfolio .portfolio-row {
+  flex-direction: column;
+}
+@media (min-width: 1200px) {
+  .portfolio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 .portfolio-card {
   flex: 0 1 32%;
-  margin-bottom: 60px;
+  margin-bottom: 35px;
+}
+.portfolio-card:not(:nth-child(-n + 4)) {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .portfolio-card {
+    margin-bottom: 60px;
+  }
+  .portfolio-card:not(:nth-child(-n + 4)) {
+    display: block;
+  }
+  .portfolio-card:nth-child(-n + 2) {
+    flex: 0 1 48.5%;
+  }
+  .portfolio-card:nth-child(-n + 2) .portfolio-card__img {
+    max-height: 370px;
+    margin-bottom: 22px;
+    overflow: hidden;
+  }
+  .portfolio-card:nth-child(-n + 2) .portfolio-card__title h3 {
+    font-size: 32px;
+  }
+  .portfolio-card:nth-child(-n + 2) .portfolio-card__desc {
+    font-size: 22px;
+  }
+}
+.portfolio-card:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 1200px) {
+  .portfolio-card:last-child {
+    margin-bottom: unset;
+  }
 }
 .portfolio-card__img {
   position: relative;
@@ -667,13 +732,13 @@ footer {
   background-color: #039be5;
 }
 .portfolio-card__img img {
+  min-width: 105%;
+  min-height: 105%;
+  transition: opacity 0.8s ease;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  min-width: 105%;
-  min-height: 105%;
-  transition: opacity 0.8s ease;
 }
 .portfolio-card__img:hover img,
 .portfolio-card__img:active img {
@@ -716,15 +781,28 @@ footer {
   border: none;
 }
 .portfolio-card__title h3 {
+  margin-bottom: 15px;
   font-weight: 700;
-  font-size: 26px;
+  font-size: 22px;
+  line-height: 1.2;
+}
+@media (min-width: 1200px) {
+  .portfolio-card__title h3 {
+    margin-bottom: 10px;
+    font-size: 26px;
+  }
 }
 .portfolio-card__title h3 a:focus {
   margin: -3px;
 }
 .portfolio-card__desc {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 16px;
+}
+@media (min-width: 1200px) {
+  .portfolio-card__desc {
+    font-size: 20px;
+  }
 }
 .portfolio-card .link {
   padding: 0;
@@ -738,14 +816,30 @@ footer {
 .planning {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 127px 0 116px;
-  background-image: url("../img/planning/line-4.png");
-  background-position: center;
-  background-size: contain;
+  padding: 60px 0 65px;
+}
+@media (min-width: 1200px) {
+  .planning {
+    padding: 127px 0 116px;
+    background-image: url("../img/planning/line-4.png");
+    background-position: center;
+    background-size: contain;
+  }
 }
 .planning__title {
-  margin-bottom: 145px;
+  margin-bottom: 50px;
   text-align: center;
+}
+.planning__title h2 {
+  font-size: 32px;
+}
+@media (min-width: 1200px) {
+  .planning__title {
+    margin-bottom: 145px;
+  }
+  .planning__title h2 {
+    font-size: unset;
+  }
 }
 .planning-card-wrapper {
   max-width: 1005px;
@@ -754,31 +848,36 @@ footer {
 .planning-card {
   position: relative;
   display: flex;
-  width: calc(50% + 37px);
   margin-right: 0;
-  margin-bottom: 85px;
-  margin-left: auto;
+  margin-bottom: 60px;
 }
-.planning-card:nth-child(odd) {
-  margin-right: auto;
-  margin-left: 0;
-}
-.planning-card:nth-child(odd) div:nth-child(even) {
-  order: -1;
-  margin-right: 40px;
-  margin-left: auto;
-  text-align: right;
-}
-.planning-card:first-child::after {
-  position: absolute;
-  right: 37px;
-  bottom: calc(100% + 20px);
-  width: 4px;
-  height: 57px;
-  background-color: #e1eef4;
-  border-radius: 2px;
-  transform: translateX(50%);
-  content: "";
+@media (min-width: 1200px) {
+  .planning-card {
+    width: calc(50% + 37px);
+    margin-bottom: 85px;
+    margin-left: auto;
+  }
+  .planning-card:nth-child(odd) {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  .planning-card:nth-child(odd) div:nth-child(even) {
+    order: -1;
+    margin-right: 40px;
+    margin-left: auto;
+    text-align: right;
+  }
+  .planning-card:first-child::after {
+    position: absolute;
+    right: 37px;
+    bottom: calc(100% + 20px);
+    width: 4px;
+    height: 57px;
+    background-color: #e1eef4;
+    border-radius: 2px;
+    transform: translateX(50%);
+    content: "";
+  }
 }
 .planning-card:last-child {
   margin-bottom: 0;
@@ -799,11 +898,16 @@ footer {
   top: 94px;
   left: 50%;
   width: 4px;
-  height: calc(100% - 74px);
+  height: calc(100% - 94px);
   background-color: #e1eef4;
   border-radius: 2px;
   transform: translateX(-50%);
   content: "";
+}
+@media (min-width: 1200px) {
+  .planning-card__img-wrapper::before {
+    height: calc(100% - 74px);
+  }
 }
 .planning-card__img {
   position: relative;
@@ -826,20 +930,35 @@ footer {
 }
 .planning-card__action {
   justify-content: flex-start;
-  margin-right: auto;
-  margin-left: 48px;
+  margin-left: 25px;
+}
+@media (min-width: 1200px) {
+  .planning-card__action {
+    margin-right: auto;
+    margin-left: 48px;
+  }
 }
 .planning-card__title {
   margin-bottom: 7px;
-  padding-top: 16px;
   font-weight: 800;
-  font-size: 26px;
+  font-size: 19px;
+}
+@media (min-width: 1200px) {
+  .planning-card__title {
+    padding-top: 16px;
+    font-size: 26px;
+  }
 }
 .planning-card__desc {
   width: 100%;
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 13px;
   line-height: 1.45;
+}
+@media (min-width: 1200px) {
+  .planning-card__desc {
+    font-size: 18px;
+  }
 }
 .planning-card__desc p {
   margin-bottom: 10px;
@@ -848,18 +967,28 @@ footer {
   margin-bottom: 0;
 }
 @keyframes pc-2 {
-  10% {
-    width: 29px;
+  25% {
+    right: 26px;
+    left: 21px;
+  }
+  50% {
+    right: 26px;
+    left: 50px;
+  }
+  75% {
+    right: 26px;
+    left: 21px;
   }
   100% {
-    width: 0px;
+    right: 50px;
+    left: 21px;
   }
 }
 #pc2-anim::before {
   position: absolute;
   top: 26px;
-  right: 21px;
-  width: 0;
+  right: 50px;
+  left: 21px;
   height: 18px;
   background-color: #ff5b5b;
   animation: pc-2 ease-in-out 3s infinite;
@@ -875,11 +1004,11 @@ footer {
 #pc4-anim i {
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 8px;
   width: 58px;
   height: 62px;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 9px;
   line-height: 1.25;
   opacity: 1;
   transition: opacity 1.5s ease;

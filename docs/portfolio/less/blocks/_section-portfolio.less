@@ -1,7 +1,9 @@
 .portfolio {
-  // padding: 96px 0 127px;
-  padding: 96px 0 66px;
+  padding: 55px 0 97px;
   background-color: #f4f8f9;
+  @media (min-width: 1200px) {
+    padding: 96px 0 66px;
+  }
 
   // .portfolio__title
   &__title {
@@ -9,10 +11,13 @@
   }
   // .portfolio__pagination
   &__pagination {
-    display: flex;
-    margin-bottom: 38px;
-    font-weight: 800;
-    font-size: 28px;
+    display: none;
+    @media (min-width: 1200px) {
+      display: flex;
+      margin-bottom: 38px;
+      font-weight: 800;
+      font-size: 28px;
+    }
 
     a {
       margin-right: 80px;
@@ -38,36 +43,70 @@
       }
     }
   }
-}
-.portfolio-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 
-.portfolio-card:nth-child(-n + 2) {
-  flex: 0 1 48.5%;
-  .portfolio-card {
-    &__img {
-      max-height: 370px;
-      margin-bottom: 22px;
-      overflow: hidden;
+  &__link {
+    margin-left: calc(50% - 104px);
+    border-bottom: 1px solid @main;
+    span::before {
+      content: "Смотреть все работы";
     }
-    // .portfolio-card__title
-    &__title h3 {
-      font-size: 32px;
+    span.show::before {
+      content: "Свернуть работы";
     }
-    // .portfolio-card__desc
-    &__desc {
-      font-size: 22px;
+    @media (min-width: 1200px) {
+      display: none;
     }
   }
+  .portfolio-row {
+    flex-direction: column;
+  }
+  @media (min-width: 1200px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
-
 .portfolio-card {
   flex: 0 1 32%;
-  margin-bottom: 60px;
+  margin-bottom: 35px;
 
+  &:not(:nth-child(-n + 4)) {
+    display: none;
+  }
+  @media (min-width: 1200px) {
+    margin-bottom: 60px;
+
+    &:not(:nth-child(-n + 4)) {
+      display: block;
+    }
+    &:nth-child(-n + 2) {
+      flex: 0 1 48.5%;
+      .portfolio-card {
+        &__img {
+          max-height: 370px;
+          margin-bottom: 22px;
+          overflow: hidden;
+        }
+        // .portfolio-card__title
+        &__title h3 {
+          font-size: 32px;
+        }
+        // .portfolio-card__desc
+        &__desc {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+
+    @media (min-width: 1200px) {
+      margin-bottom: unset;
+    }
+  }
   &__img {
     position: relative;
     max-height: 240px;
@@ -76,10 +115,10 @@
     background-color: @main;
 
     img {
-      user-select: none;
       min-width: 105%;
       min-height: 105%;
       transition: opacity 0.8s ease;
+      user-select: none;
     }
     &:hover img,
     &:active img {
@@ -129,8 +168,14 @@
 
   // .portfolio-card__title
   &__title h3 {
+    margin-bottom: 15px;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 22px;
+    line-height: 1.2;
+    @media (min-width: 1200px) {
+      margin-bottom: 10px;
+      font-size: 26px;
+    }
     a:focus {
       margin: -3px;
     }
@@ -139,7 +184,10 @@
   // .portfolio-card__desc
   &__desc {
     font-weight: 300;
-    font-size: 20px;
+    font-size: 16px;
+    @media (min-width: 1200px) {
+      font-size: 20px;
+    }
   }
 
   .link {

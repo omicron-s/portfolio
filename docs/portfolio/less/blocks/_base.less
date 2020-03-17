@@ -35,7 +35,9 @@ a:hover {
 }
 
 a:focus {
-  border: 3px dotted @scarlet;
+  @media (min-width: 1200px) {
+    border: 3px dotted @scarlet;
+  }
 }
 
 button,
@@ -69,7 +71,10 @@ input {
   color: #000;
   font-weight: 800;
   &&__section {
-    font-size: 64px;
+    font-size: 42px;
+    @media (min-width: 1200px) {
+      font-size: 64px;
+    }
   }
 }
 
@@ -88,16 +93,24 @@ input {
   }
   &&--lg::before {
     right: -2px;
-    bottom: 17%;
+    bottom: 12%;
     left: -2px;
     height: 12px;
+    @media (min-width: 1200px) {
+      bottom: 17%;
+    }
   }
   &&--sm::before {
     right: 0;
     bottom: 10%;
     left: 0;
+    display: none;
     height: 7px;
     transition: background-color 0.5s ease-in-out;
+
+    @media (min-width: 1200px) {
+      display: block;
+    }
   }
 }
 
@@ -256,11 +269,8 @@ input {
   }
 }
 
-main {
+#contacts {
   display: none;
-}
-#portfolio {
-  display: block;
 }
 footer {
   display: none;
