@@ -2,7 +2,7 @@
 $("#page-nav").onePageNav({
   currentClass: "current",
   changeHash: false,
-  scrollThreshold: 0.4,
+  scrollThreshold: 0.4
 });
 // portfolio__pagination ul li active
 $(".portfolio__pagination a").click(function(e) {
@@ -41,3 +41,14 @@ $("#select-frontend").click(function() {
   frontend.appendTo(".portfolio-row");
 });
 
+var typed = new Typed("#pc4-anim i", {
+  strings: [
+    "Привет...",
+    "Здесь этап создания блоков и не только...",
+    "Медленно, но верно, я проделаю всё..."
+  ],
+  typeSpeed: 40,
+  loop: true,
+  loopCount: Infinity,
+  showCursor: false
+});

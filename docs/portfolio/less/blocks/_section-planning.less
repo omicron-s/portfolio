@@ -87,6 +87,7 @@
     height: 74px;
     border-radius: 28px;
     box-shadow: 3px 1px 35px rgba(#0070bb, 0.35);
+    user-select: none;
     img {
       z-index: 1;
       width: 40px;
@@ -111,7 +112,7 @@
     width: 100%;
     font-weight: 400;
     font-size: 19px;
-    line-height: 1.25;
+    line-height: 1.45;
     p {
       margin-bottom: 10px;
       &:last-child {
@@ -119,17 +120,6 @@
       }
     }
   }
-}
-
-#pc2-anim::before {
-  position: absolute;
-  top: 26px;
-  right: 21px;
-  display: none;
-  width: 0;
-  height: 18px;
-  background-color: #ff5b5b;
-  content: "";
 }
 
 @keyframes pc-2 {
@@ -141,44 +131,46 @@
   }
 }
 
+#pc2-anim::before {
+  position: absolute;
+  top: 26px;
+  right: 21px;
+  width: 0;
+  height: 18px;
+  background-color: #ff5b5b;
+  animation: pc-2 ease-in-out 3s infinite;
+  content: "";
+}
 #pc2:hover #pc2-anim::before {
-  display: block;
-  animation: pc-2 5s ease infinite;
+  animation-play-state: paused;
 }
 
-@keyframes pc-3 {
-  25% {
-    transform: translate(6%, 6%) rotate(90deg);
+#pc4-anim {
+  img {
+    opacity: 0.3;
+    transition: opacity 1.5s ease;
   }
-  50% {
-    transform: translate(0, 12%) rotate(180deg);
-  }
-  75% {
-    transform: translate(-6%, 6%) rotate(270deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(360deg);
+  i {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 58px;
+    height: 62px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.25;
+    opacity: 1;
+    transition: opacity 1.5s ease;
   }
 }
 
-#pc3:hover img {
-  animation: pc-3 linear 5s infinite;
-}
-
-@keyframes pc-4 {
-  10% {
-    transform: rotateY(0) rotateZ(-14deg);
+#pc4:hover {
+  img {
+    opacity: 1;
+    transition: opacity 1.5s ease;
   }
-  30% {
-    transform: rotateY(360deg) rotateZ(-14deg);
+  i {
+    opacity: 0;
+    transition: opacity 1.5s ease;
   }
-  50% {
-    transform: rotateY(0deg) rotateZ(-14deg);
-  }
-  60% {
-    transform: rotateY(0deg) rotateZ(0);
-  }
-}
-#pc4:hover img {
-  animation: pc-4 linear 5s infinite;
 }

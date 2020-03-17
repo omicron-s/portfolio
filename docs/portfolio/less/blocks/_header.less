@@ -22,6 +22,7 @@
     font-weight: 900;
     font-size: 42px;
     transition: color 0.2s ease;
+    user-select: none;
     span {
       display: block;
     }
@@ -138,8 +139,7 @@
   max-height: 433px;
   padding-top: 27px;
   overflow: hidden;
-  img {
-  }
+  user-select: none;
 
   &::before {
     position: absolute;
@@ -163,10 +163,12 @@
   z-index: -1;
   max-width: 1600px;
   margin: -125px auto 0;
+  user-select: none;
+  pointer-events: none;
 }
 
 .header-experience {
- flex: 0 1 68%;
+  flex: 0 1 68%;
   &__title {
     margin-bottom: 25px;
     font-weight: 800;
