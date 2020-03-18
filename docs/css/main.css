@@ -317,12 +317,16 @@ input {
 @media (min-width: 1200px) {
   .navbar {
     padding-top: 124px;
+    background-image: url("../img/lines-5.jpg");
+    background-position: center;
+    background-size: contain;
   }
 }
 .navbar--fixed {
   position: fixed;
   top: 0;
   padding-top: 0;
+  background-image: unset;
   transition: top 0.3s linear;
 }
 .navbar__logo {
