@@ -27,10 +27,10 @@ $(document).ready(function() {
     $(this).toggleClass("act");
     if ($(this).hasClass("act")) {
       $(".navbar__menu").addClass("act");
-      // $(".navbar").css("backdrop-filter", "none");
+      $(".navbar").css("bottom", "0");
     } else {
       $(".navbar__menu").removeClass("act");
-      // $(".navbar").css("backdrop-filter", "blur(5px) grayscale(70%)");
+      $(".navbar").css("bottom", "unset");
     }
   });
 });
