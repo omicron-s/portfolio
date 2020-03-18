@@ -4,6 +4,37 @@ $("#page-nav").onePageNav({
   changeHash: false,
   scrollThreshold: 0.4
 });
+
+//Sticky navbar
+$(window).scroll(function() {
+  if ($(window).scrollTop() >= 150 && $(window).width() <= 768) {
+    $(".navbar").addClass("navbar--fixed");
+  }
+  if ($(window).scrollTop() >= 250 && $(window).width() >= 1200) {
+    $(".navbar").addClass("navbar--fixed");
+  }
+  if ($(window).scrollTop() <= 20 && $(window).width() <= 768) {
+    $(".navbar").removeClass("navbar--fixed");
+  }
+  if ($(window).scrollTop() <= 60 && $(window).width() >= 1200) {
+    $(".navbar").removeClass("navbar--fixed");
+  }
+});
+
+// mobile-menu
+$(document).ready(function() {
+  $(".navbar__btn").click(function() {
+    $(this).toggleClass("act");
+    if ($(this).hasClass("act")) {
+      $(".navbar__menu").addClass("act");
+      // $(".navbar").css("backdrop-filter", "none");
+    } else {
+      $(".navbar__menu").removeClass("act");
+      // $(".navbar").css("backdrop-filter", "blur(5px) grayscale(70%)");
+    }
+  });
+});
+
 // portfolio__pagination ul li active
 $(".portfolio__pagination a").click(function(e) {
   e.preventDefault();

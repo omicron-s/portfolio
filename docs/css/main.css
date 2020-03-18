@@ -82,7 +82,7 @@ input {
 }
 .title-line {
   position: relative;
-  z-index: 2;
+  z-index: 0;
 }
 .title-line::before {
   position: absolute;
@@ -258,14 +258,12 @@ input {
 .header {
   position: relative;
   z-index: 1;
-  max-width: 1600px;
   margin: 0 auto;
-  padding: 30px 0 100px;
-  overflow: hidden;
+  padding: 113px 0 100px;
 }
 @media (min-width: 1200px) {
   .header {
-    padding: 60px 0 238px;
+    padding: 266px 0 238px;
     background-image: url("../img/lines-5.jpg");
     background-position: center;
     background-size: contain;
@@ -306,18 +304,26 @@ input {
   background-color: #ea736d;
 }
 .navbar {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1400px;
-  margin: 0 auto 20px;
-  padding: 0 15px;
+  position: absolute;
+  top: -64px;
+  left: auto;
+  z-index: 10;
+  width: 100%;
+  padding-top: 84px;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(5px) grayscale(70%);
+          backdrop-filter: blur(5px) grayscale(70%);
 }
 @media (min-width: 1200px) {
   .navbar {
-    margin: 0 auto 146px;
+    padding-top: 124px;
   }
+}
+.navbar--fixed {
+  position: fixed;
+  top: 0;
+  padding-top: 0;
+  transition: top 0.3s linear;
 }
 .navbar__logo {
   color: #000;
@@ -348,10 +354,41 @@ input {
 }
 .navbar__menu {
   position: absolute;
-  top: -500px;
-  left: 15px;
-  display: flex;
-  flex-direction: column;
+  top: 63px;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  padding-top: 20px;
+  padding-left: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.59, -0.72, 0.44, 1.82);
+}
+.navbar__menu.act {
+  transform: scale(1);
+  opacity: 1;
+  -webkit-backdrop-filter: blur(5px) grayscale(70%);
+          backdrop-filter: blur(5px) grayscale(70%);
+}
+.navbar__menu.act > div,
+.navbar__menu.act .link {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.navbar__menu > div {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.25s 0.31s;
+}
+.navbar__menu > div:nth-child(2) {
+  transition-delay: 0.56s;
+}
+.navbar__menu .link {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.25s 0.81s;
 }
 @media (min-width: 1200px) {
   .navbar__menu {
@@ -359,12 +396,39 @@ input {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: unset;
+    height: unset;
+    padding-top: 0;
+    padding-left: 0;
     font-size: 22px;
+    background-color: unset;
+    transform: none;
+    opacity: 1;
+  }
+  .navbar__menu div {
+    transform: none;
+    opacity: 1;
+    transition: none;
+  }
+  .navbar__menu .header-contacts__icons {
+    display: flex;
+  }
+}
+@media (min-width: 1200px) and (min-width: 1200px) {
+  .navbar__menu .header-contacts__icons {
+    display: none;
   }
 }
 .navbar__menu-wrapper {
+  display: flex;
+  flex-direction: column;
   font-weight: 700;
   font-size: 19px;
+}
+@media (min-width: 1200px) {
+  .navbar__menu-wrapper {
+    flex-direction: row;
+  }
 }
 .navbar__menu-wrapper > a {
   position: relative;
@@ -376,6 +440,7 @@ input {
 }
 @media (min-width: 1200px) {
   .navbar__menu-wrapper > a {
+    flex-direction: row;
     margin: 0 80px 0 0;
     text-decoration: none;
   }
@@ -409,6 +474,55 @@ input {
 .navbar__menu-wrapper > a:active::before {
   width: 110%;
 }
+.navbar__btn {
+  position: relative;
+  width: 40px;
+  height: 25px;
+  margin-right: 10px;
+}
+.navbar__btn span {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  transition: height 0.1s;
+}
+.navbar__btn span::after,
+.navbar__btn span::before {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  transition: all 0.2s;
+  content: "";
+}
+.navbar__btn span::after {
+  top: -10px;
+}
+.navbar__btn span::before {
+  top: 10px;
+}
+.navbar__btn.act > span {
+  height: 0;
+}
+.navbar__btn.act > span:after,
+.navbar__btn.act > span:before {
+  top: 1px;
+}
+.navbar__btn.act > span:after {
+  transform: rotate(45deg);
+}
+.navbar__btn.act > span:before {
+  transform: rotate(-45deg);
+}
+@media (min-width: 1200px) {
+  .navbar__btn {
+    display: none;
+  }
+}
 .navbar__contacts {
   display: none;
 }
@@ -438,18 +552,25 @@ input {
   transition: fill 0.2s ease;
   fill: #181818;
 }
-.navbar .header-contacts__icons,
 .navbar .link {
-  display: block;
+  display: inline-block;
 }
 @media (min-width: 1200px) {
-  .navbar .header-contacts__icons,
   .navbar .link {
     display: none;
   }
 }
+.navbar-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 .header-coder {
-  z-index: 5;
+  z-index: 1;
   flex: 0 1 50%;
 }
 .header-coder__title {
@@ -464,6 +585,7 @@ input {
   }
 }
 .header-coder__desc {
+  z-index: 1;
   margin-bottom: 32px;
   color: #393f47;
   font-weight: 500;
@@ -521,18 +643,23 @@ input {
   }
 }
 .header-background-img {
-  z-index: -1;
+  z-index: 2;
   max-width: 1600px;
   margin: 0;
-  transform: scale(1.5);
+  overflow: hidden;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
 }
+.header-background-img img {
+  margin-bottom: 40px;
+  transform: scale(1.5);
+}
 @media (min-width: 540px) {
-  .header-background-img {
+  .header-background-img img {
+    margin-bottom: 0;
     transform: scale(1);
   }
 }
@@ -937,7 +1064,7 @@ input {
           user-select: none;
 }
 .planning-card__img img {
-  z-index: 1;
+  z-index: 0;
   width: 40px;
   height: 40px;
 }
