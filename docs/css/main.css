@@ -741,7 +741,7 @@ input {
 }
 .header-experience {
   z-index: 1;
-  flex: 0 1 60%;
+  flex: 1 1 60%;
 }
 .header-experience__title {
   margin-bottom: 25px;
@@ -775,6 +775,7 @@ input {
 }
 @media (min-width: 1200px) {
   .header-experience__desc {
+    margin-bottom: 40px;
     font-size: 24px;
   }
   .header-experience__desc li {
