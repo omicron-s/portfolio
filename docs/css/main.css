@@ -479,9 +479,30 @@ input {
     margin: 0 80px 0 0;
     text-decoration: none;
   }
+  .navbar__menu-wrapper > a::before {
+    position: absolute;
+    bottom: 2px;
+    left: -5px;
+    z-index: -1;
+    width: 0;
+    height: 5px;
+    background-color: #039be5;
+    transition: 0.2s ease;
+    content: "";
+  }
+  .navbar__menu-wrapper > a:hover::before,
+  .navbar__menu-wrapper > a:active::before {
+    width: 110%;
+  }
+  .navbar__menu-wrapper > a:focus {
+    margin: -3px 77px -3px -3px;
+  }
+  .navbar__menu-wrapper > a:focus:last-child {
+    margin-right: -3px;
+  }
 }
-.navbar__menu-wrapper > a:focus {
-  margin: -3px 77px -3px -3px;
+.navbar__menu-wrapper > a:active {
+  color: #ea736d;
 }
 .navbar__menu-wrapper > a:last-child {
   margin: 0 0 35px 0;
@@ -490,24 +511,6 @@ input {
   .navbar__menu-wrapper > a:last-child {
     margin: 0;
   }
-}
-.navbar__menu-wrapper > a:focus:last-child {
-  margin-right: -3px;
-}
-.navbar__menu-wrapper > a::before {
-  position: absolute;
-  bottom: 2px;
-  left: -5px;
-  z-index: -1;
-  width: 0;
-  height: 5px;
-  background-color: #039be5;
-  transition: 0.2s ease;
-  content: "";
-}
-.navbar__menu-wrapper > a:hover::before,
-.navbar__menu-wrapper > a:active::before {
-  width: 110%;
 }
 .navbar__btn {
   position: relative;
