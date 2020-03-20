@@ -4,6 +4,10 @@
   margin: 0 auto;
   padding: 113px 0 100px;
 
+  @media (min-width: 768px) {
+    padding: 150px 0 155px;
+  }
+
   @media (min-width: 1200px) {
     padding: 266px 0 238px;
     background-image: url("../../img/lines-5.jpg");
@@ -49,26 +53,34 @@
 
 .navbar {
   position: absolute;
-  top: -64px;
-  left: auto;
+  top: 20px;
+  right: 0;
   z-index: 10;
   width: 100%;
-  padding-top: 84px;
+  height: 63px;
+  overflow: hidden;
   background-color: rgba(#fff, 0.7);
   backdrop-filter: blur(5px) grayscale(70%);
+  transition: height 0.2s linear;
+
+  @media (min-width: 768px) {
+    top: 30px;
+    transition: width 0.2s linear, height 0.2s linear;
+  }
 
   @media (min-width: 1200px) {
-    padding-top: 124px;
+    top: 60px;
+    right: unset;
+    left: auto;
     background-image: url("../../img/lines-5.jpg");
     background-position: center;
     background-size: contain;
+    background-repeat-x: no-repeat;
   }
   &--fixed {
     position: fixed;
     top: 0;
-    padding-top: 0;
     background-image: unset;
-    transition: top 0.3s linear;
   }
 
   &__logo {
@@ -102,12 +114,20 @@
     left: 0;
     z-index: 10;
     width: 100%;
-    padding-top: 20px;
-    padding-left: 15px;
+    padding: 20px 0 0 15px;
     transform: scale(0);
     opacity: 0;
-    transition: all 0.3s cubic-bezier(0.59, -0.72, 0.44, 1.82);
+    transition: all 0.2s cubic-bezier(0.59, -0.72, 0.44, 1.82);
 
+    @media (min-width: 768px) {
+      left: 25px;
+      width: unset;
+      padding: 20px 15px 0 0;
+    }
+    @media (min-width: 1200px) {
+      left: unset;
+      padding: 0;
+    }
     &.act {
       transform: scale(1);
       opacity: 1;
@@ -121,15 +141,15 @@
     > div {
       transform: translateX(100%);
       opacity: 0;
-      transition: all 0.25s 0.31s;
+      transition: all 0.15s 0.21s;
       &:nth-child(2) {
-        transition-delay: 0.56s;
+        transition-delay: 0.36s;
       }
     }
     .link {
       transform: translateX(100%);
       opacity: 0;
-      transition: all 0.25s 0.81s;
+      transition: all 0.15s 0.51s;
     }
 
     @media (min-width: 1200px) {
@@ -306,15 +326,33 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 15px;
+  @media (min-width: 768px) {
+    padding: 0 30px;
+  }
+  @media (min-width: 1200px) {
+    padding: 0 15px;
+  }
 }
 
 .header-coder {
   z-index: 1;
   flex: 0 1 50%;
+  @media (min-width: 768px) {
+    flex: 0 1 44%;
+  }
+
+  @media (min-width: 1200px) {
+    flex: 0 1 50%;
+  }
   &__title {
     margin-bottom: 30px;
     font-size: 42px;
     line-height: 1.2;
+
+    @media (min-width: 768px) {
+      margin-bottom: 20px;
+      font-size: 52px;
+    }
     @media (min-width: 1200px) {
       margin-bottom: 15px;
       font-size: 90px;
@@ -359,10 +397,16 @@
   overflow: hidden;
   user-select: none;
 
+  @media (min-width: 768px) {
+    flex: 0 1 44%;
+    order: unset;
+    padding: 10px 25px 0;
+  }
+
   @media (min-width: 1200px) {
-    order: 2;
+    flex: 0 1 50%;
     margin-bottom: 0;
-    padding-top: 27px;
+    padding: 27px 0 0;
 
     &::before {
       position: absolute;
@@ -410,6 +454,9 @@
     margin-bottom: 25px;
     font-weight: 800;
     font-size: 30px;
+    @media (min-width: 768px) {
+      font-size: 32px;
+    }
     @media (min-width: 1200px) {
       font-size: 40px;
     }
@@ -423,7 +470,10 @@
         text-transform: capitalize;
       }
     }
-
+    
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
     @media (min-width: 1200px) {
       font-size: 24px;
       li {
@@ -453,6 +503,9 @@
     margin-bottom: 25px;
     font-weight: 800;
     font-size: 30px;
+    @media (min-width: 768px) {
+      font-size: 32px;
+    }
     @media (min-width: 1200px) {
       margin-bottom: 32px;
       font-size: 40px;
@@ -470,13 +523,16 @@
       color: @main;
       border-color: @main;
     }
-    @media (min-width: 1200px) {
-      padding-left: 6px;
-      font-size: 24px;
+    @media (min-width: 768px) {
+      font-size: 20px;
       span {
         color: unset;
         border-color: unset;
       }
+    }
+    @media (min-width: 1200px) {
+      padding-left: 6px;
+      font-size: 24px;
     }
     &:focus {
       margin: -3px;

@@ -2,6 +2,11 @@
   padding: 50px 0 97px;
   text-align: center;
   background-color: #f4f8f9;
+
+  @media (min-width: 768px) {
+    padding: 63px 0 110px;
+    text-align: left;
+  }
   @media (min-width: 1200px) {
     padding: 96px 0 66px;
   }
@@ -13,19 +18,29 @@
   // .portfolio__pagination
   &__pagination {
     display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      margin-bottom: 45px;
+      font-weight: 800;
+      font-size: 24px;
+    }
+
     @media (min-width: 1200px) {
       display: flex;
       margin-bottom: 38px;
-      font-weight: 800;
       font-size: 28px;
     }
 
     a {
-      margin-right: 80px;
+      margin-right: 50px;
       color: #8fa5ae;
       outline: none;
       cursor: pointer;
 
+      @media (min-width: 1200px) {
+        margin-right: 80px;
+      }
       &.active {
         color: #000;
       }
@@ -36,8 +51,12 @@
         border: none;
       }
       &:focus {
-        margin: -3px 77px -3px -3px;
+        margin: -3px 47px -3px -3px;
         border: 3px dotted @scarlet;
+
+        @media (min-width: 1200px) {
+          margin: -3px 77px -3px -3px;
+        }
       }
       &:last-child {
         margin-right: 0;
@@ -48,6 +67,7 @@
   &__link {
     border-bottom: 1px solid @main;
     span::before {
+      font-size: 20px;
       content: "Смотреть все работы";
     }
     span.show::before {
@@ -61,7 +81,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    @media (min-width: 1200px) {
+    @media (min-width: 768px) {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -75,7 +95,11 @@
     &:not(:nth-child(-n + 4)) {
       display: none;
     }
+    @media (min-width: 768px) {
+      flex: 0 1 48%;
+    }
     @media (min-width: 1200px) {
+      flex: 0 1 32%;
       margin-bottom: 60px;
 
       &:not(:nth-child(-n + 4)) {
@@ -173,6 +197,10 @@
       font-weight: 700;
       font-size: 22px;
       line-height: 1.2;
+      @media (min-width: 768px) {
+        margin-bottom: 10px;
+        font-size: 24px;
+      }
       @media (min-width: 1200px) {
         margin-bottom: 10px;
         font-size: 26px;
@@ -186,6 +214,11 @@
     &__desc {
       font-weight: 300;
       font-size: 16px;
+
+      @media (min-width: 768px) {
+        font-size: 18px;
+      }
+
       @media (min-width: 1200px) {
         font-size: 20px;
       }
