@@ -759,7 +759,7 @@ input {
   }
 }
 .header-experience__desc {
-  margin-bottom: 40px;
+  margin-bottom: 0;
   font-size: 18px;
 }
 .header-experience__desc li {
@@ -767,11 +767,6 @@ input {
 }
 .header-experience__desc li::first-letter {
   text-transform: capitalize;
-}
-@media (min-width: 768px) {
-  .header-experience__desc {
-    margin-bottom: 0;
-  }
 }
 @media (min-width: 1200px) {
   .header-experience__desc {
