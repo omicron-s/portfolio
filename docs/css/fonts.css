@@ -40,45 +40,23 @@
   src: url("../fonts/Montserrat-Alternates/MontserratAlternates-Black.ttf");
   font-display: swap;
 }
-/* @font-face {
-  font-weight: 100;
-  font-family: "MPLUS 1p";
-  src: url("../fonts/mplus1p/MPLUS1p-Thin.ttf");
-  font-display: swap;
-}
+
 @font-face {
-  font-weight: 300;
-  font-family: "MPLUS 1p";
-  src: url("../fonts/mplus1p/MPLUS1p-Light.ttf");
+  font-weight: 100;
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Thin.ttf");
   font-display: swap;
 }
 @font-face {
   font-weight: 400;
-  font-family: "MPLUS 1p";
-  src: url("../fonts/mplus1p/MPLUS1p-Regular.ttf");
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
   font-display: swap;
 }
-@font-face {
-  font-weight: 500;
-  font-family: "MPLUS 1p";
-  src: url("../fonts/mplus1p/MPLUS1p-Medium.ttf");
-  font-display: swap;
-}
+
 @font-face {
   font-weight: 700;
-  font-family: "MPLUS 1p";
-  src: url("../fonts/mplus1p/MPLUS1p-Bold.ttf");
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Bold.ttf");
   font-display: swap;
 }
-@font-face {
-  font-weight: 800;
-  font-family: "MPLUS 1p";
-  src: url("../fonts/mplus1p/MPLUS1p-ExtraBold.ttf");
-  font-display: swap;
-}
-@font-face {
-  font-weight: 900;
-  font-family: "MPLUS 1p";
-  src: url("../fonts/mplus1p/MPLUS1p-Black.ttf");
-  font-display: swap;
-} */

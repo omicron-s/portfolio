@@ -1,4 +1,4 @@
-footer {
+.footer {
   padding: 22px 0 20px;
   background-color: #333;
   h4 {
@@ -23,5 +23,69 @@ footer {
       color: #fff;
       border-color: #fff;
     }
+  }
+}
+
+#footerBy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 55px 0 180px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  background-color: #f4f8f9;
+  background-image: url("../../img/bg-03.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 180%;
+
+  @media (min-width: 768px) {
+    padding: 45px 0 230px;
+    background-size: contain;
+    h3 {
+      margin-bottom: 20px;
+      font-size: 38px;
+    }
+    p {
+      margin-bottom: 40px;
+      font-size: 30px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    padding: 25px 0 470px;
+    h3 {
+      margin-bottom: 30px;
+      font-size: 42px;
+    }
+    p {
+      font-size: 36px;
+    }
+  }
+
+  h3 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 28px;
+  }
+  p {
+    margin-bottom: 35px;
+    font-weight: 100;
+    font-size: 22px;
+  }
+
+  .link {
+    color: @main;
+    span {
+      border-bottom: 1px solid @main;
+    }
+    &:hover span,
+    &:active span {
+      color: @scarlet;
+      border-color: @scarlet;
+    }
+  }
+  .contacts-icons {
+    justify-content: center;
   }
 }
