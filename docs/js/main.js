@@ -4,6 +4,7 @@ $("#page-nav").onePageNav({
   changeHash: false,
   scrollThreshold: 0.4
 });
+
 //Smooth scrolling
 $(".header a").on("click", function() {
   var el = $(this);
@@ -51,7 +52,7 @@ $(window).scroll(function() {
 });
 
 // mobile-menu
-$(document).ready(function() {
+$(function() {
   $(".navbar__btn").click(function() {
     $(this).toggleClass("act");
     if ($(this).hasClass("act")) {
@@ -139,7 +140,7 @@ var typed = new Typed("#pc4-anim i", {
 });
 
 //planning scroll
-$(document).ready(function() {
+$(function() {
   $(window).scroll(function() {
     var scroll = $(window).scrollTop() + $(window).height() / 1.8;
     var pc1Offset = $("#pc1").offset().top + $("#pc1").height() / 2;
@@ -177,5 +178,13 @@ $(document).ready(function() {
     } else {
       $("#pc5").removeClass("planning-act");
     }
+  });
+});
+
+//porjects__right-side max-height
+$(document).ready(function() {
+  var maxHeight = $(".projects-container__left-side").height();
+  $(".projects-container__right-side").resize(function() {
+      $(this).height(maxHeight);
   });
 });

@@ -13,14 +13,14 @@
 </head>
 
 <body>
-    <header id="projects-header" class="header">
+    <header id="works-header" class="header">
         <div class="navbar">
             <div class="navbar-wrapper">
-                <a href="#projects-header" class="navbar__logo"><span class="title-line">АБ</span></a>
+                <a href="#works-header" class="navbar__logo"><span class="title-line">АБ</span></a>
                 <nav class="navbar__menu">
                     <div class="navbar__menu-wrapper">
                         <a href="index.html">Главная</a>
-                        <a href="works.html">Работы</a>
+                        <a href="#works-portfolio" class="active">Работы</a>
                         <a href="contacts.html">Контакты</a></div>
                     <div class="header-contacts__icons contacts-icons ">
                         <a href="https://vk.com/omigod" target="_blank" class="contacts-icon contacts-icon__vk">
@@ -75,79 +75,118 @@
         </div>
     </header>
 
-    <main id="projects">
-        <section id="project-mediamarket" class="projects">
-            <div class="container">
-                <div class="projects-header">
-                    <div class="projects-header__title">
-                        <span class="title-line">Верстка </span><span class="title-line">интернет </span><span class="title-line">магазина </span><span
-                            class="title-line">“Медиамаркет”</span>
+    <section id="works-portfolio" class="portfolio">
+        <div class="container">
+            <div class="portfolio__title title title__section">
+                <h2><span class="title-line title-line--lg">Портфолио</span></h2>
+            </div>
+            <nav class="portfolio__pagination">
+                <a id="select-all" href="#!" class="active">Все работы</a>
+                <a id="select-bootstrap" href="#!">Bootstrap</a>
+                <a id="select-wordpress" href="#!">WordPress</a>
+                <a id="select-frontend" href="#!">Frontend</a>
+            </nav>
+            <div class="portfolio-row">
+                <div class="portfolio-card portfolio-card--bootstrap">
+                    <div class="portfolio-card__img">
+                        <a href="../forest-travel/index.html" target="_blank" tabindex="-1"><img src="img/portfolio/travel.jpg" alt="Проект Форест-Тревел">
+                            <button class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
                     </div>
-                    <div class="projects-header__used">
-                        <span class="html">HTML</span>
-                        <span class="css">CSS</span>
-                        <span class="bootstrap">Bootstrap</span>
-                        <span class="js">JS</span>
-                        <span class="jquery">jQuery</span>
-                        <span class="php">PHP</span>
+                    <div class="portfolio-card__title">
+                        <h3>
+                            <a href="../forest-travel/index.html" target="_blank" class="link">Верстка “Форест тревел”</a>
+                        </h3>
                     </div>
+                    <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
                 </div>
-                <div class="projects-container">
-                    <div class="projects-container__left-side">
-                        <div class="projects-container__links">
-                            <div>
-                                <a href="https://github.com/omicron-s" target="_blank" class="contacts-icon contacts-icon__github">
-                                    <img src="img/icons/github-brands.svg" alt="Github">
-                                </a>
-                                <a href="#" class="link"><span>Смотреть демо онлайн</span></a>
-                            </div>
-                            <div>
-                                <a href="https://github.com/omicron-s" target="_blank" class="contacts-icon contacts-icon__github">
-                                    <img src="img/icons/github-brands.svg" alt="Github">
-                                </a>
-                                <a href="#" class="link"><span>Код проекта на GitHub</span></a>
-                            </div>
-                        </div>
-                        <div class="projects-container__about">
-                            <h3><span class="title-line title-line--sm">О проекте</span></h3>
-                            <p>Описание этого замечательного проекта. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                        </div>
-                        <div class="projects-container__misc">
-                            <h3><span class="title-line title-line--sm">Детали</span></h3>
-                            <ul>
-                                <li>
-                                    <b>Клиент:</b>
-                                    <p>ООО “Медиамаркет”</p>
-                                </li>
-                                <li>
-                                    <b>Проект:</b>
-                                    <p>Интернет магазин “Медиамаркет”</p>
-                                </li>
-                                <li>
-                                    <b>Сайт:</b>
-                                    <p>
-                                        <a href="http://mediamarket.com">mediamarket.com</a>
-                                    </p>
-                                </li>
-                                <li>
-                                    <b>Верстка:</b>
-                                    <p>Адаптивная верстка, HTML5, CSS3, Bootstrap grid, JavaScript, jQuery.</p>
-                                </li>
-                                <li>
-                                    <b>Особенности:</b>
-                                    <p>Мобильная навигация, мега-меню, карусель OwlCarousel, ajax корзина, предпросмотре товара, календарь, datepicker, валидация форм, маска ввода
-                                        номера телефона, лайтбоксы, сортировка товаров.</p>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="portfolio-card portfolio-card--wordpress">
+                    <div class="portfolio-card__img">
+                        <a href="../unit/index.html" target="_blank" tabindex="-1"><img src="img/portfolio/unit.jpg" alt="Проект Ю Н И Т">
+                            <button class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
                     </div>
-                    <div class="projects-container__right-side">
-                        <img src="img/projects/project-mediamarket.jpg" alt="“Медиамаркет”">
+                    <div class="portfolio-card__title">
+                        <h3>
+                            <a href="../unit//index.html" target="_blank" class="link">Верстка "Ю Н И Т"</a>
+                        </h3>
                     </div>
+                    <div class="portfolio-card__desc">Верстка лендинга. </div>
                 </div>
-        </section>
-    </main>
+                <div class="portfolio-card portfolio-card--frontend">
+                    <div class="portfolio-card__img">
+                        <a href="#" tabindex="-1"><img src="img/portfolio/img-01.jpg" alt="&#34;Мир авто&#34;">
+                            <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
+                    </div>
+                    <div class="portfolio-card__title">
+                        <h3>
+                            <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
+                        </h3>
+                    </div>
+                    <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
+                </div>
+                <div class="portfolio-card portfolio-card--bootstrap">
+                    <div class="portfolio-card__img">
+                        <a href="#" tabindex="-1"><img src="img/portfolio/img-02.jpg" alt="&#34;Мир авто&#34;">
+                            <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
+                    </div>
+                    <div class="portfolio-card__title">
+                        <h3>
+                            <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
+                        </h3>
+                    </div>
+                    <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
+                </div>
+                <div class="portfolio-card portfolio-card--wordpress">
+                    <div class="portfolio-card__img">
+                        <a href="#" tabindex="-1"><img src="img/portfolio/img-03.jpg" alt="&#34;Мир авто&#34;">
+                            <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
+                    </div>
+                    <div class="portfolio-card__title">
+                        <h3>
+                            <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
+                        </h3>
+                    </div>
+                    <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
+                </div>
+                <div class="portfolio-card portfolio-card--frontend">
+                    <div class="portfolio-card__img">
+                        <a href="#" tabindex="-1"><img src="img/portfolio/img-01.jpg" alt="&#34;Мир авто&#34;">
+                            <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
+                    </div>
+                    <div class="portfolio-card__title">
+                        <h3>
+                            <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
+                        </h3>
+                    </div>
+                    <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
+                </div>
+                <div class="portfolio-card portfolio-card--bootstrap">
+                    <div class="portfolio-card__img">
+                        <a href="#" tabindex="-1"><img src="img/portfolio/img-02.jpg" alt="&#34;Мир авто&#34;">
+                            <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
+                    </div>
+                    <div class="portfolio-card__title">
+                        <h3>
+                            <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
+                        </h3>
+                    </div>
+                    <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
+                </div>
+                <div class="portfolio-card portfolio-card--wordpress">
+                    <div class="portfolio-card__img">
+                        <a href="#" tabindex="-1"><img src="img/portfolio/img-03.jpg" alt="&#34;Мир авто&#34;">
+                            <button target="_blank" class="portfolio-card__btn btn" tabindex="-1">Смотреть проект</button></a>
+                    </div>
+                    <div class="portfolio-card__title">
+                        <h3>
+                            <a href="#" target="_blank" class="link">Верстка “Мир Авто”</a>
+                        </h3>
+                    </div>
+                    <div class="portfolio-card__desc">Верстка многостраничного сайта.</div>
+                </div>
+            </div>
+            <a class="portfolio__link" href="#!"><span></span></a>
+        </div>
+    </section>
 
     <footer id="footerBy">
         <div class="container">
