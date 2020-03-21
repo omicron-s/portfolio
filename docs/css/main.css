@@ -1734,8 +1734,8 @@ input {
 }
 @media (min-width: 1200px) {
   #projects-header.header {
-    background-image: unset;
     padding: 220px 0 0;
+    background-image: unset;
   }
 }
 #projects-header .navbar {
