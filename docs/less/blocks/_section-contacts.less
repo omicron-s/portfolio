@@ -1,22 +1,26 @@
 .contacts {
   margin: 0 auto;
-  padding: 50px 0 60px;
+  padding: 45px 0 60px;
   background-color: #f4f8f9;
 
   @media (min-width: 768px) {
-    padding: 85px 0 124px;
+    padding: 85px 0 125px;
   }
 
   @media (min-width: 1200px) {
-    padding: 127px 0 150px;
+    padding: 125px 0 150px;
   }
 
   &__title {
-    margin-bottom: 56px;
+    margin-bottom: 35px;
     text-align: center;
 
-    @media (min-width: 768px) and (max-width: 1199px) {
+    @media (min-width: 768px) {
       margin-bottom: 80px;
+    }
+
+    @media (min-width: 1200px) {
+      margin-bottom: 56px;
     }
   }
 }
@@ -51,15 +55,15 @@
   }
   // .contacts-left-side__call-to-me
   &__call-to-me {
-    margin-bottom: 20px;
-    padding-top: 22px;
-
-    @media (min-width: 768px) and (max-width: 1199px) {
-      padding-top: 0;
+    margin-bottom: 10px;
+    padding-top: 0;
+    @media (min-width: 768px) {
+      margin-bottom: 20px;
     }
 
     @media (min-width: 1200px) {
       margin-bottom: 35px;
+      padding-top: 22px;
     }
   }
   // .contacts-left-side__list
@@ -67,19 +71,17 @@
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    margin-bottom: 6px;
+    margin-bottom: -6px;
     padding: 8px 0;
     font-size: 18px;
-
-    @media (min-width: 768px) and (max-width: 1199px) {
-      margin-bottom: -6px;
-      b {
-        margin-bottom: -5px;
-      }
+    b {
+      width: 40%;
+      margin-bottom: -5px;
     }
 
     @media (min-width: 1200px) {
       flex-direction: row;
+      margin-bottom: 6px;
       font-size: 20px;
       &::before {
         position: absolute;
@@ -92,9 +94,6 @@
         background-repeat: no-repeat;
         content: "";
       }
-    }
-    b {
-      width: 40%;
     }
     a {
       color: @main;
@@ -114,7 +113,7 @@
   }
   .contacts-icon {
     margin-bottom: 50px;
-    @media (min-width: 1200px) {
+    @media (min-width: 768px) {
       margin-bottom: 0;
     }
   }
@@ -164,10 +163,11 @@
   }
 
   input[type="submit"] {
+    width: 100%;
     margin-right: auto;
     padding-top: 0;
-    @media (min-width: 768px) and (max-width: 1199px) {
-      width: 100%;
+    @media (min-width: 1200px) {
+      width: unset;
     }
   }
 
