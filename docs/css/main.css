@@ -1766,18 +1766,17 @@ input {
   background-image: unset;
 }
 #projects {
-  padding: 45px 0 100px;
+  padding: 45px 0 75px;
   background-color: #f4f8f9;
 }
 @media (min-width: 768px) {
   #projects {
-    padding: 65px 0 110px;
-    text-align: left;
+    padding: 65px 0 75px;
   }
 }
 @media (min-width: 1200px) {
   #projects {
-    padding: 100px 0 65px;
+    padding: 100px 0 75px;
   }
 }
 .projects-header {
@@ -1825,6 +1824,7 @@ input {
 .projects-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 110px;
 }
 .projects-container__left-side {
   flex: 0 1 40%;
@@ -1837,20 +1837,41 @@ input {
   display: flex;
   align-items: center;
 }
+.projects-container__links div:hover,
+.projects-container__links div:active,
+.projects-container__links div:focus {
+  outline: none;
+}
 .projects-container__links div:hover .contacts-icon,
-.projects-container__links div:active .contacts-icon {
+.projects-container__links div:active .contacts-icon,
+.projects-container__links div:focus .contacts-icon,
+.projects-container__links div:hover .browser,
+.projects-container__links div:active .browser,
+.projects-container__links div:focus .browser {
   box-shadow: 0 0 20px #181818;
 }
 .projects-container__links div:hover .link span,
-.projects-container__links div:active .link span {
+.projects-container__links div:active .link span,
+.projects-container__links div:focus .link span {
   color: #ea736d;
   border-color: #ea736d;
+}
+.projects-container__links .browser {
+  width: 26px;
+  height: 26px;
+  margin-right: 12px;
+  margin-left: 2px;
+  border-radius: 12%;
+  transition: box-shadow 0.2s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .projects-container__links .contacts-icon {
   width: 30px;
   height: 30px;
   margin-right: 10px;
-  background-color: #f4f8f9;
 }
 .projects-container__links .link span {
   color: #039be5;
@@ -1891,11 +1912,46 @@ input {
   min-width: 165px;
   font-weight: 800;
 }
+.projects-container__misc ul li a:focus {
+  margin: -3px;
+}
 .projects-container__right-side {
+  position: relative;
   flex: 0 1 58%;
-  height: 600px;
   overflow: hidden;
   box-shadow: 20px 20px 100px #c4dbe9;
+}
+.projects-container__right-side img {
+  position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.projects-btn {
+  flex: 0 1 48.5%;
+  padding: 24px 0;
+  color: #fff;
+  font-weight: 300;
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  background-color: #333333;
+}
+.projects-btn:hover,
+.projects-btn:focus {
+  color: #fff;
+  background-color: #656565;
+  border: none;
+  outline: none;
+}
+.projects-btn:active {
+  background-color: #141414;
+}
+.projects-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
 }
 #contacts-header.header {
   padding: 100px 0 0;

@@ -180,11 +180,3 @@ $(function() {
     }
   });
 });
-
-//porjects__right-side max-height
-$(document).ready(function() {
-  var maxHeight = $(".projects-container__left-side").height();
-  $(".projects-container__right-side").resize(function() {
-      $(this).height(maxHeight);
-  });
-});

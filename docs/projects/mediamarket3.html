@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио</title>
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="libs/owlCarousel2/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
@@ -19,20 +18,20 @@
                 <a href="#projects-header" class="navbar__logo"><span class="title-line">АБ</span></a>
                 <nav class="navbar__menu">
                     <div class="navbar__menu-wrapper">
-                        <a href="index.html">Главная</a>
-                        <a href="works.html">Работы</a>
-                        <a href="contacts.html">Контакты</a></div>
+                        <a href="../index.html">Главная</a>
+                        <a href="../works.html">Работы</a>
+                        <a href="../contacts.html">Контакты</a></div>
                     <div class="header-contacts__icons contacts-icons ">
                         <a href="https://vk.com/omigod" target="_blank" class="contacts-icon contacts-icon__vk">
-                            <img src="img/icons/vk-brands.svg" alt="Вконтакте">
+                            <img src="../img/icons/vk-brands.svg" alt="Вконтакте">
                         </a>
 
                         <a href="https://github.com/omicron-s" target="_blank" class="contacts-icon contacts-icon__github">
-                            <img src="img/icons/github-brands.svg" alt="Github">
+                            <img src="../img/icons/github-brands.svg" alt="Github">
                         </a>
 
                         <a href="https://discordapp.com/channels/Omicron#8516" target="_blank" class="contacts-icon contacts-icon__discord">
-                            <img src="img/icons/discord-brands.svg" alt="Discord">
+                            <img src="../img/icons/discord-brands.svg" alt="Discord">
                         </a>
 
                     </div>
@@ -76,13 +75,13 @@
     </header>
 
     <main id="projects">
-        <section id="project-mediamarket" class="projects">
+        <section class="projects">
             <div class="container">
                 <div class="projects-header">
-                    <div class="projects-header__title">
+                    <h1 class="projects-header__title">
                         <span class="title-line">Верстка </span><span class="title-line">интернет </span><span class="title-line">магазина </span><span
                             class="title-line">“Медиамаркет”</span>
-                    </div>
+                    </h1>
                     <div class="projects-header__used">
                         <span class="html">HTML</span>
                         <span class="css">CSS</span>
@@ -95,22 +94,23 @@
                 <div class="projects-container">
                     <div class="projects-container__left-side">
                         <div class="projects-container__links">
-                            <div>
-                                <a href="https://github.com/omicron-s" target="_blank" class="contacts-icon contacts-icon__github">
-                                    <img src="img/icons/github-brands.svg" alt="Github">
+                            <div tabindex="0">
+                                <a href="https://github.com/omicron-s" target="_blank" class="browser" tabindex="-1">
+                                    <img src="../img/icons/browser-window.svg" alt="Окно браузера">
                                 </a>
-                                <a href="#" class="link"><span>Смотреть демо онлайн</span></a>
+                                <a href="#" class="link" tabindex="-1"><span>Смотреть демо онлайн</span></a>
                             </div>
-                            <div>
-                                <a href="https://github.com/omicron-s" target="_blank" class="contacts-icon contacts-icon__github">
-                                    <img src="img/icons/github-brands.svg" alt="Github">
+                            <div tabindex="0">
+                                <a href="https://github.com/omicron-s" target="_blank" class="contacts-icon contacts-icon__github" tabindex="-1">
+                                    <img src="../img/icons/github-brands.svg" alt="Github">
                                 </a>
-                                <a href="#" class="link"><span>Код проекта на GitHub</span></a>
+                                <a href="#" class="link" tabindex="-1"><span>Код проекта на GitHub</span></a>
                             </div>
                         </div>
                         <div class="projects-container__about">
                             <h3><span class="title-line title-line--sm">О проекте</span></h3>
-                            <p>Описание этого замечательного проекта. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            <p>Описание этого замечательного проекта. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                dolore
                                 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
                         </div>
                         <div class="projects-container__misc">
@@ -136,17 +136,25 @@
                                 </li>
                                 <li>
                                     <b>Особенности:</b>
-                                    <p>Мобильная навигация, мега-меню, карусель OwlCarousel, ajax корзина, предпросмотре товара, календарь, datepicker, валидация форм, маска ввода
+                                    <p>Мобильная навигация, мега-меню, карусель OwlCarousel, ajax корзина, предпросмотре товара, календарь, datepicker, валидация форм, маска
+                                        ввода
                                         номера телефона, лайтбоксы, сортировка товаров.</p>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="projects-container__right-side">
-                        <img src="img/projects/project-mediamarket.jpg" alt="“Медиамаркет”">
+                        <img src="../img/projects/project-mediamarket.jpg" alt="“Медиамаркет”">
                     </div>
                 </div>
+            </div>
         </section>
+        <div class="container">
+            <div class="row row__sb">
+                <a href="mediamarket2.html" class="projects-btn">Предыдущий проект</a>
+                <a disabled href="mediamarket3.html" class="projects-btn">Следующий проект</a>
+            </div>
+        </div>
     </main>
 
     <footer id="footerBy">
@@ -155,20 +163,19 @@
             <p>обращайтесь на <a href="mailto:omigod@live.ru?subject=Здравствуйте, Александр, я к вам по делу вертски..." class="link"><span>omigod@live.ru</span></a></p>
             <div class="contacts-icons">
                 <a href="https://vk.com/omigod" target="_blank" class="contacts-icon contacts-icon__vk">
-                    <img src="img/icons/vk-brands.svg" alt="Вконтакте">
+                    <img src="../img/icons/vk-brands.svg" alt="Вконтакте">
                 </a>
                 <a href="https://github.com/omicron-s" target="_blank" class="contacts-icon contacts-icon__github">
-                    <img src="img/icons/github-brands.svg" alt="Github">
+                    <img src="../img/icons/github-brands.svg" alt="Github">
                 </a>
                 <a href="https://discordapp.com/channels/Omicron#8516" target="_blank" class="contacts-icon contacts-icon__discord">
-                    <img src="img/icons/discord-brands.svg" alt="Discord">
+                    <img src="../img/icons/discord-brands.svg" alt="Discord">
                 </a>
             </div>
         </div>
     </footer>
 
     <script src="libs/jQuery/jquery-3.4.1.min.js"></script>
-    <script src="libs/owlCarousel2/owl.carousel.min.js"></script>
     <script src="libs/nav/nav.js"></script>
     <script src="libs/typed/typed.min.js"></script>
     <script src="js/main.js"></script>
