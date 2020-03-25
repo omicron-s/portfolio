@@ -87,10 +87,10 @@
   // .projects-container__links
   &__links {
     margin-bottom: 50px;
-    div {
+    > a {
       display: flex;
       align-items: center;
-
+      border: none;
       &:hover,
       &:active,
       &:focus {
@@ -99,7 +99,7 @@
         .browser {
           box-shadow: 0 0 20px @darkgray;
         }
-        .link span {
+        span {
           color: @scarlet;
           border-color: @scarlet;
         }
@@ -118,6 +118,10 @@
       width: 30px;
       height: 30px;
       margin-right: 10px;
+      background-color: #f4f8f9;
+      img {
+        margin-left: 5%;
+      }
     }
 
     .link {

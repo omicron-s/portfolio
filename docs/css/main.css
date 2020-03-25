@@ -1833,26 +1833,27 @@ input {
 .projects-container__links {
   margin-bottom: 50px;
 }
-.projects-container__links div {
+.projects-container__links > a {
   display: flex;
   align-items: center;
+  border: none;
 }
-.projects-container__links div:hover,
-.projects-container__links div:active,
-.projects-container__links div:focus {
+.projects-container__links > a:hover,
+.projects-container__links > a:active,
+.projects-container__links > a:focus {
   outline: none;
 }
-.projects-container__links div:hover .contacts-icon,
-.projects-container__links div:active .contacts-icon,
-.projects-container__links div:focus .contacts-icon,
-.projects-container__links div:hover .browser,
-.projects-container__links div:active .browser,
-.projects-container__links div:focus .browser {
+.projects-container__links > a:hover .contacts-icon,
+.projects-container__links > a:active .contacts-icon,
+.projects-container__links > a:focus .contacts-icon,
+.projects-container__links > a:hover .browser,
+.projects-container__links > a:active .browser,
+.projects-container__links > a:focus .browser {
   box-shadow: 0 0 20px #181818;
 }
-.projects-container__links div:hover .link span,
-.projects-container__links div:active .link span,
-.projects-container__links div:focus .link span {
+.projects-container__links > a:hover span,
+.projects-container__links > a:active span,
+.projects-container__links > a:focus span {
   color: #ea736d;
   border-color: #ea736d;
 }
@@ -1872,6 +1873,10 @@ input {
   width: 30px;
   height: 30px;
   margin-right: 10px;
+  background-color: #f4f8f9;
+}
+.projects-container__links .contacts-icon img {
+  margin-left: 5%;
 }
 .projects-container__links .link span {
   color: #039be5;
