@@ -18,11 +18,11 @@
 }
 
 #projects {
-  padding: 45px 0 75px;
+  padding: 30px 0 0;
   background-color: #f4f8f9;
 
   @media (min-width: 768px) {
-    padding: 65px 0 75px;
+    padding: 65px 0 45px;
   }
   @media (min-width: 1200px) {
     padding: 100px 0 75px;
@@ -32,26 +32,48 @@
 .projects-header {
   background-color: #f4f8f9;
   // .projects-header__title
+
   &__title {
     margin-bottom: 40px;
     font-weight: 800;
-    font-size: 48px;
+    font-size: 30px;
     text-align: center;
+
+    span {
+      display: inline-block;
+
+      &::before {
+        bottom: 15%;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 48px;
+
+      span {
+        display: unset;
+
+        &::before {
+          bottom: 10%;
+        }
+      }
+    }
   }
   // .projects-header__used
   &__used {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 90px;
+    margin-bottom: 40px;
     color: #f4f8f9;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 90px;
+    }
     span {
-      margin-right: 10px;
+      margin: 0 5px 10px;
       padding: 8px 10px;
       line-height: 1;
-      &:last-child {
-        margin-right: 0;
-      }
     }
   }
 
@@ -77,19 +99,49 @@
 
 .projects-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 110px;
+  margin-bottom: 45px;
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    margin-bottom: 110px;
+  }
   // .projects-container__left-side
   &__left-side {
     flex: 0 1 40%;
-    flex-direction: column;
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+      column-count: 2;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+      font-weight: 800;
+      font-size: 22px;
+
+      .title-line--sm::before {
+        display: block;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: 26px;
+      }
+    }
   }
   // .projects-container__links
   &__links {
-    margin-bottom: 50px;
+    margin-bottom: 35px;
+
+    @media (min-width: 1200px) {
+      // flex: unset;
+      margin-bottom: 50px;
+    }
+
     > a {
-      display: flex;
+      display: inline-flex;
       align-items: center;
+      font-size: 18px;
       border: none;
       &:hover,
       &:active,
@@ -133,12 +185,13 @@
   }
   // .projects-container__about
   &__about {
-    margin-bottom: 60px;
-    h3 {
-      margin-bottom: 20px;
-      font-weight: 800;
-      font-size: 26px;
+    margin-bottom: 35px;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 60px;
+      // flex: unset;
     }
+
     p {
       font-size: 16px;
       line-height: 1.5;
@@ -146,11 +199,11 @@
   }
   // .projects-container__misc
   &__misc {
-    h3 {
-      margin-bottom: 20px;
-      font-weight: 800;
-      font-size: 26px;
+    @media (min-width: 768px) and (max-width: 1199px) {
+      display: inline-block;
+      margin-left: 7px;
     }
+
     ul {
       margin: 0;
       padding: 0;
@@ -158,9 +211,17 @@
       line-height: 1.5;
       li {
         display: flex;
-        margin-bottom: 35px;
-        &:last-child,
-        &:last-child p {
+        flex-direction: column;
+        margin-bottom: 20px;
+        p {
+          margin-bottom: 0;
+        }
+
+        @media (min-width: 1200px) {
+          flex-direction: row;
+          margin-bottom: 35px;
+        }
+        &:last-child {
           margin-bottom: 0;
         }
         b {
@@ -176,24 +237,42 @@
   &__right-side {
     position: relative;
     flex: 0 1 58%;
+    order: -1;
+    max-height: 60vh;
+    margin-bottom: 60px;
     overflow: hidden;
     box-shadow: 20px 20px 100px rgb(196, 219, 233);
     img {
-      position: absolute;
+      position: static;
       user-select: none;
+    }
+
+    @media (min-width: 1200px) {
+      order: unset;
+      max-height: unset;
+      margin-bottom: 0;
+      img {
+        position: absolute;
+      }
     }
   }
 }
 
 .projects-btn {
   flex: 0 1 48.5%;
-  padding: 24px 0;
+  padding: 16px 0;
   color: #fff;
   font-weight: 300;
-  font-size: 22px;
+  font-size: 18px;
   font-family: "Roboto", sans-serif;
   text-align: center;
   background-color: #333333;
+
+  @media (min-width: 1200px) {
+    padding: 24px 0;
+    font-size: 22px;
+  }
+
   &:hover,
   &:focus {
     color: #fff;
@@ -208,5 +287,11 @@
     cursor: not-allowed;
     opacity: 0.5;
     pointer-events: none;
+  }
+  &:first-child {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
   }
 }

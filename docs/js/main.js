@@ -87,7 +87,6 @@ $(function() {
   var bootstrap = $(".portfolio-card--bootstrap");
   var wordpress = $(".portfolio-card--wordpress");
   var frontend = $(".portfolio-card--frontend");
-  var another = $(".portfolio-card--another");
 
   $("#select-all").click(function() {
     $(".portfolio-card--bootstrap").remove();
