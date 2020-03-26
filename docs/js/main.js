@@ -59,19 +59,29 @@ $(function() {
     if ($(this).hasClass("act")) {
       $(".navbar__menu").addClass("act");
       $(".navbar").css("height", "150vh");
-      // $("body").css("overflow", "hidden");
+      $("body").css("overflow", "hidden");
+
       if ($(window).width() >= 768) {
         $(".navbar").css("width", "320px");
       }
     } else {
       $(".navbar__menu").removeClass("act");
       $(".navbar").css("height", "63px");
-      // $("body").css("overflow", "unset");
+      $("body").css("overflow", "unset");
       if ($(window).width() >= 768) {
         $(".navbar").css("width", "100%");
       }
     }
   });
+});
+
+// autoclose when resizing
+$(window).resize(function() {
+  $(".navbar__btn").removeClass("act");
+  $(".navbar__menu").removeClass("act");
+  $(".navbar").css("height", "63px");
+  $("body").css("overflow", "unset");
+  $(".navbar").css("width", "100%");
 });
 
 // portfolio__pagination ul li active
