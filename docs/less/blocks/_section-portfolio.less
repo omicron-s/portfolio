@@ -77,161 +77,170 @@
       display: none;
     }
   }
-  .portfolio-row {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    @media (min-width: 768px) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  }
+}
+.portfolio-row {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 
-  .portfolio-card {
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.portfolio-card {
+  flex: 0 1 32%;
+  margin-bottom: 35px;
+
+  &:not(:nth-child(-n + 4)) {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    flex: 0 1 49%;
+  }
+  @media (min-width: 1200px) {
     flex: 0 1 32%;
-    margin-bottom: 35px;
+    margin-right: 22px;
+    margin-bottom: 60px;
+
+    &:nth-child(3n + 2) {
+      margin-right: 0;
+      margin-left: auto;
+    }
 
     &:not(:nth-child(-n + 4)) {
-      display: none;
+      display: block;
     }
-    @media (min-width: 768px) {
-      flex: 0 1 48%;
-    }
-    @media (min-width: 1200px) {
-      flex: 0 1 32%;
-      margin-bottom: 60px;
 
-      &:not(:nth-child(-n + 4)) {
-        display: block;
-      }
-      &:nth-child(-n + 2) {
-        flex: 0 1 48.5%;
-        .portfolio-card {
-          &__img {
-            max-height: 370px;
-            margin-bottom: 22px;
-            overflow: hidden;
-          }
-          // .portfolio-card__title
-          &__title h3 {
-            font-size: 32px;
-          }
-          // .portfolio-card__desc
-          &__desc {
-            font-size: 22px;
-          }
+    &:nth-child(-n + 2) {
+      flex: 0 1 49%;
+
+      .portfolio-card {
+        &__img {
+          max-height: 350px;
+          margin-bottom: 22px;
+          overflow: hidden;
+        }
+        // .portfolio-card__title
+        &__title h3 {
+          font-size: 32px;
+        }
+        // .portfolio-card__desc
+        &__desc {
+          font-size: 22px;
         }
       }
     }
+  }
 
-    &:last-child {
-      margin-bottom: 60px;
+  &:last-child {
+    margin-bottom: 60px;
 
-      @media (min-width: 1200px) {
-        margin-bottom: unset;
-      }
+    @media (min-width: 1200px) {
+      margin-bottom: unset;
     }
-    &__img {
-      position: relative;
-      max-height: 270px;
-      margin-bottom: 20px;
-      overflow: hidden;
-      background-color: @main;
+  }
+  &__img {
+    position: relative;
+    max-height: 250px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: @main;
 
-      img {
-        min-width: 105%;
-        min-height: 105%;
-        transition: opacity 0.8s ease;
-        user-select: none;
-      }
-      &:hover img,
-      &:active img {
-        opacity: 0.3;
-        transition: opacity 0.8s ease;
-      }
-      &:hover .portfolio-card__btn {
-        top: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 1;
-        transition: 0.5s ease;
-      }
+    img {
+      min-width: 105%;
+      min-height: 105%;
+      transition: opacity 0.8s ease;
+      user-select: none;
     }
-
-    &__btn {
-      position: absolute;
-      top: 25%;
-      left: 50%;
-      min-width: 276px;
-      padding-top: 0;
-      color: @scarlet;
-      font-weight: 800;
-      font-size: 22px;
-      line-height: 1.2;
-      text-align: center;
-      background-color: rgba(#f4f8f9, 0.7);
-      transform: translate(-50%);
-      opacity: 0;
+    &:hover img,
+    &:active img {
+      opacity: 0.3;
+      transition: opacity 0.8s ease;
+    }
+    &:hover .portfolio-card__btn {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 1;
       transition: 0.5s ease;
+    }
+  }
 
-      &:hover {
-        color: #fff;
-        background-color: rgba(@scarlet, 0.8);
-        transition: 0.2s ease;
-      }
+  &__btn {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    min-width: 276px;
+    padding-top: 0;
+    color: @scarlet;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 1.2;
+    text-align: center;
+    background-color: rgba(#f4f8f9, 0.7);
+    transform: translate(-50%);
+    opacity: 0;
+    transition: 0.5s ease;
 
-      &:active {
-        color: #fff;
-        background-color: darken(@scarlet, 10%);
-        transition: 0.2s ease;
-      }
-
-      &:focus {
-        border: none;
-      }
+    &:hover {
+      color: #fff;
+      background-color: rgba(@scarlet, 0.8);
+      transition: 0.2s ease;
     }
 
-    // .portfolio-card__title
-    &__title h3 {
-      margin-bottom: 15px;
-      font-weight: 700;
-      font-size: 22px;
-      line-height: 1.2;
-      @media (min-width: 768px) {
-        margin-bottom: 10px;
-        font-size: 24px;
-      }
-      @media (min-width: 1200px) {
-        margin-bottom: 10px;
-        font-size: 26px;
-      }
-      a:focus {
-        margin: -3px;
-      }
+    &:active {
+      color: #fff;
+      background-color: darken(@scarlet, 10%);
+      transition: 0.2s ease;
     }
 
-    // .portfolio-card__desc
-    &__desc {
-      font-weight: 300;
-      font-size: 16px;
+    &:focus {
+      border: none;
+    }
+  }
 
-      @media (min-width: 768px) {
-        font-size: 18px;
-      }
+  // .portfolio-card__title
+  &__title h3 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
 
-      @media (min-width: 1200px) {
-        font-size: 20px;
-      }
+    @media (min-width: 768px) {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+    @media (min-width: 1200px) {
+      margin-bottom: 10px;
+      font-size: 26px;
+    }
+    a:focus {
+      margin: -3px;
+    }
+  }
+
+  // .portfolio-card__desc
+  &__desc {
+    font-weight: 300;
+    font-size: 16px;
+
+    @media (min-width: 768px) {
+      font-size: 18px;
     }
 
-    .link {
-      padding: 0;
-      color: #212529;
-      &:hover,
-      &:active {
-        color: @scarlet;
-        border-bottom: 1px solid @scarlet;
-      }
+    @media (min-width: 1200px) {
+      font-size: 20px;
+    }
+  }
+
+  .link {
+    padding: 0;
+    color: #212529;
+    &:hover,
+    &:active {
+      color: @scarlet;
+      border-bottom: 1px solid @scarlet;
     }
   }
 }
