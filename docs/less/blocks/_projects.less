@@ -27,6 +27,11 @@
   @media (min-width: 1200px) {
     padding: 100px 0 75px;
   }
+
+  .row__sb {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .projects-header {
@@ -229,7 +234,11 @@
           font-weight: 800;
         }
         a:focus {
-          margin: -3px;
+          color: @scarlet;
+
+          @media (min-width: 1200px) {
+            margin: -3px;
+          }
         }
       }
     }
@@ -258,19 +267,138 @@
   }
 }
 
-.projects-btn {
-  flex: 0 1 48.5%;
-  padding: 16px 0;
-  color: #fff;
-  font-weight: 300;
-  font-size: 18px;
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  background-color: #333333;
+// .projects-btn {
+//   flex: 0 1 48.5%;
+//   padding: 16px 0;
+//   color: #fff;
+//   font-weight: 300;
+//   font-size: 18px;
+//   font-family: "Roboto", sans-serif;
+//   text-align: center;
+//   background-color: #333333;
 
-  @media (min-width: 1200px) {
-    padding: 24px 0;
-    font-size: 22px;
+//   @media (min-width: 1200px) {
+//     padding: 24px 0;
+//     font-size: 22px;
+//   }
+
+//   &:hover,
+//   &:focus {
+//     color: #fff;
+//     background-color: #656565;
+//     border: none;
+//     outline: none;
+//   }
+//   &:active {
+//     background-color: #141414;
+//   }
+//   &[disabled] {
+//     cursor: not-allowed;
+//     opacity: 0.5;
+//     pointer-events: none;
+//   }
+//   &:first-child {
+//     display: none;
+//     @media (min-width: 768px) {
+//       display: block;
+//     }
+//   }
+// }
+
+@keyframes btn-left {
+  50% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes btn-left-after {
+  50% {
+    transform: translateX(-20%) rotate(-45deg);
+  }
+  100% {
+    transform: translateX(0) rotate(-45deg);
+  }
+}
+
+@keyframes btn-right {
+  50% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes btn-right-after {
+  50% {
+    transform: translateX(20%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(0) rotate(45deg);
+  }
+}
+
+.projects-btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: auto 0;
+  color: #fff;
+  background-color: #333333;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover::before,
+  &:hover::after {
+    animation-play-state: paused;
+  }
+
+  &::before {
+    position: absolute;
+    top: 23px;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    filter: drop-shadow(0 0 3px #fff);
+    content: "";
+  }
+
+  &::after {
+    position: absolute;
+    top: 14px;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #fff;
+    border-radius: 2px;
+    filter: drop-shadow(0 0 3px#fff);
+    content: "";
+  }
+
+  &__left::before {
+    left: 16px;
+    animation: btn-left linear 2s infinite;
+  }
+
+  &__left::after {
+    left: 17px;
+    border-left: 2px solid #fff;
+    transform: rotate(-45deg);
+    animation: btn-left-after linear 2s infinite;
+  }
+
+  &__right::before {
+    right: 16px;
+    animation: btn-right linear 2s infinite;
+  }
+
+  &__right::after {
+    right: 17px;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    animation: btn-right-after linear 2s infinite;
   }
 
   &:hover,
@@ -283,15 +411,44 @@
   &:active {
     background-color: #141414;
   }
-  &[disabled] {
-    cursor: not-allowed;
-    opacity: 0.5;
-    pointer-events: none;
+}
+
+.owl-carousel-wrapper {
+  position: relative;
+  order: -1;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  @media (min-width: 1200px) {
+    order: unset;
+    width: 90%;
   }
-  &:first-child {
-    display: none;
-    @media (min-width: 768px) {
-      display: block;
+}
+
+.owl-carousel__img {
+  max-height: 150px;
+  margin: 0 5px;
+  background-color: @main;
+
+  img {
+    opacity: 1;
+    transition: opacity 0.5s ease, filter 0.2s linear;
+  }
+
+  &:hover,
+  a:focus {
+    border: none;
+    img {
+      opacity: 0.5;
+      filter: grayscale();
     }
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 280px;
+    max-height: 130px;
   }
 }

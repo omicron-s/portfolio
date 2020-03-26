@@ -141,18 +141,19 @@ $(".portfolio__link span").click(function(e) {
 });
 
 //planning animate
-var typed = new Typed("#pc4-anim i", {
-  strings: [
-    "Привет...",
-    "Здесь этап создания блоков и не только...",
-    "Медленно, но верно, я проделаю всё..."
-  ],
-  typeSpeed: 40,
-  loop: true,
-  loopCount: Infinity,
-  showCursor: false
+$(document).ready(function() {
+  var typed = new Typed("#pc4-anim i", {
+    strings: [
+      "Привет...",
+      "Здесь этап создания блоков и не только...",
+      "Медленно, но верно, я проделаю всё..."
+    ],
+    typeSpeed: 40,
+    loop: true,
+    loopCount: Infinity,
+    showCursor: false
+  });
 });
-
 //planning scroll
 $(function() {
   $(window).scroll(function() {
@@ -192,5 +193,52 @@ $(function() {
     } else {
       $("#pc5").removeClass("planning-act");
     }
+  });
+});
+
+$(document).ready(function() {
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    items: 1,
+    dots: false,
+    nav: false,
+    center: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    autoplaySpeed: 3000,
+    autoplayHoverPause: true,
+    startPosition: "URLHash",
+    responsive: {
+      768: {
+        items: 3
+      },
+      1200: {
+        items: 4
+      }
+    }
+  });
+
+  $(".projects-btn__right").click(function() {
+    $(".owl-carousel").trigger("next.owl.carousel");
+    $(".owl-carousel")
+      .trigger("stop.owl.autoplay")
+      .delay(3000)
+      .queue(function() {
+        $(this)
+          .trigger("play.owl.autoplay")
+          .dequeue();
+      });
+  });
+
+  $(".projects-btn__left").click(function() {
+    $(".owl-carousel").trigger("prev.owl.carousel");
+    $(".owl-carousel")
+      .trigger("stop.owl.autoplay")
+      .delay(3000)
+      .queue(function() {
+        $(this)
+          .trigger("play.owl.autoplay")
+          .dequeue();
+      });
   });
 });
