@@ -1675,12 +1675,11 @@ input {
   background-image: url("../img/bg-03.png");
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size: 180%;
+  background-size: cover;
 }
 @media (min-width: 768px) {
   #footerBy {
     padding: 45px 0 230px;
-    background-size: contain;
   }
   #footerBy h3 {
     margin-bottom: 20px;
