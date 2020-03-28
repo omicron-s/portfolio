@@ -1,8 +1,11 @@
 // page-nav
-$("#page-nav").onePageNav({
-  currentClass: "current",
-  changeHash: false,
-  scrollThreshold: 0.4
+$(function() {
+  if ($("#page-nav").length === 0) return;
+  $("#page-nav").onePageNav({
+    currentClass: "current",
+    changeHash: false,
+    scrollThreshold: 0.4
+  });
 });
 
 //Smooth scrolling
@@ -141,104 +144,116 @@ $(".portfolio__link span").click(function(e) {
 });
 
 //planning animate
-$(document).ready(function() {
-  var typed = new Typed("#pc4-anim i", {
-    strings: [
-      "Привет...",
-      "Здесь этап создания блоков и не только...",
-      "Медленно, но верно, я проделаю всё..."
-    ],
-    typeSpeed: 40,
-    loop: true,
-    loopCount: Infinity,
-    showCursor: false
+$(function() {
+  if ($("#pc4-anim").length === 0) return;
+  $(document).ready(function() {
+    var typed = new Typed("#pc4-anim i", {
+      strings: [
+        "Привет...",
+        "Здесь этап создания блоков и не только...",
+        "Медленно, но верно, я проделаю всё..."
+      ],
+      typeSpeed: 40,
+      loop: true,
+      loopCount: Infinity,
+      showCursor: false
+    });
   });
 });
 //planning scroll
 $(function() {
-  $(window).scroll(function() {
-    var scroll = $(window).scrollTop() + $(window).height() / 1.8;
-    var pc1Offset = $("#pc1").offset().top + $("#pc1").height() / 2;
-    var pc2Offset = $("#pc2").offset().top + $("#pc2").height() / 2;
-    var pc3Offset = $("#pc3").offset().top + $("#pc3").height() / 2;
-    var pc4Offset = $("#pc4").offset().top + $("#pc4").height() / 2;
-    var pc5Offset = $("#pc5").offset().top + $("#pc5").height() / 2;
+  if ($(".planning").length === 0) return;
+  $(function() {
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop() + $(window).height() / 1.8;
+      var pc1Offset = $("#pc1").offset().top + $("#pc1").height() / 2;
+      var pc2Offset = $("#pc2").offset().top + $("#pc2").height() / 2;
+      var pc3Offset = $("#pc3").offset().top + $("#pc3").height() / 2;
+      var pc4Offset = $("#pc4").offset().top + $("#pc4").height() / 2;
+      var pc5Offset = $("#pc5").offset().top + $("#pc5").height() / 2;
 
-    if (scroll > pc1Offset && scroll < pc2Offset) {
-      $("#pc1").addClass("planning-act");
-    } else {
-      $("#pc1").removeClass("planning-act");
-    }
-    if (scroll > pc2Offset && scroll < pc3Offset) {
-      $("#pc2").addClass("planning-act");
-      $("#pc2").addClass("hover");
-    } else {
-      $("#pc2").removeClass("planning-act");
-      $("#pc2").removeClass("hover");
-    }
-    if (scroll > pc3Offset && scroll < pc4Offset) {
-      $("#pc3").addClass("planning-act");
-    } else {
-      $("#pc3").removeClass("planning-act");
-    }
-    if (scroll > pc4Offset && scroll < pc5Offset) {
-      $("#pc4").addClass("planning-act");
-      $("#pc4").addClass("hover");
-    } else {
-      $("#pc4").removeClass("planning-act");
-      $("#pc4").removeClass("hover");
-    }
-    if (scroll > pc5Offset && scroll < pc5Offset + 200) {
-      $("#pc5").addClass("planning-act");
-    } else {
-      $("#pc5").removeClass("planning-act");
-    }
+      if (scroll > pc1Offset && scroll < pc2Offset) {
+        $("#pc1").addClass("planning-act");
+      } else {
+        $("#pc1").removeClass("planning-act");
+      }
+      if (scroll > pc2Offset && scroll < pc3Offset) {
+        $("#pc2").addClass("planning-act");
+        $("#pc2").addClass("hover");
+      } else {
+        $("#pc2").removeClass("planning-act");
+        $("#pc2").removeClass("hover");
+      }
+      if (scroll > pc3Offset && scroll < pc4Offset) {
+        $("#pc3").addClass("planning-act");
+      } else {
+        $("#pc3").removeClass("planning-act");
+      }
+      if (scroll > pc4Offset && scroll < pc5Offset) {
+        $("#pc4").addClass("planning-act");
+        $("#pc4").addClass("hover");
+      } else {
+        $("#pc4").removeClass("planning-act");
+        $("#pc4").removeClass("hover");
+      }
+      if (scroll > pc5Offset && scroll < pc5Offset + 200) {
+        $("#pc5").addClass("planning-act");
+      } else {
+        $("#pc5").removeClass("planning-act");
+      }
+    });
   });
 });
 
-$(document).ready(function() {
-  $(".owl-carousel").owlCarousel({
-    loop: true,
-    items: 1,
-    dots: false,
-    nav: false,
-    center: true,
-    autoplay: true,
-    autoplayTimeout: 5000,
-    autoplaySpeed: 3000,
-    autoplayHoverPause: true,
-    startPosition: "URLHash",
-    responsive: {
-      768: {
-        items: 3
-      },
-      1200: {
-        items: 4
+$(function() {
+  if ($(".owl-carousel").length === 0) return;
+  $(document).ready(function() {
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      items: 1,
+      dots: false,
+      nav: false,
+      center: true,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplaySpeed: 3000,
+      autoplayHoverPause: true,
+      startPosition: "URLHash",
+      responsive: {
+        450: {
+          items: 2
+        },
+        768: {
+          items: 3
+        },
+        1200: {
+          items: 4
+        }
       }
-    }
-  });
+    });
 
-  $(".projects-btn__right").click(function() {
-    $(".owl-carousel").trigger("next.owl.carousel");
-    $(".owl-carousel")
-      .trigger("stop.owl.autoplay")
-      .delay(3000)
-      .queue(function() {
-        $(this)
-          .trigger("play.owl.autoplay")
-          .dequeue();
-      });
-  });
+    $(".projects-btn__right").click(function() {
+      $(".owl-carousel").trigger("next.owl.carousel", [1300]);
+      $(".owl-carousel")
+        .trigger("stop.owl.autoplay")
+        .delay(3000)
+        .queue(function() {
+          $(this)
+            .trigger("play.owl.autoplay")
+            .dequeue();
+        });
+    });
 
-  $(".projects-btn__left").click(function() {
-    $(".owl-carousel").trigger("prev.owl.carousel");
-    $(".owl-carousel")
-      .trigger("stop.owl.autoplay")
-      .delay(3000)
-      .queue(function() {
-        $(this)
-          .trigger("play.owl.autoplay")
-          .dequeue();
-      });
+    $(".projects-btn__left").click(function() {
+      $(".owl-carousel").trigger("prev.owl.carousel", [1300]);
+      $(".owl-carousel")
+        .trigger("stop.owl.autoplay")
+        .delay(3000)
+        .queue(function() {
+          $(this)
+            .trigger("play.owl.autoplay")
+            .dequeue();
+        });
+    });
   });
 });

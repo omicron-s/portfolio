@@ -96,8 +96,13 @@
   &:not(:nth-child(-n + 4)) {
     display: none;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1199px) {
     flex: 0 1 49%;
+    margin-right: 10px;
+    &:nth-child(2n) {
+      margin-right: 0;
+      margin-left: auto;
+    }
   }
   @media (min-width: 1200px) {
     flex: 0 1 32%;
@@ -141,9 +146,10 @@
       margin-bottom: unset;
     }
   }
+
   &__img {
     position: relative;
-    max-height: 250px;
+    max-height: 230px;
     margin-bottom: 20px;
     overflow: hidden;
     background-color: @main;

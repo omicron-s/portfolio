@@ -150,8 +150,8 @@
   }
 
   input:not([type="submit"]) {
+    height: 40px;
     margin-bottom: 59px;
-    padding: 0 0 14px;
     border: none;
     border-bottom: 2px solid #eaeaea;
     border-radius: 1px;
@@ -192,7 +192,7 @@
   // .contacts-right-side__email
   &__email {
     position: absolute;
-    top: 0;
+    top: 5px;
     left: 0;
     color: #bcbcbc;
     font-weight: 700;
@@ -203,7 +203,7 @@
 
   input[type="email"]:focus + span,
   input[type="email"]:not(:placeholder-shown) + span {
-    top: -25px;
+    top: -20px;
     color: @main;
     font-weight: 700;
     font-size: 16px;
@@ -211,7 +211,7 @@
   // .contacts-right-side__title
   &__title {
     position: absolute;
-    top: 107px;
+    top: 105px;
     left: 0;
     color: #bcbcbc;
     font-weight: 700;
@@ -222,7 +222,7 @@
 
   input[type="text"]:focus + span,
   input[type="text"]:not(:placeholder-shown) + span {
-    top: 75px;
+    top: 80px;
     color: @main;
     font-weight: 700;
     font-size: 16px;
@@ -241,7 +241,7 @@
 
   textarea:focus + span.contacts-right-side__text,
   textarea:not(:placeholder-shown) + span.contacts-right-side__text {
-    top: 174px;
+    top: 177px;
     color: @main;
     font-weight: 700;
     font-size: 16px;
