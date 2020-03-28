@@ -2125,6 +2125,7 @@ input {
 }
 .owl-carousel-wrapper {
   position: relative;
+  z-index: 0;
   order: -1;
   width: 100%;
   margin: 0 auto;
