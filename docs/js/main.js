@@ -257,3 +257,30 @@ $(function() {
     });
   });
 });
+
+$(function() {
+  $("#contact-form").submit(function(e) {
+    e.preventDefault();
+    var input = $("#contact-form input").val();
+    var textarea = $("#contact-form textarea").val();
+    if (
+      input.length > 0 &&
+      input != "" &&
+      textarea.length > 0 &&
+      textarea != ""
+    ) {
+      $.ajax({
+        type: "POST",
+        url: "php/mail.php",
+        data: $("#contact-form").serialize(),
+
+        success: function(html) {
+          $("#contact-form").remove();
+          $("#answer").html(html);
+        }
+      });
+    } else {
+      return false;
+    }
+  });
+});
