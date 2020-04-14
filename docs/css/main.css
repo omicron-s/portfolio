@@ -693,7 +693,7 @@ input {
 }
 .header-avatar a {
   position: absolute;
-  bottom: 30px;
+  bottom: 10px;
   left: 20px;
   font-weight: 700;
   font-size: 24px;
@@ -716,6 +716,10 @@ input {
     order: unset;
     padding: 10px 25px 0;
   }
+  .header-avatar a {
+    bottom: 20px;
+    left: 40px;
+  }
 }
 @media (min-width: 1200px) {
   .header-avatar {
@@ -734,6 +738,10 @@ input {
     background: linear-gradient(90deg, #f4f8f9 0%, rgba(244, 248, 249, 0) 100%);
     opacity: 0.5;
     content: '';
+  }
+  .header-avatar a {
+    bottom: 30px;
+    left: 20px;
   }
 }
 .header-background-img {
