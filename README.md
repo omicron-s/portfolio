@@ -11,7 +11,7 @@
 - Sticky navbar
 - Форма обратной связи (Ajax, PHP) 
 
-[**Онлайн демо**](/https://omicron-s.github.io/portfolio/)
+[**Онлайн демо**](https://omicron-s.github.io/portfolio/)
 
 ### Тестировать локально
 
